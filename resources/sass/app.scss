@@ -1,0 +1,429 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+* {
+    box-sizing: border-box;
+  }
+  
+  
+  .content {
+    max-width: 1150px;
+    margin: auto;
+    background: #f0bc95;
+    padding: 30px;
+  }
+  /* Style the body */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color:#eeeeee;
+    
+  }
+  .carousel-item {
+    height: 40vh;
+    min-height: 450px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    
+  
+  }
+  #logo-main {
+      display: block;
+     
+    }
+  
+  
+  
+  /* Right-aligned link */
+  .navbar a.right {
+    float: right;
+  }
+  
+  
+  
+  @import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
+  .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase
+  }
+  
+  .navbar .nav {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 18px;
+  }
+  
+  .navbar-inverse {
+    background-color: #fc6b51
+  }
+  
+  .navbar-inverse .navbar-nav>.active>a:hover,
+  .navbar-inverse .navbar-nav>li>a:hover,
+  .navbar-inverse .navbar-nav>li>a:focus {
+    background-color: #000000
+  }
+  
+  .navbar-inverse .navbar-nav>.active>a,
+  .navbar-inverse .navbar-nav>.open>a,
+  .navbar-inverse .navbar-nav>.open>a,
+  .navbar-inverse .navbar-nav>.open>a:hover,
+  .navbar-inverse .navbar-nav>.open>a,
+  .navbar-inverse .navbar-nav>.open>a:hover,
+  .navbar-inverse .navbar-nav>.open>a:focus {
+    background-color: #000000
+  }
+  
+  .dropdown-menu {
+    background-color: #000000
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fc6b51;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: #FFFFFF;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    min-width: 200px;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #000000;
+    color:#FFCC00 ;
+    
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-menu>li>a:hover,
+  .dropdown-menu>li>a:focus {
+    background-color: #fc6b51
+  }
+  
+  .navbar-inverse {
+    background-image: none;
+  }
+  
+  .dropdown-menu>li>a:hover,
+  .dropdown-menu>li>a:focus {
+    background-image: none;
+  }
+  
+  .navbar-inverse {
+    border-color: #003300
+  }
+  
+  .navbar-inverse .navbar-brand {
+    color: #FFFFFF
+  }
+  
+  .navbar-inverse .navbar-brand:hover {
+    color: #FFCC00
+  }
+  
+  .navbar-inverse .navbar-nav>li>a {
+    color: #FFFFFF
+  }
+  
+  .navbar-inverse .navbar-nav>li>a:hover,
+  .navbar-inverse .navbar-nav>li>a:focus {
+    color: #FFCC00
+  }
+  
+  .navbar-inverse .navbar-nav>.active>a,
+  .navbar-inverse .navbar-nav>.open>a,
+  .navbar-inverse .navbar-nav>.open>a:hover,
+  .navbar-inverse .navbar-nav>.open>a:focus {
+    color: #FFCC00
+  }
+  
+  .navbar-inverse .navbar-nav>.active>a:hover,
+  .navbar-inverse .navbar-nav>.active>a:focus {
+    color: #FFCC00
+    
+  }
+  
+  .dropdown-menu>li>a {
+    color: #003300
+    
+  }
+  
+  .dropdown-menu>li>a:hover,
+  .dropdown-menu>li>a:focus {
+    color: #FFCC00
+    
+  }
+  
+  .navbar-inverse .navbar-nav>.dropdown>a .caret {
+    border-top-color: #003300
+    
+  }
+  
+  .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+    border-top-color: #003300
+    
+  }
+  
+  .navbar-inverse .navbar-nav>.dropdown>a .caret {
+    border-bottom-color: #003300
+  }
+  
+  .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+    border-bottom-color: #003300
+  }
+  
+  .leftcolumn {   
+    float: left;
+    width: 71%;
+    
+    
+  }
+  .left{
+    float: left;
+    width: 100%;
+    
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 29%;
+    padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    
+    width: 100%;
+  
+   
+  
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+     background-color:#eeeeee;
+     padding: 15px;
+     margin-top: 5px;
+     
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+  }
+  
+  
+  
+  
+  h2{
+    color: #0894d1;
+  }
+  
+  footer {
+      background: #eda590;
+      color: white;
+      padding-top: 10px;
+      font-size: 14px;
+  }
+    
+    footer a {
+      color: #aaa;
+    }
+    
+    footer a:hover {
+      color: #fff;
+    }
+    
+    footer h3 {
+     color: #0894d1;
+      letter-spacing: 1px;
+      margin: 30px 0 20px;
+    }
+    
+    footer .three-column {
+     overflow: hidden;
+    }
+    
+    footer .three-column li{
+     width: 33.3333%;
+      float: left;
+      padding: 5px 0;
+    }
+    
+    footer .socila-list {
+      overflow: hidden;
+      margin: 20px 0 10px;
+    }
+    
+    footer .socila-list li {
+      float: left;
+      margin-right: 3px;
+      opacity: 0.7;
+      overflow: hidden;
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    footer .socila-list li:hover {
+      opacity: 1;
+    }
+    
+    footer .img-thumbnail {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid #444;
+      margin-bottom: 5px;
+    }
+    
+    footer .copyright {
+      padding: 15px 0;
+      background: #fc6b51
+      ;
+      margin-top: 20px;
+      font-size: 15px;
+    }
+    
+    footer .copyright span {
+      color: #949494;
+    }
+    .description {
+      padding-left: 15px;
+      border-left: 2px solid #000;
+   }
+    .description h3 {
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 20px;
+      margin: 0px;
+      color: #000;
+      text-transform: uppercase;
+   }
+    .description p {
+      margin-top: 10px;
+      font-weight: 300;
+   }
+    .wrapper {
+      margin: 50px;
+   }
+    ul.breadcrumbs {
+      margin: 25px 0px 0px;
+      padding: 0px;
+      font-size: 0px;
+      line-height: 0px;
+      display: inline-block;
+      *display: inline;
+      zoom: 1;
+      vertical-align: top;
+      height: 40px;
+   }
+    ul.breadcrumbs li {
+      position: relative;
+      margin: 0px 0px;
+      padding: 0px;
+      list-style: none;
+      list-style-image: none;
+      display: inline-block;
+      *display: inline;
+      zoom: 1;
+      vertical-align: top;
+      border-left: 1px solid #ccc;
+      transition: 0.3s ease;
+   }
+    ul.breadcrumbs li:hover:before {
+      border-left: 10px solid #96be11;
+   }
+    ul.breadcrumbs li:hover a {
+      color: #000;
+      background: #96be11;
+   }
+    ul.breadcrumbs li:before {
+      content: "";
+      position: absolute;
+      right: -9px;
+      top: -1px;
+      z-index: 20;
+      border-left: 10px solid #fff;
+      border-top: 22px solid transparent;
+      border-bottom: 22px solid transparent;
+      transition: 0.3s ease;
+   }
+    ul.breadcrumbs li:after {
+      content: "";
+      position: absolute;
+      right: -10px;
+      top: -1px;
+      z-index: 10;
+      border-left: 10px solid #ccc;
+      border-top: 22px solid transparent;
+      border-bottom: 22px solid transparent;
+   }
+    ul.breadcrumbs li.active a {
+      color: #000;
+      background: #96be11;
+   }
+    ul.breadcrumbs li.first {
+      border-left: none;
+   }
+    ul.breadcrumbs li.first a {
+      font-size: 18px;
+      padding-left: 20px;
+      border-radius: 5px 0px 0px 5px;
+   }
+    ul.breadcrumbs li.last:before {
+      display: none;
+   }
+    ul.breadcrumbs li.last:after {
+      display: none;
+   }
+    ul.breadcrumbs li.last a {
+      padding-right: 20px;
+      border-radius: 0px 40px 40px 0px;
+   }
+    ul.breadcrumbs li a {
+      display: block;
+      font-size: 12px;
+      line-height: 40px;
+      color: #757575;
+      padding: 0px 15px 0px 25px;
+      text-decoration: none;
+      background: #fff;
+      border: 1px solid #ddd;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: 0.3s ease;
+   }
+  
