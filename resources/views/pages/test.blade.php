@@ -35,13 +35,8 @@
           </nav>
         </div>
       </header>
-
-<div class="content">
-  <div class="row">
-    <div class="leftcolumn">
-      <div class="card">
-          <img class="card-img-top" src="<?php echo asset('assets/img/header1.png'); ?>" width="100%" height="100%" alt="">
-        <div class="fakeimg" style="height:100%;"></div>
+      <div class="content">
+      <div class="fakeimg" style="height:100%;"></div>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -50,7 +45,7 @@
               </ol>
               <div class="carousel-inner" role="listbox">
                 <!-- Slide One - Set the background image for this slide in the line below -->
-                <div class="carousel-item active" style="background-image: url('assets/img/10.jpg')">
+                <div class="carousel-item active" style="background-image: url('assets/img/555555.jpg')">
                   <div class="carousel-caption d-none d-md-block">
                   
                   </div>
@@ -77,31 +72,63 @@
                     <span class="sr-only">Next</span>
                   </a>
             </div>
-        <p>Some text..</p>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-4">
-              <div>
-                  <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/51.jpg'); ?>" width="100%" height="100%" alt=""></a>  
-                  <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+<br>
+
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+          <img class="card-img-top" src="<?php echo asset('assets/img/header11.png'); ?>" width="100%" height="100%" alt="">
+          <div class="slideshow-container">
+
+              <div class="mySlides">
+                <div class="numbertext">1 / 3</div>
+                <img src="<?php echo asset('assets/img/1004.jpg'); ?>" width="100%" height="550px" alt=""/>
+                <div class="text">Caption Text</div>
               </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-              <div>
-                  <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/52.jpg'); ?>" width="100%" height="100%" alt=""></a>   
-                  <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+              
+              <div class="mySlides">
+                <div class="numbertext">2 / 3</div>
+                <img src="<?php echo asset('assets/img/10.jpg'); ?>" width="100%" height="" alt=""/>
+                <div class="text">Caption Two</div>
               </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-              <div>
-                  <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/53.jpg'); ?>" width="100%" height="100%" alt=""></a>              
-                  <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+              
+              <div class="mySlides">
+                <div class="numbertext">3 / 3</div>
+                <img src="<?php echo asset('assets/img/10.jpg'); ?>" width="100%" height="100%" alt=""/>
+                <div class="text">Caption Three</div>
               </div>
+              
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              
+              </div>
+              
+              <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col-lg-4 col-sm-6 mb-4">
+                    <div>
+                        <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/1000.jpg'); ?>" width="100%" height="100%" alt=""></a>  
+                        <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-4">
+                    <div>
+                        <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/1002.jpg'); ?>" width="100%" height="100%" alt=""></a>   
+                        <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-4">
+                    <div>
+                        <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/1002.jpg'); ?>" width="100%" height="100%" alt=""></a>              
+                        <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+                    </div>
+                  </div>
             </div>
-      </div>
-      
-     
-        
-    
     
     <!-- /.row -->
   
@@ -122,45 +149,55 @@
       <p>ผู้ช่วยศาสตราจารย์ ดร.หงษ์ศิริ ภิยโยดิลกชัย</p>
       </div>
       <div class="card">
-        <h2>Popular Post</h2>
+        <h2>BIT VDO</h2>
         <div class="fakeimg">
             <img src="<?php echo asset('assets/img/2.png'); ?>" width="100%" height="100%" alt=""/>
           
         </div><br>
         
-        <div class="fakeimg">Image</div><br>
         <div class="fakeimg">Image</div>
+      
       </div>
      
     </div>
   </div>
   <br>
+  <div class="row">
+      <div class="left">
+        <div class="card">
+            <img id="logo-main" src="<?php echo asset('assets/img/nav.png'); ?>" width="100%" height="80px" alt=""/><br>
+          <div class="fakeimg" style="height:100%;"></div>
+          <div class="row">
+              <div class="col-lg-4 col-sm-6 mb-4">
+                <div>
+                    <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/51.jpg'); ?>" width="100%" height="100%" alt=""></a>  
+                    <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 mb-4">
+                <div>
+                    <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/52.jpg'); ?>" width="100%" height="100%" alt=""></a>   
+                    <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 mb-4">
+                <div>
+                    <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/53.jpg'); ?>" width="100%" height="100%" alt=""></a>              
+                    <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+                </div>
+              </div>
+        </div>
+        </div>
+      </div>
+</div>
+
   
       <div class="row">
           <div class="left">
             <div class="card">
                 <img id="logo-main" src="<?php echo asset('assets/img/sty.png'); ?>" width="100%" height="100%" alt=""/><br>
               <div class="fakeimg" style="height:100%;"></div>
-              <div class="row">
-                  <div class="col-lg-6 col-sm-6 mb-4">
-                    <div>
-                        <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/51.jpg'); ?>" width="100%" height="100%" alt=""></a>  
-                        <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-sm-6 mb-4">
-                    <div>
-                        <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/52.jpg'); ?>" width="100%" height="100%" alt=""></a>   
-                        <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-sm-6 mb-4">
-                      <div>
-                          <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/52.jpg'); ?>" width="100%" height="100%" alt=""></a>   
-                          <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-                      </div>
-                    </div> 
-            </div>
+              
             </div>
           </div>
 </div>
@@ -172,6 +209,32 @@
 
 
 <script>
+  var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
 function openPage(pageName,elmnt,color) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");

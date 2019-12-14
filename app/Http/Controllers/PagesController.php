@@ -26,4 +26,8 @@ class PagesController extends Controller
        
         return view('pages.test');
     }
+    public function com(){
+       
+        return view('pages.com');
+    }
 }

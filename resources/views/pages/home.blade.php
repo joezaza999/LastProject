@@ -78,28 +78,7 @@
                   </a>
             </div>
         <p>Some text..</p>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-4">
-              <div>
-                  <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/51.jpg'); ?>" width="100%" height="100%" alt=""></a>  
-                  <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-              <div>
-                  <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/52.jpg'); ?>" width="100%" height="100%" alt=""></a>   
-                  <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-              <div>
-                  <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/53.jpg'); ?>" width="100%" height="100%" alt=""></a>              
-                  <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-              </div>
-            </div>
-      </div>
-      
-     
+        
         
     
     
@@ -122,45 +101,55 @@
       <p>ผู้ช่วยศาสตราจารย์ ดร.หงษ์ศิริ ภิยโยดิลกชัย</p>
       </div>
       <div class="card">
-        <h2>Popular Post</h2>
+        <h2>BIT VDO</h2>
         <div class="fakeimg">
             <img src="<?php echo asset('assets/img/2.png'); ?>" width="100%" height="100%" alt=""/>
           
         </div><br>
         
-        <div class="fakeimg">Image</div><br>
         <div class="fakeimg">Image</div>
+      
       </div>
      
     </div>
   </div>
   <br>
+  <div class="row">
+      <div class="left">
+        <div class="card">
+            <img id="logo-main" src="<?php echo asset('assets/img/111111.png'); ?>" width="100%" height="70px alt=""/><br>
+          <div class="fakeimg" style="height:100%;"></div>
+          <div class="row">
+              <div class="col-lg-4 col-sm-6 mb-4">
+                <div>
+                    <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/51.jpg'); ?>" width="100%" height="100%" alt=""></a>  
+                    <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 mb-4">
+                <div>
+                    <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/52.jpg'); ?>" width="100%" height="100%" alt=""></a>   
+                    <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 mb-4">
+                <div>
+                    <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/53.jpg'); ?>" width="100%" height="100%" alt=""></a>              
+                    <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+                </div>
+              </div>
+        </div>
+        </div>
+      </div>
+</div>
+
   
       <div class="row">
           <div class="left">
             <div class="card">
                 <img id="logo-main" src="<?php echo asset('assets/img/sty.png'); ?>" width="100%" height="100%" alt=""/><br>
               <div class="fakeimg" style="height:100%;"></div>
-              <div class="row">
-                  <div class="col-lg-6 col-sm-6 mb-4">
-                    <div>
-                        <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/51.jpg'); ?>" width="100%" height="100%" alt=""></a>  
-                        <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-sm-6 mb-4">
-                    <div>
-                        <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/52.jpg'); ?>" width="100%" height="100%" alt=""></a>   
-                        <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-sm-6 mb-4">
-                      <div>
-                          <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/52.jpg'); ?>" width="100%" height="100%" alt=""></a>   
-                          <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-                      </div>
-                    </div> 
-            </div>
+              
             </div>
           </div>
 </div>
