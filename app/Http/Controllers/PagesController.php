@@ -30,4 +30,16 @@ class PagesController extends Controller
        
         return view('pages.com');
     }
+    public function activities(){
+       
+        return view('pages.activities');
+    }
+    public function cooperative(){
+       
+        return view('pages.cooperative');
+    }
+    public function newupdate(){
+       
+        return view('pages.newupdate');
+    }
 }

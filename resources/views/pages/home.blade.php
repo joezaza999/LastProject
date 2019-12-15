@@ -147,7 +147,7 @@
       <div class="row">
           <div class="left">
             <div class="card">
-                <img id="logo-main" src="<?php echo asset('assets/img/sty.png'); ?>" width="100%" height="100%" alt=""/><br>
+              <a href="cooperative"><img id="logo-main" src="<?php echo asset('assets/img/sty.png'); ?>" width="100%" height="100%" alt=""/><br></a>    
               <div class="fakeimg" style="height:100%;"></div>
               
             </div>

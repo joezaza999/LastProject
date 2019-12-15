@@ -21,6 +21,9 @@ Route::get('/course','PagesController@course');
 Route::get('/tact','PagesController@tact');
 Route::get('/test','PagesController@test');
 Route::get('/com','PagesController@com');
+Route::get('/activities','PagesController@activities');
+Route::get('/cooperative','PagesController@cooperative');
+Route::get('/newupdate','PagesController@newupdate');
 
 Auth::routes();
 
