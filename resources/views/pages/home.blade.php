@@ -1,47 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-<div>
-    <img id="logo-main" src="<?php echo asset('assets/img/logos.png'); ?>" width="100%" height="100%" alt=""/>
-    </div>
-<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav navbar-expand-lg" role="banner">
-        <div class="container">
-          <div class="navbar-header">
-            <a href="./" class="navbar-brand">เทคโนโลยีสารสนเทศ</a>
-          </div>
-          <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav navbar-right navbar-nav ml-auto ">
-              <li class="active">
-                <a class="nav-link" href="/">หน้าแรก</a>
-              </li>
-              <li>
-                    <a class="nav-link" href="member">บุคลากร</a>
-                  </li>
-                  <li>
-                    <a class="nav-link" href="course">หลักสูตร</a>
-                  </li>
-              <li class="dropdown">
-                <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">หน่วยงานอื่น <b class="caret"></b></a>
-                <ul class="dropdown-content ">
-                  <li><a class="nav-link" href="https://bua.rmutr.ac.th/" target="blank">คณะบริหารธุรกิจ</a></li>
-                  <li><a class="nav-link" href="https://www.rmutr.ac.th/">มทร.รัตนโกสินทร์</a></li>
-                  <li><a class="nav-link" href="https://reg.rmutr.ac.th/registrar/home.asp">งานทะเบียน</a></li>
-                </ul>
-              </li>
-              <li>
-                <a class="nav-link" href="tact">ติดต่อเรา</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
 
-<div class="content">
-  <div class="row">
-    <div class="leftcolumn">
-      <div class="card">
-          <img class="card-img-top" src="<?php echo asset('assets/img/header1.png'); ?>" width="100%" height="100%" alt="">
-        <div class="fakeimg" style="height:100%;"></div>
+      <div class="content">
+        <h2>เทคโนโลยีสารสนเทศทางธุรกิจ</h2>
+      <div class="fakeimg" style="height:100%;"></div>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -50,7 +13,7 @@
               </ol>
               <div class="carousel-inner" role="listbox">
                 <!-- Slide One - Set the background image for this slide in the line below -->
-                <div class="carousel-item active" style="background-image: url('assets/img/10.jpg')">
+                <div class="carousel-item active" style="background-image: url('assets/img/s1.png')">
                   <div class="carousel-caption d-none d-md-block">
                   
                   </div>
@@ -77,10 +40,63 @@
                     <span class="sr-only">Next</span>
                   </a>
             </div>
-        <p>Some text..</p>
-        
-        
-    
+<br>
+
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+          <img class="card-img-top" src="<?php echo asset('assets/img/header11.png'); ?>" width="100%" height="100%" alt="">
+          <div class="slideshow-container">
+
+              <div class="mySlides">
+                <div class="numbertext">1 / 3</div>
+                <img src="<?php echo asset('assets/img/1004.jpg'); ?>" width="100%" height="550px" alt=""/>
+                <div class="text">Caption Text</div>
+              </div>
+              
+              <div class="mySlides">
+                <div class="numbertext">2 / 3</div>
+                <img src="<?php echo asset('assets/img/10.jpg'); ?>" width="100%" height="" alt=""/>
+                <div class="text">Caption Two</div>
+              </div>
+              
+              <div class="mySlides">
+                <div class="numbertext">3 / 3</div>
+                <img src="<?php echo asset('assets/img/10.jpg'); ?>" width="100%" height="100%" alt=""/>
+                <div class="text">Caption Three</div>
+              </div>
+              
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              
+              </div>
+              
+              <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col-lg-4 col-sm-6 mb-4">
+                    <div>
+                        <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/1000.jpg'); ?>" width="100%" height="100%" alt=""></a>  
+                        <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-4">
+                    <div>
+                        <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/1002.jpg'); ?>" width="100%" height="100%" alt=""></a>   
+                        <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-4">
+                    <div>
+                        <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/1002.jpg'); ?>" width="100%" height="100%" alt=""></a>              
+                        <p class="card-text">เทคโนโลยีสารสนเทศ</p>
+                    </div>
+                  </div>
+            </div>
     
     <!-- /.row -->
   
@@ -117,7 +133,7 @@
   <div class="row">
       <div class="left">
         <div class="card">
-            <img id="logo-main" src="<?php echo asset('assets/img/111111.png'); ?>" width="100%" height="70px alt=""/><br>
+            <img id="logo-main" src="<?php echo asset('assets/img/nav.png'); ?>" width="100%" height="80px" alt=""/><br>
           <div class="fakeimg" style="height:100%;"></div>
           <div class="row">
               <div class="col-lg-4 col-sm-6 mb-4">
@@ -147,7 +163,7 @@
       <div class="row">
           <div class="left">
             <div class="card">
-              <a href="cooperative"><img id="logo-main" src="<?php echo asset('assets/img/sty.png'); ?>" width="100%" height="100%" alt=""/><br></a>    
+                <img id="logo-main" src="<?php echo asset('assets/img/sty.png'); ?>" width="100%" height="100%" alt=""/><br>
               <div class="fakeimg" style="height:100%;"></div>
               
             </div>
@@ -161,6 +177,32 @@
 
 
 <script>
+  var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
 function openPage(pageName,elmnt,color) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -181,79 +223,6 @@ document.getElementById("defaultOpen").click();
 
 </div>
 
-<footer>
-    <div class="container">
-      <div class="row">
-        
-        <div class="col-lg-4 col-md-6">
-          <h3>Site Map</h3>
-          <ul class="list-unstyled three-column">
-            <li>Home</li>
-            <li>Services</li>
-            <li>About</li>
-            <li>Code</li>
-            <li>Design</li>
-            <li>Host</li>
-            <li>Contact</li>
-            <li>Company</li>
-          </ul>
-          <ul class="list-unstyled socila-list">
-            <li><img src="http://placehold.it/48x48" alt="" /></li>
-            <li><img src="http://placehold.it/48x48" alt="" /></li>
-            <li><img src="http://placehold.it/48x48" alt="" /></li>
-            <li><img src="http://placehold.it/48x48" alt="" /></li>
-            <li><img src="http://placehold.it/48x48" alt="" /></li>
-            <li><img src="http://placehold.it/48x48" alt="" /></li>
-          </ul>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <h3>latest Articles</h3>
-          <div class="media">
-            <a href="#" class="pull-left">
-              <img src="http://placehold.it/64x64" alt="" class="media-object" />
-            </a>
-            <div class="media-body">
-              <h4 class="media-heading">Programming</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          
-          <div class="media">
-            <a href="#" class="pull-left">
-              <img src="http://placehold.it/64x64" alt="" class="media-object" />
-            </a>
-            <div class="media-body">
-              <h4 class="media-heading">Coding</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          
-          <div class="media">
-            <a href="#" class="pull-left">
-              <img src="http://placehold.it/64x64" alt="" class="media-object" />
-            </a>
-            <div class="media-body">
-              <h4 class="media-heading">Web Sesign</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          
-        </div>
-        
-        <div class="col-lg-4">
-          <h3>Our Work</h3>
-          <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
-          <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
-          <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
-          <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
-        </div>
-        
-      </div>
-    </div>
-    <div class="copyright text-center">
-      Copyright &copy; 2017 <span>Your Template Name</span>
-    </div>
-  </footer>
+
 
 @endsection

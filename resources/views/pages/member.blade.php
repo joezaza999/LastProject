@@ -8,12 +8,12 @@
 <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav navbar-expand-lg" role="banner">
         <div class="container">
           <div class="navbar-header">
-            <a href="./" class="navbar-brand">เทคโนโลยีสารสนเทศ</a>
+            <a href="home" class="navbar-brand">เทคโนโลยีสารสนเทศ</a>
           </div>
           <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav navbar-right navbar-nav ml-auto ">
               <li >
-                <a class="nav-link" href="/">หน้าแรก</a>
+                <a class="nav-link" href="home">หน้าแรก</a>
               </li>
               <li class="active">
                     <a class="nav-link" href="member">บุคลากร</a>
@@ -36,12 +36,7 @@
           </nav>
         </div>
       </header>
-      <div class="wrapper">
-        <ul class="breadcrumbs">
-          <li class="first"><a href="http://localhost/ProjectWebsite/public/" class="icon-home"></a></li>
-          <li class="last active"><a href="http://localhost/ProjectWebsite/public/member">บุคลากร</a></li>
-        </ul>
-      </div>
+     
 <div class="content">
 <!-- Header -->
 <header class="bg-primary text-center py-5 mb-4">
@@ -56,9 +51,9 @@
       <!-- Team Member 1 -->  
       <div class="col-xl-3 col-md-2 mb-2">
         <div class="card border-0 ">
-          <img class="card-img-top" src="<?php echo asset('assets/img/60.png'); ?>" width="141px" height="213px" alt=""></a>
+          <img class="card-img-top" src="<?php echo asset('assets/img/60.png'); ?>" width="100%" height="100%" alt=""></a>
           <div class="card-body text-center">
-            <h5 class="card-title mb-0">Team Memberกดหดก</h5>
+            <h5 class="card-title mb-0">Team Member</h5>
             <div class="card-text text-black-50">Web Developer</div>
           </div>
         </div>

@@ -8,12 +8,12 @@
 <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav navbar-expand-lg" role="banner">
         <div class="container">
           <div class="navbar-header">
-            <a href="./" class="navbar-brand">เทคโนโลยีสารสนเทศ</a>
+            <a href="home" class="navbar-brand">เทคโนโลยีสารสนเทศ</a>
           </div>
           <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav navbar-right navbar-nav ml-auto ">
               <li>
-                <a class="nav-link" href="/">หน้าแรก</a>
+                <a class="nav-link" href="home">หน้าแรก</a>
               </li>
               <li>
                     <a class="nav-link" href="member">บุคลากร</a>

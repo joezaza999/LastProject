@@ -14,7 +14,6 @@ class CreateComTable extends Migration
     public function up()
     {
         Schema::create('com', function (Blueprint $table) {
-            $table->increments('id');
             $table->string('image');
             $table->string('textroom');
             $table->string('com');

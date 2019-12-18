@@ -11,11 +11,11 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+ Route::get('/', function () {
+     return view('auth.login');
+ });
 
-Route::get('/','PagesController@home');
+Route::get('/home','PagesController@home');
 Route::get('/member','PagesController@member');
 Route::get('/course','PagesController@course');
 Route::get('/tact','PagesController@tact');
@@ -27,4 +27,6 @@ Route::get('/newupdate','PagesController@newupdate');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/bhome', 'HomeController@index')->name('bhome');
+Route::get('/position', 'PositionController@index')->name('position');
+Route::get('/position/destroy/(id)', 'PositionController@destroy');

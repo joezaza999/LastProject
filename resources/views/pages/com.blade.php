@@ -7,12 +7,12 @@
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav navbar-expand-lg" role="banner">
             <div class="container">
               <div class="navbar-header">
-                <a href="./" class="navbar-brand">เทคโนโลยีสารสนเทศ</a>
+                <a href="home" class="navbar-brand">เทคโนโลยีสารสนเทศ</a>
               </div>
               <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                 <ul class="nav navbar-nav navbar-right navbar-nav ml-auto ">
                   <li class="active">
-                    <a class="nav-link" href="/">หน้าแรก</a>
+                    <a class="nav-link" href="home">หน้าแรก</a>
                   </li>
                   <li>
                         <a class="nav-link" href="member">บุคลากร</a>
@@ -39,7 +39,7 @@
       
         <!-- Slideshow Header -->
         <div class="w3-container" id="apartment">
-          <h2 class="w3-text-green">The Apartment</h2>
+          <h2 class="w3-text-green">บรรยากาศในห้องเรียน</h2>
           <div class="w3-display-container mySlides">
           <img src="assets/img/1004.jpg" style="width:500px;margin-bottom:-6px">
             <div class="w3-display-bottomleft w3-container w3-black">
