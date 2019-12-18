@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-
+<div class="body">
       <div class="content">
         <h2>เทคโนโลยีสารสนเทศทางธุรกิจ</h2>
       <div class="fakeimg" style="height:100%;"></div>
@@ -221,6 +221,7 @@ function openPage(pageName,elmnt,color) {
 document.getElementById("defaultOpen").click();
 </script>
 
+</div>
 </div>
 
 

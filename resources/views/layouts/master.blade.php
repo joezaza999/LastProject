@@ -32,10 +32,11 @@
 
 	</div>
 </header>
+
 <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav navbar-expand-lg" role="banner">
         <div class="container">
           <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav navbar-right navbar-nav ml-auto ">
+            <ul class="nav navbar-nav navbar-right navbar-nav ml-auto">
               <li class="active">
                 <a class="nav-link" href="/">หน้าแรก</a>
               </li>
@@ -55,16 +56,17 @@
               </li>
               <li>
                 <a class="nav-link" href="tact">ติดต่อเรา</a>
-              </li>
+			  </li>
+			  
             </ul>
           </nav>
         </div>
-    </div>
+	</div>
+	<div class="body">
+	</div>
+		@yield('content')
 
-
-        @yield('content')
-
-
+		
         <script>
   $(document).ready(function() {
 
@@ -80,6 +82,17 @@ $('nav ul li').click(function(){
 });
 
 });
+$(window).scroll(function(){
+    if ($(window).scrollTop() >= 300) {
+        $('nav').addClass('fixed-header');
+        $('nav div').addClass('visible-title');
+    }
+    else {
+        $('nav').removeClass('fixed-header');
+        $('nav div').removeClass('visible-title');
+    }
+});
+
 </script>
 
 <!-- Footer -->
