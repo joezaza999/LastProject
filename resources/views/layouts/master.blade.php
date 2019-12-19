@@ -39,7 +39,7 @@
           <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav navbar-right navbar-nav">
               <li class="active">
-                <a class="nav-link" href="/">หน้าแรก</a>
+                <a class="nav-link" href="home">หน้าแรก</a>
               </li>
               <li>
                     <a class="nav-link" href="member">กิจกรรม</a>
@@ -101,31 +101,31 @@ $(window).scroll(function(){
 		<div class="container">
 			<div class="row text-center text-xs-center text-sm-left text-md-left">
 				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>รายละเอียด</h5>
+					
+						<a>สาขาวิชาเทคโนโลยีสารสนเทศทางธุรกิจ</a></br></br>
+						<a>264 ถนนจักรวรรดิ แขวงจักรวรรดิ</a></br></br>
+						<a>เขตสัมพันธวงศ์ กรุงเทพฯ 10100</a></br></br>
+						<a>โทร : 0-2222-2814 ต่อ 5319,5330,5350</a>
+						<a></a>
+			
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>Quick links</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+						<li><a href="https://bua.rmutr.ac.th/"><i class="fa fa-angle-double-right"></i>เกี่ยวกับเรา</a></li>
+						<li><a href="https://www.rmutr.ac.th/"><i class="fa fa-angle-double-right"></i>กิจกรรม</a></li>
+						<li><a href="https://reg.rmutr.ac.th/registrar/login.asp"><i class="fa fa-angle-double-right"></i>ประชาสัมพันธ์</a></li>
 						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
 						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Quick links</h5>
+					<h5>หน่วยงานอื่น</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
-					</ul>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Quick links</h5>
-					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+					<li><a href="https://bua.rmutr.ac.th/"><i class="fa fa-angle-double-right"></i>คณะบริหารธุรกิจ</a></li>
+						<li><a href="https://www.rmutr.ac.th/"><i class="fa fa-angle-double-right"></i>มทร.รัตนโกสินทร์</a></li>
+						<li><a href="https://reg.rmutr.ac.th/registrar/login.asp"><i class="fa fa-angle-double-right"></i>งานทะเบียน</a></li>
 						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
 						<li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
 					</ul>
@@ -145,8 +145,8 @@ $(window).scroll(function(){
 			</div>	
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-					<p><u><a href="https://www.nationaltransaction.com/">National Transaction Corporation</a></u> is a Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp, Minneapolis, MN]</p>
-					<p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">Sunlimetech</a></p>
+					<p>สาขาเทคโนโลยีสารสนเทศทางธุรกิจ-การพัฒนาซอฟต์แวร์</p>
+					<p> มหาวิทยาลัยเทคโนโลยีราชมงคลรัตนโกสินทร์ บพิตรพิมุข จักรวรรดิ</p>
 				</div>
 				</hr>
 			</div>	
