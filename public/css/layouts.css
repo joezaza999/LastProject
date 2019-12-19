@@ -1,7 +1,7 @@
 .body{
 
   background-color: #777;
-  background: #eeeeee;
+  background: #ffffff;
 
 }
 header *{
@@ -140,7 +140,6 @@ header.clicked nav{
 	
 
 }
-
 nav {
     width: 100%;
 	background: #000080;
@@ -161,12 +160,13 @@ nav {
 }
 
 .navbar .nav {
-  font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+  font-family: 'Kanit', sans-serif;
+  margin-left: 850px;
+  letter-spacing: 2px;
   font-size: 18px;
   
 }
+
 
 .navbar-inverse {
   background-color: #000080
@@ -337,7 +337,7 @@ nav {
 .content {
     max-width: 1300px;
     margin: auto;
-    background: #white;
+    background: #ffffff;
     padding: 30px;
   }
 

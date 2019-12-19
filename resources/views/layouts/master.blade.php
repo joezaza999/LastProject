@@ -34,28 +34,29 @@
 </header>
 
 <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav navbar-expand-lg" role="banner">
-        <div class="container">
+        <div class="">
+			
           <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav navbar-right navbar-nav ml-auto">
+            <ul class="nav navbar-nav navbar-right navbar-nav">
               <li class="active">
                 <a class="nav-link" href="/">หน้าแรก</a>
               </li>
               <li>
-                    <a class="nav-link" href="member">บุคลากร</a>
-                  </li>
-                  <li>
-                    <a class="nav-link" href="course">หลักสูตร</a>
+                    <a class="nav-link" href="member">กิจกรรม</a>
                   </li>
               <li class="dropdown">
-                <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">หน่วยงานอื่น <b class="caret"></b></a>
+                <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">ข้อมูลสาขาวิชา <b class="caret"></b></a>
                 <ul class="dropdown-content ">
-                  <li><a class="nav-link" href="https://bua.rmutr.ac.th/" target="blank">คณะบริหารธุรกิจ</a></li>
-                  <li><a class="nav-link" href="https://www.rmutr.ac.th/">มทร.รัตนโกสินทร์</a></li>
-                  <li><a class="nav-link" href="https://reg.rmutr.ac.th/registrar/home.asp">งานทะเบียน</a></li>
+                  <li><a class="nav-link" href="https://bua.rmutr.ac.th/" target="blank">หลักสูตรและการสอน</a></li>
+                  <li><a class="nav-link" href="https://www.rmutr.ac.th/">เกี่ยวกับสาขาวิชา</a></li>
+                  <li><a class="nav-link" href="tact">ติดต่อเรา</a></li>
                 </ul>
               </li>
               <li>
-                <a class="nav-link" href="tact">ติดต่อเรา</a>
+                <a class="nav-link" href="tact">ประชาสัมพันธ์</a>
+			  </li>
+			  <li>
+                <a class="nav-link" href="tact">Download</a>
 			  </li>
 			  
             </ul>

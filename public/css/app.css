@@ -11368,7 +11368,7 @@ a.text-dark:focus {
 
 .carousel-item {
   height: 40vh;
-  min-height: 480px;
+  min-height: 600px;
   background: no-repeat center center scroll;
   background-size: cover;
 }
