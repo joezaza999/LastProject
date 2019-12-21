@@ -26,9 +26,8 @@
 		
 
 	<div class="head">
-		<a href="#" class="tile socialmedia"><i class="fa fa-facebook-official"></i></a>
-		<a href="#" class="tile socialmedia"><i class="fa fa-instagram"></i></a>
-		<a href="#" class="tile socialmedia"><i class="fa fa-twitter-square"></i></a>
+		<a href="https://bua.rmutr.ac.th/" class="tile socialmedia"><i class="fa fa-facebook-official"></i></a>
+
 
 	</div>
 </header>
@@ -38,27 +37,37 @@
 			
           <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav navbar-right navbar-nav">
-              <li class="active">
+			<li class="{{ Request::path() == 'home' ? 'active' : '' }}">
                 <a class="nav-link" href="home">หน้าแรก</a>
-              </li>
-              <li>
-                    <a class="nav-link" href="member">กิจกรรม</a>
-                  </li>
+            </li>
+			<li class="{{ Request::path() == 'activities' ? 'active' : '' }}">
+                <a class="nav-link" href="activities">กิจกรรม</a>
+            </li>
               <li class="dropdown">
                 <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">ข้อมูลสาขาวิชา <b class="caret"></b></a>
                 <ul class="dropdown-content ">
-                  <li><a class="nav-link" href="https://bua.rmutr.ac.th/" target="blank">หลักสูตรและการสอน</a></li>
-                  <li><a class="nav-link" href="https://www.rmutr.ac.th/">เกี่ยวกับสาขาวิชา</a></li>
-                  <li><a class="nav-link" href="tact">ติดต่อเรา</a></li>
+				  <li class="{{ Request::path() == 'course' ? 'active' : '' }}">
+					<a class="nav-link" href="course" target="blank">หลักสูตรและการสอน</a></li>
+				  <li class="{{ Request::path() == 'about' ? 'active' : '' }}">
+					<a class="nav-link" href="about">เกี่ยวกับสาขาวิชา</a></li>
+				  <li class="{{ Request::path() == 'tact' ? 'active' : '' }}">
+					<a class="nav-link" href="tact">ติดต่อเรา</a></li>
                 </ul>
-              </li>
-              <li>
-                <a class="nav-link" href="tact">ประชาสัมพันธ์</a>
-			  </li>
-			  <li>
-                <a class="nav-link" href="tact">Download</a>
-			  </li>
-			  
+			</li>
+			<li class="dropdown">
+                <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">นักศึกษา <b class="caret"></b></a>
+                <ul class="dropdown-content ">
+				  <li class="{{ Request::path() == 'cooperative' ? 'active' : '' }}">
+					<a class="nav-link" href="cooperative" target="blank">สหกิจศึกษา</a></li>
+				  <li class="{{ Request::path() == 'award' ? 'active' : '' }}">
+					<a class="nav-link" href="award">รางวัล</a></li>
+				  <li class="{{ Request::path() == 'fund' ? 'active' : '' }}">
+					<a class="nav-link" href="fund">ทุนการศึกษา</a></li>
+                </ul>
+            </li>
+            <li class="{{ Request::path() == 'newupdate' ? 'active' : '' }}">
+                <a class="nav-link" href="newupdate">ประชาสัมพันธ์</a>
+            </li>
             </ul>
           </nav>
         </div>
@@ -90,7 +99,13 @@ $(window).scroll(function(){
     }
     else {
         $('nav').removeClass('fixed-header');
-        $('nav div').removeClass('visible-title');
+		$('nav div').removeClass('visible-title');
+		$(document).ready(function() {
+      $(".nav a").on("click", function(){
+      $(".nav").find(".active").removeClass("active");
+      $(this).parent().addClass("active");
+   });
+});
     }
 });
 
@@ -103,9 +118,9 @@ $(window).scroll(function(){
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>รายละเอียด</h5>
 					
-						<a>สาขาวิชาเทคโนโลยีสารสนเทศทางธุรกิจ</a></br></br>
-						<a>264 ถนนจักรวรรดิ แขวงจักรวรรดิ</a></br></br>
-						<a>เขตสัมพันธวงศ์ กรุงเทพฯ 10100</a></br></br>
+						<a>สาขาวิชาเทคโนโลยีสารสนเทศทางธุรกิจ</a><br><br>
+						<a>264 ถนนจักรวรรดิ แขวงจักรวรรดิ</a><br><br>
+						<a>เขตสัมพันธวงศ์ กรุงเทพฯ 10100</a><br><br>
 						<a>โทร : 0-2222-2814 ต่อ 5319,5330,5350</a>
 						<a></a>
 			
@@ -113,42 +128,42 @@ $(window).scroll(function(){
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>Quick links</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="https://bua.rmutr.ac.th/"><i class="fa fa-angle-double-right"></i>เกี่ยวกับเรา</a></li>
-						<li><a href="https://www.rmutr.ac.th/"><i class="fa fa-angle-double-right"></i>กิจกรรม</a></li>
-						<li><a href="https://reg.rmutr.ac.th/registrar/login.asp"><i class="fa fa-angle-double-right"></i>ประชาสัมพันธ์</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+						<li><a href="activities"><i class="fa fa-angle-double-right"></i>กิจกรรม</a></li>
+						<li><a href="course"><i class="fa fa-angle-double-right"></i>หลักสูตรและการสอน</a></li>
+						<li><a href="about"><i class="fa fa-angle-double-right"></i>เกี่ยวกับสาขาวิชา</a></li>
+						<li><a href="tact"><i class="fa fa-angle-double-right"></i>ติดต่อเรา</a></li>
+						<li><a href="cooperative"><i class="fa fa-angle-double-right"></i>สหกิจศึกษา</a></li>
+						<li><a href="award"><i class="fa fa-angle-double-right"></i>รางวัล</a></li>
+						<li><a href="fund"><i class="fa fa-angle-double-right"></i>ทุนการศึกษา</a></li>
+						<li><a href="newupdate"><i class="fa fa-angle-double-right"></i>ประชาสัมพันธ์</a></li>
+				
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>หน่วยงานอื่น</h5>
 					<ul class="list-unstyled quick-links">
-					<li><a href="https://bua.rmutr.ac.th/"><i class="fa fa-angle-double-right"></i>คณะบริหารธุรกิจ</a></li>
-						<li><a href="https://www.rmutr.ac.th/"><i class="fa fa-angle-double-right"></i>มทร.รัตนโกสินทร์</a></li>
-						<li><a href="https://reg.rmutr.ac.th/registrar/login.asp"><i class="fa fa-angle-double-right"></i>งานทะเบียน</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-						<li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
+						<li><a href="https://www.rmutr.ac.th/" target="_blank"><i class="fa fa-angle-double-right"></i>มทร.รัตนโกสินทร์</a></li>
+						<li><a href="https://bua.rmutr.ac.th/" target="_blank"><i class="fa fa-angle-double-right"></i>คณะบริหารธุรกิจ</a></li>
+						<li><a href="https://reg.rmutr.ac.th/registrar/login.asp" target="_blank"><i class="fa fa-angle-double-right"></i>งานทะเบียน</a></li>
+						<li><a href="https://www.facebook.com/%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%AF-%E0%B8%9A%E0%B8%9E%E0%B8%B4%E0%B8%95%E0%B8%A3%E0%B8%9E%E0%B8%B4%E0%B8%A1%E0%B8%B8%E0%B8%82-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A7%E0%B8%A3%E0%B8%A3%E0%B8%94%E0%B8%B4-858180540866398/" target="_blank">
+							<i class="fa fa-angle-double-right"></i>งานกองทุน</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
 					<ul class="list-unstyled list-inline social text-center">
-						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
-						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
-						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
-						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
-						<li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+						<li class="list-inline-item"><a href="https://bua.rmutr.ac.th/" target="_blank"><i class="fa fa-facebook"></i></a></li>
 					</ul>
 				</div>
-				</hr>
+				<hr>
 			</div>	
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-					<p>สาขาเทคโนโลยีสารสนเทศทางธุรกิจ-การพัฒนาซอฟต์แวร์</p>
+					<p>สาขาเทคโนโลยีสารสนเทศทางธุรกิจ</p>
 					<p> มหาวิทยาลัยเทคโนโลยีราชมงคลรัตนโกสินทร์ บพิตรพิมุข จักรวรรดิ</p>
 				</div>
-				</hr>
+				<hr>
 			</div>	
 		</div>
 	</section>

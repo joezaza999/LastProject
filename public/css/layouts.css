@@ -2,6 +2,7 @@
 
   background-color: #777;
   background: #ffffff;
+  font-family: 'Kanit', sans-serif;
 
 }
 header *{
@@ -30,7 +31,7 @@ header{
 .head{
 	position: absolute;
 	top: 35px;
-	right: 100px;
+	right: 120px;
 }
 .head .tile{
 	display: inline-block;
@@ -43,6 +44,14 @@ header{
 .head .tile.socialmedia{
 	color: #0b253e;
 	font-size: 50px;
+	text-align: center;
+	line-height: 50px;
+	position: relative;
+	top: -6px;
+}
+.tile.socialmediaa{
+	color: #0b253e;
+	font-size: 80px;
 	text-align: center;
 	line-height: 50px;
 	position: relative;
@@ -189,7 +198,9 @@ nav {
 }
 
 .dropdown-menu {
-  background-color: #000080
+  background-color: #000080;
+  
+  
 }
 .dropdown {
   position: relative;
@@ -225,6 +236,7 @@ nav {
 .dropdown-menu>li>a:hover,
 .dropdown-menu>li>a:focus {
   background-color: #002200
+  
 }
 
 .navbar-inverse {
@@ -234,6 +246,7 @@ nav {
 .dropdown-menu>li>a:hover,
 .dropdown-menu>li>a:focus {
   background-image: none;
+  
 }
 
 .navbar-inverse {
@@ -272,6 +285,8 @@ nav {
 
 .dropdown-menu>li>a {
   color: #003300
+
+
   
 }
 
@@ -354,7 +369,8 @@ section .section-title {
     text-transform: uppercase;
 }
 #footer {
-    background: #000080 !important;
+	background: #000080 !important;
+	font-family: 'Kanit', sans-serif;
 }
 #footer h5{
 	padding-left: 10px;
