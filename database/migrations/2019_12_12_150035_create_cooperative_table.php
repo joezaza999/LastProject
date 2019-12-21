@@ -15,8 +15,9 @@ class CreateCooperativeTable extends Migration
     {
         Schema::create('cooperative', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('text');
             $table->string('image');
-            $table->string('textimage');
             $table->timestamps();
         });
     }
