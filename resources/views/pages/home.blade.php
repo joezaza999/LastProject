@@ -102,19 +102,7 @@
       </div>
     </div>
     <div class="rightcolumn">
-      <div class="card">
-        <img class="card-img-top" src="<?php echo asset('assets/img/leder2.png'); ?>" width="100%" height="100%" alt=""><br>
-        <div class="fakeimg" style="height:100%;">
-            <div class="row justify-content-md-center">
-          <div class="col-lg-7 col-sm-6 mb-4" >
-            <div>
-              <a href="member"><img class="card-img-top" src="<?php echo asset('assets/img/60.png'); ?>" width="141px" height="213px" alt=""></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p>ผู้ช่วยศาสตราจารย์ ดร.หงษ์ศิริ ภิยโยดิลกชัย</p>
-      </div>
+   
       <div class="card">
         <h2>BIT VDO</h2>
         <div class="fakeimg">
