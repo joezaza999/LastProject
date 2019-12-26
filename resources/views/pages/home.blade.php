@@ -104,9 +104,36 @@
     <div class="rightcolumn">
    
       <div class="card">
-        <h2>BIT VDO</h2>
+      <!-- Posts -->
+        <div class="w3-container w3-padding w3-indigo">
+          <h4>เมนู</h4>
+        </div>
+        <ul class="w3-ul w3-hoverable w3-white">
+          <li class="w3-padding-10">
+            <a class="" href="home">หน้าแรก</a>
+          </li>
+          <li class="w3-padding-10">
+            <a class="" href="activities">กิจกรรม</a>
+          </li>
+          <li class="w3-padding-10">
+            <a class="" href="activities">ข้อมูลสาขาวิชา</a>
+          </li>
+          <li class="w3-padding-10">
+            <a class="" href="activities">นักศึกษา</a>
+          </li>
+        </ul>
+      
+
+        
+      
+      </div>
+      <div class="card">
+        <div class="w3-container w3-padding w3-indigo">
+          <h4>BIT Video</h4>
+        </div>
+        <br>
         <div class="fakeimg">
-            <video width="300" controls>
+            <video width="315" controls>
               <source src="<?php echo asset('assets/img/bit.mp4'); ?>" type="video/mp4">
               <source src="<?php echo asset('assets/img/bit.ogg'); ?>" type="video/ogg">
             </video>
@@ -119,6 +146,7 @@
     </div>
   </div>
   <br>
+  
 
 <script>
   var slideIndex = 1;

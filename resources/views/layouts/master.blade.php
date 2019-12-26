@@ -28,8 +28,6 @@
 
 	<div class="head">
 		<a href="https://bua.rmutr.ac.th/" class="tile socialmedia"><i class="fa fa-facebook-official"></i></a>
-
-
 	</div>
 </header>
 		<div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav navbar-expand-lg" role="banner">
