@@ -112,15 +112,6 @@ header.clicked .burger:hover .meat{
 	transform: rotate(270deg);
 	-webkit-transform: rotate(270deg);
 }
-
-
-
-
-
-
-
-
-
 header.clicked .nav-modal{
 	visibility: visible;
 	opacity: 1;

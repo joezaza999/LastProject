@@ -106,27 +106,19 @@
       <div class="card">
         <h2>BIT VDO</h2>
         <div class="fakeimg">
-            <img src="<?php echo asset('assets/img/2.png'); ?>" width="100%" height="100%" alt=""/>
+            <video width="300" controls>
+              <source src="<?php echo asset('assets/img/bit.mp4'); ?>" type="video/mp4">
+              <source src="<?php echo asset('assets/img/bit.ogg'); ?>" type="video/ogg">
+            </video>
           
         </div><br>
         
-        <div class="fakeimg">Image</div>
       
       </div>
      
     </div>
   </div>
   <br>
-
-
-  
-
-
-
-
-
-
-
 
 <script>
   var slideIndex = 1;
