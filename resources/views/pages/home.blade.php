@@ -11,19 +11,19 @@
     </ol>
     <div class="carousel-inner" role="listbox">
       <!-- Slide One - Set the background image for this slide in the line below -->
-      <div class="carousel-item active" style="background-image: url('assets/img/s1.png')">
+      <div class="carousel-item active fill" style="background-image: url('assets/img/s1.png')">
         <div class="carousel-caption d-none d-md-block">
         
         </div>
       </div>
       <!-- Slide Two - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('https://source.unsplash.com/bF2vsubyHcQ/1920x1080')">
+      <div class="carousel-item fill" style="background-image: url('assets/img/s2.png')">
         <div class="carousel-caption d-none d-md-block">
       
         </div>
       </div>
       <!-- Slide Three - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('https://source.unsplash.com/szFUQoyvrxM/1920x1080')">
+      <div class="carousel-item fill" style="background-image: url('assets/img/s3.png')">
         <div class="carousel-caption d-none d-md-block">
 
         </div>
@@ -44,24 +44,24 @@
   <div class="row">
     <div class="leftcolumn">
       <div class="card">
-          <img class="card-img-top" src="<?php echo asset('assets/img/header11.png'); ?>" width="100%" height="100%" alt="">
+          <img class="card-img-top img-fluid" src="<?php echo asset('assets/img/header11.png'); ?>" width="100%" height="100%" alt="">
           <div class="slideshow-container">
 
               <div class="mySlides">
                 <div class="numbertext">1 / 3</div>
-                <img src="<?php echo asset('assets/img/1004.jpg'); ?>" width="100%" height="550px" alt=""/>
+                <img class="img-fluid" src="<?php echo asset('assets/img/1004.jpg'); ?>" width="100%" height="550px" alt=""/>
                 <div class="text">Caption Text</div>
               </div>
               
               <div class="mySlides">
                 <div class="numbertext">2 / 3</div>
-                <img src="<?php echo asset('assets/img/10.jpg'); ?>" width="100%" height="" alt=""/>
+                <img class="img-fluid" src="<?php echo asset('assets/img/10.jpg'); ?>" width="100%" height="" alt=""/>
                 <div class="text">Caption Two</div>
               </div>
               
               <div class="mySlides">
                 <div class="numbertext">3 / 3</div>
-                <img src="<?php echo asset('assets/img/10.jpg'); ?>" width="100%" height="100%" alt=""/>
+                <img class="img-fluid" src="<?php echo asset('assets/img/10.jpg'); ?>" width="100%" height="100%" alt=""/>
                 <div class="text">Caption Three</div>
               </div>
               
@@ -117,45 +117,10 @@
     </div>
   </div>
   <br>
-  <div class="row">
-      <div class="left">
-        <div class="card">
-            <img id="logo-main" src="<?php echo asset('assets/img/nav.png'); ?>" width="100%" height="80px" alt=""/><br>
-          <div class="fakeimg" style="height:100%;"></div>
-          <div class="row">
-              <div class="col-lg-4 col-sm-6 mb-4">
-                <div>
-                    <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/51.jpg'); ?>" width="100%" height="100%" alt=""></a>  
-                    <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6 mb-4">
-                <div>
-                    <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/52.jpg'); ?>" width="100%" height="100%" alt=""></a>   
-                    <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6 mb-4">
-                <div>
-                    <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/53.jpg'); ?>" width="100%" height="100%" alt=""></a>              
-                    <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-                </div>
-              </div>
-        </div>
-        </div>
-      </div>
-</div>
+
 
   
-      <div class="row">
-          <div class="left">
-            <div class="card">
-                <img id="logo-main" src="<?php echo asset('assets/img/sty.png'); ?>" width="100%" height="100%" alt=""/><br>
-              <div class="fakeimg" style="height:100%;"></div>
-              
-            </div>
-          </div>
-</div>
+
 
 
 

@@ -18,12 +18,13 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
     <header>
-	<img  class="timlogo" src="">
-		
+
+	<img  class="timlogo img-fluid" src="<?php echo asset('assets/img/logo.png'); ?>" alt="">
+
 
 	<div class="head">
 		<a href="https://bua.rmutr.ac.th/" class="tile socialmedia"><i class="fa fa-facebook-official"></i></a>
@@ -31,8 +32,7 @@
 
 	</div>
 </header>
-
-<div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav navbar-expand-lg" role="banner">
+		<div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav navbar-expand-lg" role="banner">
         <div class="">
 			
           <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">

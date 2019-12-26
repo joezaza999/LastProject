@@ -11441,4 +11441,12 @@ a.text-dark:focus {
   position:absolute;
   }
 
-
+  .img-fluid{
+    max-width: 100%;
+    height: auto;
+  }
+  .fill{
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+ }
