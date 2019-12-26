@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +16,7 @@
  Route::get('/', function () {
      return view('auth.login');
  });
+
 
 Route::get('/home','PagesController@home');
 Route::get('/member','PagesController@member');
@@ -31,5 +34,7 @@ Route::get('/fund','PagesController@fund');
 Auth::routes();
 
 Route::get('/bhome', 'HomeController@index')->name('bhome');
-Route::get('/position', 'PositionController@index')->name('position');
-Route::get('/position/destroy/(id)', 'PositionController@destroy');
+// Route::get('/position', 'PositionController@index')->name('position');
+// Route::get('/position/destroy/(id)', 'PositionController@destroy');
+Route::resource('/bposition','PositionController')->name('index','bposition');
+Route::resource('/bmembers','MemberController')->name('index','bmembers');

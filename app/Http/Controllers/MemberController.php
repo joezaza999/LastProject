@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Position;
-use App\Http\Requests\PositionRequest;
+use App\Member;
+use App\Http\Requests\MembersRequest;
 
-class PositionController extends Controller
+class MemberController extends Controller
 {
     public function __construct() {
         $this->middleware('auth', ['except' => ['show']]);
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,9 +19,9 @@ class PositionController extends Controller
      */
     public function index()
     {
-        $positions = Position::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง position เก็บไว้ที่ตัวแปร
-        return view('backend.position.index',[
-            'positions' => $positions
+        $members = Member::with('position')->orderBy('id', 'desc')->paginate(5);
+        return view('backend.member.index',[
+            'members'=> $members
         ]);
     }
 
@@ -31,7 +32,7 @@ class PositionController extends Controller
      */
     public function create()
     {
-        return view('backend.position.create');
+        return view('backend.member.create');
     }
 
     /**
@@ -40,13 +41,9 @@ class PositionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PositionRequest $request)
+    public function store(MembersRequest $request)
     {
-        $position = new Position();
-        $position->name = $request->name;
-        $position->save();
-
-        return redirect()->action('PositionController@index');
+        //
     }
 
     /**
@@ -91,7 +88,6 @@ class PositionController extends Controller
      */
     public function destroy($id)
     {
-        Position::destroy($id);
-        return back();
+        //
     }
 }
