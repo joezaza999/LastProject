@@ -38,3 +38,4 @@ Route::get('/bhome', 'HomeController@index')->name('bhome');
 // Route::get('/position/destroy/(id)', 'PositionController@destroy');
 Route::resource('/bposition','PositionController')->name('index','bposition');
 Route::resource('/bmembers','MemberController')->name('index','bmembers');
+Route::resource('/bcourse','CourseController')->name('index','bcourse');
