@@ -42,9 +42,9 @@ class PositionController extends Controller
      */
     public function store(PositionRequest $request)
     {
-        $position = new Position();
-        $position->name = $request->name;
-        $position->save();
+        $positions = new Position();
+        $positions->name = $request->name;
+        $positions->save();
 
         return redirect()->action('PositionController@index');
     }
@@ -68,7 +68,10 @@ class PositionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $positions = Position::findOrFail($id);
+        return view('backend.position.edit',[
+            'positions' => $positions
+        ]);
     }
 
     /**
@@ -78,9 +81,12 @@ class PositionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PositionRequest $request, $id)
     {
-        //
+        $positions = Position::find($id);
+        $positions->update($request->all());
+
+        return redirect()->action('PositionController@index');
     }
 
     /**
@@ -91,7 +97,8 @@ class PositionController extends Controller
      */
     public function destroy($id)
     {
-        Position::destroy($id);
-        return back();
+        $positions = Position::find($id);
+        $positions->delete();
+        return redirect()->action('PositionController@index');
     }
 }

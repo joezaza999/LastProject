@@ -12,7 +12,6 @@
                 <div class="card-body">
                     <table class="table table-striped">
                         <tr>
-                            <th>รหัส</th>
                             <th>ชื่อบุคลากร</th>
                             <th>ตำแหน่ง</th>
                             <th>รูปภาพ</th>
@@ -21,12 +20,19 @@
                         </tr>
                         @foreach ($members as $member)
                         <tr>
-                            <td>{{ $member->id }}</td>
                             <td>{{ $member->name }}</td>
                             <td>{{ $member->position->name }}</td>
                             <td>
                                 <a href="{{ asset('images/'.$member->image)
-                     }}"><img src="{{ asset('images/'.$member->image) }}" style="width:100px"></a>
+                     }}"><img src="{{ asset('images/resize/'.$member->image) }}" style="width:100px"></a>
+                            </td>
+                            <td>
+                                <a href="{{ url('/bmembers/'.$member->id.'/edit') }}">แก้ไข</a>
+                            </td>
+                            <td>
+                                <?= Form::open(array('url' => 'bmembers/' . $member->id, 'method' => 'delete')) ?>
+                                <button type="submit" class="btn">ลบ</button>
+                                {!! Form::close() !!}
                             </td>
                         </tr>
                         @endforeach
@@ -35,6 +41,7 @@
                     {!! $members->render() !!}
                 </div>
             </div>
+            <br><br><br><br>
         </div>
     </div>
 </div>

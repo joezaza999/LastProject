@@ -10,6 +10,6 @@ class Member extends Model
     protected $fillable = ['name','position_id'];
 
     public function position(){
-        return $this->belongsTo(Position::class,'id');
+        return $this->belongsTo(Position::class,'position_id');
     }
 }

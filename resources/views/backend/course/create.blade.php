@@ -44,7 +44,7 @@
                             <?= Form::text('name', null,['class'=>'form-control','placeholder'=>'ระบุหลักสูตร']); ?>
                         </div>
                     </div>
-                    
+
                     <div class="col-xs-8">
                         <div class="form-group">
                             <?= Form::label('name','คุณสมบัติผู้เข้าศึกษา'); ?>
@@ -67,6 +67,7 @@
                     {!! Form::close() !!}
                 </div>
             </div>
+            <br><br><br><br>
         </div>
     </div>
 </div>
