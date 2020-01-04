@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Course;
-use App\Http\Requests\CourseRequest;
+use App\About;
+use App\Http\Requests\AboutRequest;
 
-class CourseController extends Controller
+class AboutController extends Controller
 {
     public function __construct() {
         $this->middleware('auth', ['except' => ['show']]);
@@ -14,14 +14,14 @@ class CourseController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Responses
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $courses = Course::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง course เก็บไว้ที่ตัวแปร
-        return view('backend.course.index',[
-            'courses' => $courses
-        ]);
+            $abouts = About::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง about เก็บไว้ที่ตัวแปร
+            return view('backend.about.index',[
+                'abouts' => $abouts
+            ]);
     }
 
     /**
@@ -31,7 +31,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('backend.course.create');
+        return view('backend.about.create');
     }
 
     /**
@@ -42,17 +42,11 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        $courses = new Course();
-        $courses->namethai = $request->namethai;
-        $courses->nameeng = $request->nameeng;
-        $courses->group = $request->group;
-        $courses->credit = $request->credit;
-        $courses->format = $request->format;
-        $courses->property = $request->property;
-        $courses->job = $request->job;
-        $courses->save();
+        $abouts = new About();
+        $abouts->text = $request->text;
+        $abouts->save();
 
-        return redirect()->action('CourseController@index');
+        return redirect()->action('AboutController@index');
     }
 
     /**
@@ -74,7 +68,10 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $abouts = About::findOrFail($id);
+        return view('backend.about.edit',[
+            'abouts' => $abouts
+        ]);
     }
 
     /**
@@ -84,12 +81,12 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CourseRequest $request, $id)
+    public function update(AboutRequest $request, $id)
     {
-        $courses = Course::find($id);
-        $courses->update($request->all());
+        $abouts = About::find($id);
+        $abouts->update($request->all());
 
-        return redirect()->action('CourseController@index');
+        return redirect()->action('AboutController@index');
     }
 
     /**
@@ -100,8 +97,8 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        $courses::destroy($id);
-        $courses->delete();
-        return redirect()->action('CourseController@index');
+        $abouts = About::find($id);
+        $abouts->delete();
+        return redirect()->action('AboutController@index');
     }
 }

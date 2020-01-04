@@ -39,3 +39,5 @@ Route::get('/bhome', 'HomeController@index')->name('bhome');
 Route::resource('/bposition','PositionController')->name('index','bposition');
 Route::resource('/bmembers','MemberController')->name('index','bmembers');
 Route::resource('/bcourse','CourseController')->name('index','bcourse');
+Route::resource('/babout','AboutController')->name('index','babout');
+Route::resource('/bactivities','ActivitiesController')->name('index','bactivities');

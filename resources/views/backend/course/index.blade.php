@@ -23,7 +23,6 @@
                         </tr>
                         @foreach ($courses as $course)
                         <tr>
-                            <td>{{$course->id}}</td>
                             <td>{{$course->namethai}}</td>
                             <td>{{$course->nameeng}}</td>
                             <td>{{$course->group}}</td>
@@ -31,7 +30,14 @@
                             <td>{{$course->format}}</td>
                             <td>{{$course->property}}</td>
                             <td>{{$course->job}}</td>
-                            <td>{{$course->image}}</td>
+                            <td>
+                                <a href="{{ url('/bcourse/'.$course->id.'/edit') }}">แก้ไข</a>
+                            </td>
+                            <td>
+                                <?= Form::open(array('url' => 'bcourse/' . $course->id, 'method' => 'delete')) ?>
+                                <button type="submit" class="btn">ลบ</button>
+                                {!! Form::close() !!}
+                            </td>
                         </tr>
                         @endforeach
                     </table>

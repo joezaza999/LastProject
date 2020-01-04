@@ -9,53 +9,53 @@
             <div class="card-header">เพิ่มข้อมูลหลักสูตร</div>
 
                 <div class="card-body">
-                    {!! Form::open(array('url'=>'bposition','files'=>true)) !!}
+                    {!! Form::open(array('url'=>'bcourse','files'=>true)) !!}
                     <div class="col-xs-8">
                         <div class="form-group">
-                            <?= Form::label('name','ชื่อสาขา(ไทย)'); ?>
-                            <?= Form::text('name', null,['class'=>'form-control','placeholder'=>'ระบุสาขาไทย']); ?>
+                            <?= Form::label('namethai','ชื่อสาขา(ไทย)'); ?>
+                            <?= Form::text('namethai', null,['class'=>'form-control','placeholder'=>'ระบุสาขาไทย']); ?>
                         </div>
                     </div>
 
                     <div class="col-xs-8">
                         <div class="form-group">
-                            <?= Form::label('name','ชื่อสาขา(อังกฤษ)'); ?>
-                            <?= Form::text('name', null,['class'=>'form-control','placeholder'=>'ระบุสาขาอังกฤษ']); ?>
+                            <?= Form::label('nameeng','ชื่อสาขา(อังกฤษ)'); ?>
+                            <?= Form::text('nameeng', null,['class'=>'form-control','placeholder'=>'ระบุสาขาอังกฤษ']); ?>
                         </div>
                     </div>
 
                     <div class="col-xs-8">
                         <div class="form-group">
-                            <?= Form::label('name','กลุ่มวิชา'); ?>
-                            <?= Form::text('name', null,['class'=>'form-control','placeholder'=>'ระบุกลุ่มวิชา']); ?>
+                            <?= Form::label('group','กลุ่มวิชา'); ?>
+                            <?= Form::text('group', null,['class'=>'form-control','placeholder'=>'ระบุกลุ่มวิชา']); ?>
                         </div>
                     </div>
 
                     <div class="col-xs-8">
                         <div class="form-group">
-                            <?= Form::label('name','จำนวนหน่วยกิต'); ?>
-                            <?= Form::text('name', null,['class'=>'form-control','placeholder'=>'ระบุหน่วยกิต']); ?>
+                            <?= Form::label('credit','จำนวนหน่วยกิต'); ?>
+                            <?= Form::text('credit', null,['class'=>'form-control','placeholder'=>'ระบุหน่วยกิต']); ?>
                         </div>
                     </div>
 
                     <div class="col-xs-8">
                         <div class="form-group">
-                            <?= Form::label('name','รูปแบบหลักสูตร'); ?>
-                            <?= Form::text('name', null,['class'=>'form-control','placeholder'=>'ระบุหลักสูตร']); ?>
+                            <?= Form::label('format','รูปแบบหลักสูตร'); ?>
+                            <?= Form::text('format', null,['class'=>'form-control','placeholder'=>'ระบุหลักสูตร']); ?>
                         </div>
                     </div>
 
                     <div class="col-xs-8">
                         <div class="form-group">
-                            <?= Form::label('name','คุณสมบัติผู้เข้าศึกษา'); ?>
-                            <?= Form::textarea('name', null,['class'=>'form-control','placeholder'=>'ระบุคุณสมบัติ']); ?>
+                            <?= Form::label('property','คุณสมบัติผู้เข้าศึกษา'); ?>
+                            <?= Form::textarea('property', null,['class'=>'form-control','placeholder'=>'ระบุคุณสมบัติ']); ?>
                         </div>
                     </div>
 
                     <div class="col-xs-8">
                         <div class="form-group">
-                            <?= Form::label('name','แนวทางการประกอบอาชีพ'); ?>
-                            <?= Form::textarea('name', null,['class'=>'form-control','placeholder'=>'ระบุแนวทาง']); ?>
+                            <?= Form::label('job','แนวทางการประกอบอาชีพ'); ?>
+                            <?= Form::textarea('job', null,['class'=>'form-control','placeholder'=>'ระบุแนวทาง']); ?>
                         </div>
                     </div>
 

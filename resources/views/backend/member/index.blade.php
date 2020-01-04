@@ -23,8 +23,8 @@
                             <td>{{ $member->name }}</td>
                             <td>{{ $member->position->name }}</td>
                             <td>
-                                <a href="{{ asset('images/'.$member->image)
-                     }}"><img src="{{ asset('images/resize/'.$member->image) }}" style="width:100px"></a>
+                                <a href="{{ asset('images/'.$member->image)}}">
+                                <img src="{{ asset('images/resize/'.$member->image) }}" style="width:100px"></a>
                             </td>
                             <td>
                                 <a href="{{ url('/bmembers/'.$member->id.'/edit') }}">แก้ไข</a>

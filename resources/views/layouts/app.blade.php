@@ -33,7 +33,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">หลังบ้าน</a>
+    <a class="navbar-brand mr-1" href="bhome">หลังบ้าน</a>
 
     <!-- Navbar Search -->
     @guest
@@ -58,7 +58,7 @@
             @endif
         @else
         <li class="nav-item">
-                <a class="nav-link" href="{{ route('bhome') }}">{{ __('หนักแรก') }}</a>
+                <a class="nav-link" href="{{ route('bhome') }}">{{ __('หน้าแรก') }}</a>
             </li>
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -108,6 +108,16 @@
         <a class="nav-link" href="{{ route('bcourse') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>{{ __('หลักสูตร') }}</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('babout') }}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>{{ __('เกี่ยวกับเรา') }}</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('bactivities') }}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>{{ __('สหกิจ') }}</span></a>
       </li>
       @endguest
     </ul>
