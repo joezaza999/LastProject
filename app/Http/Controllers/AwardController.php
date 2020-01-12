@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Award;
+use App\Http\Requests\AwardRequest;
 
-class Award extends Controller
+class AwardController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth', ['except' => ['show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +18,10 @@ class Award extends Controller
      */
     public function index()
     {
-        //
+        $awards = Award::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง award เก็บไว้ที่ตัวแปร
+            return view('backend.award.index',[
+                'awards' => $awards
+            ]);
     }
 
     /**
@@ -23,7 +31,7 @@ class Award extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.award.create');
     }
 
     /**
@@ -34,7 +42,11 @@ class Award extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $awards = new Award();
+        $awards->text = $request->text;
+        $awards->save();
+
+        return redirect()->action('AwardController@index');
     }
 
     /**
@@ -56,7 +68,10 @@ class Award extends Controller
      */
     public function edit($id)
     {
-        //
+        $awards = Award::findOrFail($id);
+        return view('backend.award.edit',[
+            'awards' => $awards
+        ]);
     }
 
     /**
@@ -66,9 +81,12 @@ class Award extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AwardRequest $request, $id)
     {
-        //
+        $awards = Award::find($id);
+        $awards->update($request->all());
+
+        return redirect()->action('AwardController@index');
     }
 
     /**
@@ -79,6 +97,8 @@ class Award extends Controller
      */
     public function destroy($id)
     {
-        //
+        $awards = Award::find($id);
+        $awards->delete();
+        return redirect()->action('AwardController@index');
     }
 }

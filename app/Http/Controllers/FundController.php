@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Fund;
+use App\Http\Requests\FundRequest;
 
-class Cooperative extends Controller
+class FundController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,12 @@ class Cooperative extends Controller
      */
     public function index()
     {
-        //
+        {
+            $abouts = Fund::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง Fund เก็บไว้ที่ตัวแปร
+            return view('backend.fund.index',[
+                'funds' => $funds
+            ]);
+    }
     }
 
     /**
@@ -23,7 +30,7 @@ class Cooperative extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.fund.create');
     }
 
     /**
@@ -34,7 +41,11 @@ class Cooperative extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $funds = new Fund();
+        $funds->text = $request->text;
+        $funds->save();
+
+        return redirect()->action('FundController@index');
     }
 
     /**
@@ -56,7 +67,11 @@ class Cooperative extends Controller
      */
     public function edit($id)
     {
-        //
+        $funds = new Fund();
+        $funds->text = $request->text;
+        $funds->save();
+
+        return redirect()->action('FundController@index');
     }
 
     /**
@@ -68,7 +83,10 @@ class Cooperative extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $funds = Fund::find($id);
+        $funds->update($request->all());
+
+        return redirect()->action('FundController@index');
     }
 
     /**
@@ -79,6 +97,8 @@ class Cooperative extends Controller
      */
     public function destroy($id)
     {
-        //
+        $funds = Fund::find($id);
+        $funds->delete();
+        return redirect()->action('FundController@index');
     }
 }

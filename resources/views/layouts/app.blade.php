@@ -115,9 +115,19 @@
           <span>{{ __('เกี่ยวกับเรา') }}</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('bactivities') }}">
+        <a class="nav-link" href="{{ route('baward') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>{{ __('สหกิจ') }}</span></a>
+          <span>{{ __('รางวัล') }}</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('bfund') }}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>{{ __('ทุนการศึกษา') }}</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('bnewupdate') }}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>{{ __('ประชาสัมพันธ์') }}</span></a>
       </li>
       @endguest
     </ul>

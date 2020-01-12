@@ -14,14 +14,14 @@ class CourseController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Responses
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
         $courses = Course::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง course เก็บไว้ที่ตัวแปร
-        return view('backend.course.index',[
-            'courses' => $courses
-        ]);
+            return view('backend.course.index',[
+                'courses' => $courses
+            ]);
     }
 
     /**
@@ -43,13 +43,7 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $courses = new Course();
-        $courses->namethai = $request->namethai;
-        $courses->nameeng = $request->nameeng;
-        $courses->group = $request->group;
-        $courses->credit = $request->credit;
-        $courses->format = $request->format;
-        $courses->property = $request->property;
-        $courses->job = $request->job;
+        $courses->text = $request->text;
         $courses->save();
 
         return redirect()->action('CourseController@index');
@@ -74,7 +68,10 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $courses = Course::findOrFail($id);
+        return view('backend.course.edit',[
+            'courses' => $courses
+        ]);
     }
 
     /**
@@ -100,7 +97,7 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        $courses::destroy($id);
+        $courses = Course::find($id);
         $courses->delete();
         return redirect()->action('CourseController@index');
     }

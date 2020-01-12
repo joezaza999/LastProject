@@ -81,7 +81,7 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(AboutRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $abouts = About::find($id);
         $abouts->update($request->all());

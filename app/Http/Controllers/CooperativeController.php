@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Cooperative;
+use App\Http\Requests\CooperativeRequest;
 
-class Newupdate extends Controller
+class CooperativeController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth', ['except' => ['show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +18,11 @@ class Newupdate extends Controller
      */
     public function index()
     {
-        //
+        $cooperatives = Cooperative::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง cooperative เก็บไว้ที่ตัวแปร
+            return view('backend.cooperative.index',[
+                'cooperatives' => $cooperatives
+            ]);
+    }
     }
 
     /**
@@ -23,7 +32,7 @@ class Newupdate extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.cooperative.create');
     }
 
     /**
@@ -34,7 +43,11 @@ class Newupdate extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cooperatives = new Cooperative();
+        $cooperatives->text = $request->text;
+        $cooperatives->save();
+
+        return redirect()->action('CooperativeController@index');
     }
 
     /**
@@ -56,7 +69,10 @@ class Newupdate extends Controller
      */
     public function edit($id)
     {
-        //
+        $cooperatives = Cooperative::findOrFail($id);
+        return view('backend.cooperative.edit',[
+            'cooperatives' => $cooperatives
+        ]);
     }
 
     /**
@@ -68,7 +84,10 @@ class Newupdate extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cooperatives = Cooperative::find($id);
+        $cooperatives->update($request->all());
+
+        return redirect()->action('CooperativeController@index');
     }
 
     /**
@@ -79,6 +98,8 @@ class Newupdate extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cooperative = Cooperative::find($id);
+        $cooperative->delete();
+        return redirect()->action('CooperativeController@index');
     }
 }

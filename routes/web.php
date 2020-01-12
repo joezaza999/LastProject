@@ -41,3 +41,7 @@ Route::resource('/bmembers','MemberController')->name('index','bmembers');
 Route::resource('/bcourse','CourseController')->name('index','bcourse');
 Route::resource('/babout','AboutController')->name('index','babout');
 Route::resource('/bactivities','ActivitiesController')->name('index','bactivities');
+Route::resource('/bcooperative','CooperativeController')->name('index','bcooperative');
+Route::resource('/baward','AwardController')->name('index','baward');
+Route::resource('/bfund','FundController')->name('index','bfund');
+Route::resource('/bnewupdate','NewupdateController')->name('index','bnewupdate');

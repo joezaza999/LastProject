@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Newupdate;
+use App\Http\Requests\NewupdateRequest;
 
-class Fund extends Controller
+class NewupdateController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth', ['except' => ['show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +18,10 @@ class Fund extends Controller
      */
     public function index()
     {
-        //
+        $newupdates = Newupdate::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง newupdate เก็บไว้ที่ตัวแปร
+            return view('backend.newupdate.index',[
+                'newupdates' => $newupdates
+            ]);
     }
 
     /**
@@ -23,7 +31,7 @@ class Fund extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.newupdate.create');
     }
 
     /**
@@ -34,7 +42,11 @@ class Fund extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newupdates = new Newupdate();
+        $newupdates->text = $request->text;
+        $newupdates->save();
+
+        return redirect()->action('NewupdateController@index');
     }
 
     /**
@@ -56,7 +68,10 @@ class Fund extends Controller
      */
     public function edit($id)
     {
-        //
+        $newupdates = Newupdate::findOrFail($id);
+        return view('backend.newupdate.edit',[
+            'newupdates' => $newupdates
+        ]);
     }
 
     /**
@@ -68,7 +83,10 @@ class Fund extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $newupdates = Newupdate::find($id);
+        $newupdates->update($request->all());
+
+        return redirect()->action('NewupdateController@index')
     }
 
     /**
@@ -79,6 +97,8 @@ class Fund extends Controller
      */
     public function destroy($id)
     {
-        //
+        $newupdates = Newupdate::find($id);
+        $newupdates->delete();
+        return redirect()->action('NewupdateController@index');
     }
 }
