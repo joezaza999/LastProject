@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Member;
 use App\About;
 
-class ShowmemberController extends Controller
+class ShowaboutController extends Controller
 {
     public function index()
     {

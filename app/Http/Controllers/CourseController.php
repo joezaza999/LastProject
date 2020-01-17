@@ -43,9 +43,15 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $courses = new Course();
-        $courses->text = $request->text;
-        $courses->save();
+        $courses->namethai = $request->namethai;
+        $courses->nameeng = $request->nameeng;
+        $courses->group = $request->group;
+        $courses->credit = $request->credit;
+        $courses->format = $request->format;
+        $courses->property = $request->property;
+        $courses->job = $request->job;
 
+        $courses->save();
         return redirect()->action('CourseController@index');
     }
 
@@ -81,7 +87,7 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CourseRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $courses = Course::find($id);
         $courses->update($request->all());

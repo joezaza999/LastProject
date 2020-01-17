@@ -22,7 +22,6 @@ class CreateCourseTable extends Migration
             $table->string('format');
             $table->string('property');
             $table->string('job');
-            $table->string('image');
             $table->timestamps();
         });
     }

@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Newupdate extends Model
+class Newsupdate extends Model
 {
-    protected $table = 'newupdate';
+    protected $table = 'newsupdate';
     protected $fillable = ['id','title','content'];
 }

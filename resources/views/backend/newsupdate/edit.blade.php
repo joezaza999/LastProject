@@ -4,27 +4,21 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
-            <br><br>
-            @if (count($errors) > 0)
-            <div class="alert alert-warning">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-             @endif
             <div class="card">
-                <div class="card-header">เพิ่มข้อมูลเกี่ยวทุนการศึกษา</div>
+                <div class="card-header">แก้ไขข้อมูลประชาสัมพันธ์ </div>
 
                 <div class="card-body">
-                    {!! Form::open(array('url'=>'bfund','files'=>true)) !!}
-                    <div class="col-xs-4">
-                        <div class="form-group">
-                            {!! Form::label('image','รูปภาพ'); !!}<br>
-                            <?= Form::file('image',null,['class'=>'form-control']); ?>
-                        </div>
+                    @if (count($errors) > 0)
+                    <div class="alert alert-warning">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
+                    @endif
+
+                    <?= Form::model($newsupdates,array('url'=>'bnewsupdate/'.$newsupdates->id,'method'=>'put')) ?>
                     <div class="col-xs-8">
                         <div class="form-group">
                             <?= Form::label('title','ข้อความ'); ?>

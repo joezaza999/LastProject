@@ -125,9 +125,19 @@
           <span>{{ __('ทุนการศึกษา') }}</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('bnewupdate') }}">
+        <a class="nav-link" href="{{ route('bactivities') }}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>{{ __('กิจกรรม') }}</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('bnewsupdate') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>{{ __('ประชาสัมพันธ์') }}</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('bcooperative') }}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>{{ __('สหกิจศึกษา') }}</span></a>
       </li>
       @endguest
     </ul>

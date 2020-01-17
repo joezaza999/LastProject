@@ -15,10 +15,10 @@
             </div>
              @endif
             <div class="card">
-                <div class="card-header">เพิ่มข้อมูลกิจกรรม</div>
+                <div class="card-header">เพิ่มข้อมูลประชาสัมพันธ์</div>
 
                 <div class="card-body">
-                    {!! Form::open(array('url'=>'bactivities','files'=>true)) !!}
+                    {!! Form::open(array('url'=>'bnewsupdate','files'=>true)) !!}
                     <div class="col-xs-8">
                         <div class="form-group">
                             <?= Form::label('title','หัวข้อ'); ?>

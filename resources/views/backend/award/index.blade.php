@@ -15,15 +15,17 @@
                             <th>หัวข้อ</th>
                             <th>รูปภาพ</th>
                             <th>เนื้อหา</th>
+                            <th>แก้ไข</th>
+                            <th>ลบ</th>
                         </tr>
                         @foreach ($awards as $award)
                         <tr>
                             <td>{{ $award->title }}</td> 
-                            <td>{{ $award->content }}</td>
                             <td>
                                 <a href="{{ asset('images/'.$award->image)}}">
                                 <img src="{{ asset('images/resize/'.$award->image) }}" style="width:100px"></a>
                             </td>
+                            <td>{{ $award->content }}</td>
                             <td>
                                 <a href="{{ url('/baward/'.$award->id.'/edit') }}">แก้ไข</a>
                             </td>

@@ -21,7 +21,7 @@
                         @foreach ($funds as $fund)
                         <tr>
                         <td>
-                                <a href="{{ asset('images/'.$fund>image)}}">
+                                <a href="{{ asset('images/'.$fund->image)}}">
                                 <img src="{{ asset('images/resize/'.$fund->image) }}" style="width:100px"></a>
                             </td>
                             <td>{{$fund->title}}</td>
