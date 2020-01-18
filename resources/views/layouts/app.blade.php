@@ -95,6 +95,11 @@
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="{{ route('bslideshow') }}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>{{ __('สไลด์โชว์') }}</span></a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="{{ route('bposition') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>{{ __('ตำแหน่ง') }}</span></a>
