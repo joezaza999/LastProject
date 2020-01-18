@@ -20,8 +20,8 @@ class CreateCourseTable extends Migration
             $table->string('group');
             $table->string('credit');
             $table->string('format');
-            $table->string('property');
-            $table->string('job');
+            $table->string('property' , 1000);
+            $table->string('job' , 1000);
             $table->timestamps();
         });
     }

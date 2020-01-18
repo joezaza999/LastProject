@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/home','PagesController@home');
 Route::get('/member','PagesController@member');
-Route::get('/course','PagesController@course');
+Route::get('/course','ShowcourseController@index');
 Route::get('/tact','PagesController@tact');
 Route::get('/test','PagesController@test');
 Route::get('/com','PagesController@com');

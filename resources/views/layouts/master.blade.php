@@ -47,7 +47,7 @@
                 <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">ข้อมูลสาขาวิชา <b class="caret fa fa-caret-down"></b></a>
                 <ul class="dropdown-content ">
 				  <li class="{{ Request::path() == 'course' ? 'active' : '' }}">
-					<a class="nav-link" href="course" target="blank">หลักสูตรและการสอน</a></li>
+					<a class="nav-link" href="course">หลักสูตรและการสอน</a></li>
 				  <li class="{{ Request::path() == 'about' ? 'active' : '' }}">
 					<a class="nav-link" href="about">เกี่ยวกับสาขาวิชา</a></li>
 				  <li class="{{ Request::path() == 'tact' ? 'active' : '' }}">
@@ -58,7 +58,7 @@
                 <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">นักศึกษา <b class="caret fa fa-caret-down"></b></a>
                 <ul class="dropdown-content ">
 				  <li class="{{ Request::path() == 'cooperative' ? 'active' : '' }}">
-					<a class="nav-link" href="cooperative" target="blank">สหกิจศึกษา</a></li>
+					<a class="nav-link" href="cooperative">สหกิจศึกษา</a></li>
 				  <li class="{{ Request::path() == 'award' ? 'active' : '' }}">
 					<a class="nav-link" href="award">รางวัล</a></li>
 				  <li class="{{ Request::path() == 'fund' ? 'active' : '' }}">

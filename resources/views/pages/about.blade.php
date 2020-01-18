@@ -6,8 +6,8 @@
       <li class="breadcrumb-item"><a href="home">หน้าแรก</a></li>
       <li class="breadcrumb-item active" aria-current="page">เกี่ยวกับสาขา</li>
     </ol>
-    <div class="content">
-<div class="container">
+<div class="content">
+    <div class="container">
 
     @foreach ($abouts as $about)
     <div>
@@ -19,13 +19,14 @@
 
 <div class="row">
     @foreach ($members as $member)
-    <div class="col">
-        <img src="{{ asset('images/'.$member->image) }}" style="width:100px"><br>
+    <div class="col-4">
+        <img src="{{ asset('images/'.$member->image) }}" style="width:180px"><br>
         {{ $member->name }}<br>
-        {{ $member->position->name }}
+        {{ $member->position->name }}<br><br><br>
     </div>
     @endforeach
-    </div>
+</div>
+    
 
 </div>
 </div>

@@ -37,7 +37,7 @@
                     <div class="col-xs-8">
                         <div class="form-group">
                             <?= Form::label('group','กลุ่มวิชา'); ?>
-                            <?= Form::text('group', null,['class'=>'form-control','placeholder'=>'ระบุกลุ่มวิชา']); ?>
+                            <?= Form::textarea('group', null,['class'=>'form-control','placeholder'=>'ระบุกลุ่มวิชา']); ?>
                         </div>
                     </div>
 
@@ -51,7 +51,7 @@
                     <div class="col-xs-8">
                         <div class="form-group">
                             <?= Form::label('format','รูปแบบหลักสูตร'); ?>
-                            <?= Form::text('format', null,['class'=>'form-control','placeholder'=>'ระบุหลักสูตร']); ?>
+                            <?= Form::textarea('format', null,['class'=>'form-control','placeholder'=>'ระบุหลักสูตร']); ?>
                         </div>
                     </div>
 

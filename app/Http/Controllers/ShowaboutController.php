@@ -16,7 +16,5 @@ class ShowaboutController extends Controller
             'abouts' => $about,
             'members'=> $members
         ]);
-
-
     }
 }
