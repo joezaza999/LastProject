@@ -58,7 +58,6 @@ class MemberController extends Controller
         else {
             $members->image = 'nopic.png';
         }
-
         $members->save();
         return redirect()->action('MemberController@index');
     }

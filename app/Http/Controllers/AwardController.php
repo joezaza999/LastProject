@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Award;
 use App\Http\Requests\AwardRequest;
+use Intervention\Image\Facades\Image;
+use illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class AwardController extends Controller
 {
@@ -43,9 +46,19 @@ class AwardController extends Controller
     public function store(Request $request)
     {
         $awards = new Award();
-        $awards->text = $request->text;
+        $awards->id = $request->id;
+        $awards->title = $request->title;
+        $awards->content = $request->content;
+        if ($request->hasFile('image')) {
+            $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path() . '/images/', $filename);
+            Image::make(public_path() . '/images/' . $filename)->resize(50,50)->save(public_path() . '/images/resize/' . $filename);
+            $awards->image = $filename;
+        }
+        else {
+            $awards->image = 'nopic.png';
+        }
         $awards->save();
-
         return redirect()->action('AwardController@index');
     }
 
@@ -81,7 +94,7 @@ class AwardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(AwardRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $awards = Award::find($id);
         $awards->update($request->all());
@@ -98,6 +111,10 @@ class AwardController extends Controller
     public function destroy($id)
     {
         $awards = Award::find($id);
+        if ($awards->image != 'nopic.png') {
+            File::delete(public_path() . '\\images\\' . $awards->image);
+            File::delete(public_path() . '\\images\\resize\\' . $awards->image);
+        }
         $awards->delete();
         return redirect()->action('AwardController@index');
     }

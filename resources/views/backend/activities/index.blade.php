@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
             <br><br>
-            <?= link_to('bactivities/create', $title = 'เพิ่มข้อมูลสหกิจ', ['class' => 'btn btn-primary'], $secure = null); ?>
+            <?= link_to('bactivities/create', $title = 'เพิ่มข้อมูลกิจกรรม', ['class' => 'btn btn-primary'], $secure = null); ?>
             <hr>
             <div class="card">
 
@@ -15,6 +15,8 @@
                             <th>หัวข้อ</th>
                             <th>รูปภาพ</th>
                             <th>เนื้อหา</th>
+                            <th>แก้ไข</th>
+                            <th>ลบ</th>
                         </tr>
                         @foreach ($activitiess as $activities)
                         <tr>

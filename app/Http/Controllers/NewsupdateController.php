@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Fund;
-use App\Http\Requests\FundRequest;
+use App\Newsupdate;
+use App\Http\Requests\NewsupdateRequest;
 use Intervention\Image\Facades\Image;
 use illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
-class FundController extends Controller
+class NewsupdateController extends Controller
 {
     public function __construct() {
         $this->middleware('auth', ['except' => ['show']]);
@@ -21,12 +21,10 @@ class FundController extends Controller
      */
     public function index()
     {
-        {
-            $funds = Fund::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง Fund เก็บไว้ที่ตัวแปร
-            return view('backend.fund.index',[
-                'funds' => $funds
+        $newsupdates = Newsupdate::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง newsupdate เก็บไว้ที่ตัวแปร
+            return view('backend.newsupdate.index',[
+                'newsupdates' => $newsupdates
             ]);
-    }
     }
 
     /**
@@ -36,7 +34,7 @@ class FundController extends Controller
      */
     public function create()
     {
-        return view('backend.fund.create');
+        return view('backend.newsupdate.create');
     }
 
     /**
@@ -47,21 +45,21 @@ class FundController extends Controller
      */
     public function store(Request $request)
     {
-        $funds = new Fund();
-        $funds->id = $request->id;
-        $funds->title = $request->title;
-        $funds->content = $request->content;
+        $newsupdates = new Newsupdate();
+        $newsupdates->id = $request->id;
+        $newsupdates->title = $request->title;
+        $newsupdates->content = $request->content;
         if ($request->hasFile('image')) {
             $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path() . '/images/', $filename);
             Image::make(public_path() . '/images/' . $filename)->resize(50,50)->save(public_path() . '/images/resize/' . $filename);
-            $funds->image = $filename;
+            $newsupdates->image = $filename;
         }
         else {
-            $funds->image = 'nopic.png';
+            $newsupdates->image = 'nopic.png';
         }
-        $funds->save();
-        return redirect()->action('FundController@index');
+        $newsupdates->save();
+        return redirect()->action('NewsupdateController@index');
     }
 
     /**
@@ -83,9 +81,9 @@ class FundController extends Controller
      */
     public function edit($id)
     {
-        $funds = Fund::findOrFail($id);
-        return view('backend.fund.edit',[
-            'funds'=> $funds
+        $newsupdates = Newsupdate::findOrFail($id);
+        return view('backend.newsupdate.edit',[
+            'newsupdates' => $newsupdates
         ]);
     }
 
@@ -98,11 +96,12 @@ class FundController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $funds = Fund::find($id);
-        $funds->update($request->all());
+        $newsupdates = Newsupdate::find($id);
+        $newsupdates->update($request->all());
 
-        return redirect()->action('FundController@index');
+        return redirect()->action('NewsupdateController@index');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -112,12 +111,12 @@ class FundController extends Controller
      */
     public function destroy($id)
     {
-        $funds = Fund::find($id);
-        if ($funds->image != 'nopic.png') {
-            File::delete(public_path() . '\\images\\' . $funds->image);
-            File::delete(public_path() . '\\images\\resize\\' . $funds->image);
+        $newsupdates = Newsupdate::find($id);
+        if ($newsupdates->image != 'nopic.png') {
+            File::delete(public_path() . '\\images\\' . $newsupdates->image);
+            File::delete(public_path() . '\\images\\resize\\' . $newsupdates->image);
         }
-        $funds->delete();
-        return redirect()->action('FundController@index');
+        $newsupdates->delete();
+        return redirect()->action('NewsupdateController@index');
     }
 }

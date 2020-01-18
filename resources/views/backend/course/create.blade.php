@@ -5,8 +5,17 @@
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
             <br><br>
+            @if (count($errors) > 0)
+            <div class="alert alert-warning">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+             @endif
             <div class="card">
-            <div class="card-header">เพิ่มข้อมูลหลักสูตร</div>
+                <div class="card-header">เพิ่มข้อมูลหลักสูตร</div>
 
                 <div class="card-body">
                     {!! Form::open(array('url'=>'bcourse','files'=>true)) !!}

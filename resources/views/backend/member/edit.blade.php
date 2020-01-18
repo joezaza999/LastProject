@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
             <div class="card">
-                <div class="card-header">แก้ไขข้อมูลบุคลากร {{$members->name}}</div>
+                <div class="card-header">แก้ไขข้อมูลบุคลากร</div>
 
                 <div class="card-body">
                     @if (count($errors) > 0)

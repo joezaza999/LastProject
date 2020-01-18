@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Cooperative;
 use App\Http\Requests\CooperativeRequest;
+use Intervention\Image\Facades\Image;
+use illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class CooperativeController extends Controller
 {
@@ -23,7 +26,6 @@ class CooperativeController extends Controller
                 'cooperatives' => $cooperatives
             ]);
     }
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -34,7 +36,6 @@ class CooperativeController extends Controller
     {
         return view('backend.cooperative.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -44,9 +45,19 @@ class CooperativeController extends Controller
     public function store(Request $request)
     {
         $cooperatives = new Cooperative();
+        $cooperatives->id = $request->id;
+        $cooperatives->name = $request->name;
         $cooperatives->text = $request->text;
+        if ($request->hasFile('image')) {
+            $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path() . '/images/', $filename);
+            Image::make(public_path() . '/images/' . $filename)->resize(50,50)->save(public_path() . '/images/resize/' . $filename);
+            $cooperatives->image = $filename;
+        }
+        else {
+            $cooperatives->image = 'nopic.png';
+        }
         $cooperatives->save();
-
         return redirect()->action('CooperativeController@index');
     }
 
@@ -98,8 +109,12 @@ class CooperativeController extends Controller
      */
     public function destroy($id)
     {
-        $cooperative = Cooperative::find($id);
-        $cooperative->delete();
+        $cooperatives = Cooperative::find($id);
+        if ($cooperatives->image != 'nopic.png') {
+            File::delete(public_path() . '\\images\\' . $cooperatives->image);
+            File::delete(public_path() . '\\images\\resize\\' . $cooperatives->image);
+        }
+        $cooperatives->delete();
         return redirect()->action('CooperativeController@index');
     }
 }
