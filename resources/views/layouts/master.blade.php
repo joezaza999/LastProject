@@ -23,26 +23,28 @@
     <body>
     <header>
 
-	<img  class="timlogo img-fluid" src="<?php echo asset('assets/img/logo.png'); ?>" alt="">
-
-
-	<div class="head">
-		<a href="https://bua.rmutr.ac.th/" class="tile socialmedia"><i class="fa fa-facebook-official"></i></a>
-	</div>
+	<div><img  class="img-fluid" src="<?php echo asset('assets/img/logo.png'); ?>" alt=""></div>
 </header>
-		<div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav navbar-expand-lg" role="banner">
-        <div class="">
-			
-          <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav navbar-right navbar-nav">
+
+		<div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav navbar-expand-lg navbar-expand-lg  static-top" role="banner">
+			<a class="navbar-brand" href="#">
+		
+			  </a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon">   
+					<i class="fa fa-navicon" style="color:#fff; font-size:28px;"></i>
+				</span>
+			  </button>
+          <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="navbarResponsive">
+            <ul class="nav navbar-nav navbar-right navbar-nav navbar-nav ml-auto">
 			<li class="{{ Request::path() == 'home' ? 'active' : '' }}">
                 <a class="nav-link" href="home">หน้าแรก</a>
             </li>
 			<li class="{{ Request::path() == 'activities' ? 'active' : '' }}">
                 <a class="nav-link" href="activities">กิจกรรม</a>
             </li>
-              <li class="dropdown">
-                <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">ข้อมูลสาขาวิชา <b class="caret"></b></a>
+              <li class="dropdown ">
+                <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">ข้อมูลสาขาวิชา <b class="caret fa fa-caret-down"></b></a>
                 <ul class="dropdown-content ">
 				  <li class="{{ Request::path() == 'course' ? 'active' : '' }}">
 					<a class="nav-link" href="course" target="blank">หลักสูตรและการสอน</a></li>
@@ -53,7 +55,7 @@
                 </ul>
 			</li>
 			<li class="dropdown">
-                <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">นักศึกษา <b class="caret"></b></a>
+                <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">นักศึกษา <b class="caret fa fa-caret-down"></b></a>
                 <ul class="dropdown-content ">
 				  <li class="{{ Request::path() == 'cooperative' ? 'active' : '' }}">
 					<a class="nav-link" href="cooperative" target="blank">สหกิจศึกษา</a></li>
@@ -68,9 +70,6 @@
             </li>
             </ul>
           </nav>
-        </div>
-	</div>
-	<div class="body">
 	</div>
 		@yield('content')
 

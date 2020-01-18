@@ -11367,10 +11367,9 @@ a.text-dark:focus {
 
 
 .carousel-item {
-  height: 40vh;
-  min-height: 600px;
-  background: no-repeat center center scroll;
-  background-size: cover;
+  height: 68vh;
+  min-height: 82px;
+  background:center ;
 }
 
 
@@ -11450,4 +11449,6 @@ a.text-dark:focus {
     background-repeat: no-repeat;
     background-size: contain;
  }
+
+
  
