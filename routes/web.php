@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
  });
 
 
-Route::get('/home','PagesController@home');
+Route::get('/home','ShowhomeController@index');
 Route::get('/member','PagesController@member');
 Route::get('/course','ShowcourseController@index');
 Route::get('/tact','PagesController@tact');
@@ -46,3 +46,4 @@ Route::resource('/baward','AwardController')->name('index','baward');
 Route::resource('/bfund','FundController')->name('index','bfund');
 Route::resource('/bnewsupdate','NewsupdateController')->name('index','bnewsupdate');
 Route::resource('/bactivities','ActivitiesController')->name('index','bactivities');
+Route::resource('/bslideshow','SlideshowController')->name('index','bslideshow');

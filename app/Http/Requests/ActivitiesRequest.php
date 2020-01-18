@@ -29,10 +29,13 @@ class ActivitiesRequest extends FormRequest
                 'image' => 'mimes:jpeg,jpg,png',
             ];
     }
+
     public function messages()
-            return [
-                'title.required' => 'กรุณากรอกหัวข้อ'
-                'content.required' => 'กรุณากรอกเนื้อหา'
-                'image.mimes' => 'กรุณาเลือกไฟล์ภาพนามสกุล jpeg,jpg,png' 
-            ]
+    {
+        return [
+            'name.required' => 'กรุณากรอกชื่อบุคลากร',
+            'position_id.required' => 'กรุณาเลือกตำแหน่ง',
+            'image.mimes' => 'กรุณาเลือกไฟล์ภาพนามสกุล jpeg,jpg,png',
+        ];
+    }
 }
