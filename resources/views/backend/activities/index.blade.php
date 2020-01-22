@@ -13,8 +13,8 @@
                     <table class="table table-striped">
                         <tr>
                             <th>หัวข้อ</th>
-                            <th>รูปภาพ</th>
                             <th>เนื้อหา</th>
+                            <th>รูปภาพ</th>
                             <th>แก้ไข</th>
                             <th>ลบ</th>
                         </tr>

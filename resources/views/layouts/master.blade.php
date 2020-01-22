@@ -26,7 +26,7 @@
 	<div><img  class="img-fluid" src="<?php echo asset('assets/img/logo.png'); ?>" alt=""></div>
 </header>
 
-		<div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav navbar-expand-lg navbar-expand-lg  static-top" role="banner">
+		<div class="navbar navbar-inverse navbar-fixedd-top bs-docs-nav navbar-expand-lg navbar-expand-lg  static-top" role="banner">
 			<a class="navbar-brand" href="#">
 		
 			  </a>

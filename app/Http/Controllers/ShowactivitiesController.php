@@ -14,7 +14,8 @@ class ShowactivitiesController extends Controller
      */
     public function index()
     {
-        $activities = Activities::orderBy('id','desc')->get();
+        // $activities = Activities::paginate(9)->orderBy('updated_at','desc')->get();
+        $activities = Activities::paginate(3);
         return view('pages.activities',[
             'activities' => $activities
         ]);
