@@ -2,14 +2,14 @@
 
 @section('content')
 <div class="body">
-  <div class="fakeimg" style="height:100%;"></div>
+  <div class="fakeimg" style="height:100%;"></div><br><br>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
 
         @foreach ($slideshows as $slideshow)
 
       <div class="carousel-item @if($loop->first)active @endif">
-      <img class="d-block mx-auto img-fluid" src="{{asset("images/$slideshow->image")}}" width="1200px" alt="">
+      <img class="d-block mx-auto img-fluid" src="{{asset("images/$slideshow->image")}}" width="1520px" height="30px"  alt="">
       </div>
       @endforeach
     </div>
@@ -24,12 +24,10 @@
   </div>
 
       <div class="content">
-<br>
 
   <div class="row">
     <div class="leftcolumn">
       <div class="card">
-          <img class="card-img-top img-fluid" src="<?php echo asset('assets/img/header11.png'); ?>" width="100%" height="100%" alt="">
           <div class="slideshow-container">
 
               <div class="mySlides">
@@ -61,57 +59,13 @@
                 <span class="dot" onclick="currentSlide(3)"></span>
               </div>
               <br>
-              <div class="row">
-                  <div class="col-lg-4 col-sm-6 mb-4">
-                    <div>
-                        <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/1000.jpg'); ?>" width="100%" height="100%" alt=""></a>
-                        <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-sm-6 mb-4">
-                    <div>
-                        <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/1002.jpg'); ?>" width="100%" height="100%" alt=""></a>
-                        <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-sm-6 mb-4">
-                    <div>
-                        <a href="#"><img class="card-img-top" src="<?php echo asset('assets/img/1002.jpg'); ?>" width="100%" height="100%" alt=""></a>
-                        <p class="card-text">เทคโนโลยีสารสนเทศ</p>
-                    </div>
-                  </div>
-            </div>
+            
 
     <!-- /.row -->
 
       </div>
     </div>
     <div class="rightcolumn">
-
-      <div class="card">
-      <!-- Posts -->
-        <div class="w3-container w3-padding w3-indigo">
-          <h4>เมนู</h4>
-        </div>
-        <ul class="w3-ul w3-hoverable w3-white">
-          <li class="w3-padding-10">
-            <a class="" href="home">หน้าแรก</a>
-          </li>
-          <li class="w3-padding-10">
-            <a class="" href="activities">กิจกรรม</a>
-          </li>
-          <li class="w3-padding-10">
-            <a class="" href="activities">ข้อมูลสาขาวิชา</a>
-          </li>
-          <li class="w3-padding-10">
-            <a class="" href="activities">นักศึกษา</a>
-          </li>
-        </ul>
-
-
-
-
-      </div>
       <div class="card">
         <div class="w3-container w3-padding w3-indigo">
           <h4>BIT Video</h4>
@@ -131,7 +85,9 @@
     </div>
   </div>
   <br>
-
+      <div>
+        <img class="img-fluid" src="<?php echo asset('assets/img/com.jpg'); ?>" width="100%" height="" alt=""/>
+      </div>
 
 <script>
   var slideIndex = 1;
