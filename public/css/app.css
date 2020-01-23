@@ -66,7 +66,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Kanit', sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -11440,6 +11440,9 @@ a.text-dark:focus {
   width: 100%;
 }
 
+/* Add a card effect for articles */
+
+
 
 /* Clear floats after the columns */
 
@@ -11489,6 +11492,10 @@ a.text-dark:focus {
   margin: 0;
   padding: 0;
 }
+h1 {
+  text-align: center;
+  display: block;
+}
 img {
   height: auto;
   max-width: 100%;
@@ -11527,6 +11534,7 @@ a:hover {
 }
 @media screen and (min-width: 40.063em) {
   .grid {
+    float: left;
     width: 33.333%;
  }
 }
@@ -11535,10 +11543,9 @@ a:hover {
   -moz-border-radius: 3px;
   border-radius: 3px;
   display: block;
-  min-height: 400px;
+  min-height: 450px;
   overflow: hidden;
-  width: 500px;
-  
+  position: relative;
 }
 .card__image > img {
   display: block;
@@ -11551,16 +11558,16 @@ a:hover {
   transition: all 0.25s ease-in-out;
 }
 .card__image:hover > img {
-  -webkit-transform: scale(1.0);
-  -moz-transform: scale(1.0);
-  -ms-transform: scale(1.0);
-  -o-transform: scale(1.0);
-  transform: scale(1.0);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
 }
 .card__title {
-  color:#000080;
+  color: #000080;
   display: inline-block;
-  font-family: "Montserrat";
+  font-family: 'Kanit', sans-serif;
   font-size: 1.5em;
   font-weight: 700;
   line-height: 1.2;
@@ -11612,7 +11619,7 @@ a:hover {
   color: #f8f8f8;
   display: inline;
   list-style-type: none;
-  margin-bottom 0;
+  margin-bottom: 0;
   padding-right: 1em;
   font-size: 0.85em;
   font-variant: small-caps;
@@ -11626,8 +11633,5 @@ a:hover {
   right: -0.6em;
 }
 .card__meta li > a {
-  color: #000000;
+  color: #000080;
 }
-
-
- 

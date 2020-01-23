@@ -17,23 +17,22 @@
             <div class="card__overlay">
               <div class="card__overlay-content">
                 <ul class="card__meta">
-                  <li><a href="#0"><i class="fa fa-tag"></i> UI/UX</a></li>
+                  <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
                   <li><a href="#0"><i class="fa fa-clock-o"></i>{{ $activitie->updated_at }}</a></li>
                 </ul>
     
                 <h5><a href="#0" class="card__title">{{ $activitie->title }}</a></h5>
-    
-                <ul class="card__meta card__meta--last">
-                  <li><a href="#0"><i class="fa fa-user"></i> Mithicher</a></li>
-                  <li><a href="#0"><i class="fa fa-facebook-square"></i> Share</a></li>
-                </ul>
+                <h6><a href="#0" class="card__title">{{ $activitie->content }}</a></h6>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    @endforeach    
+    @endforeach  
+    <div>
+      <img class="img-fluid" src="<?php echo asset('assets/img/com.jpg'); ?>" width="100%" height="" alt=""/>
+    </div>  
 {!! $activities->render() !!}
 <script>
   (function() {
