@@ -24,6 +24,7 @@
   </div>
 
       <div class="content">
+        
 
   <div class="row">
     <div class="leftcolumn">
@@ -72,7 +73,7 @@
         </div>
         <br>
         <div class="fakeimg">
-            <video width="315" controls>
+            <video width="100%" controls>
               <source src="<?php echo asset('assets/img/bit.mp4'); ?>" type="video/mp4">
               <source src="<?php echo asset('assets/img/bit.ogg'); ?>" type="video/ogg">
             </video>
@@ -85,10 +86,6 @@
     </div>
   </div>
   <br>
-      <div>
-        <img class="img-fluid" src="<?php echo asset('assets/img/com.jpg'); ?>" width="100%" height="" alt=""/>
-      </div>
-
 <script>
   var slideIndex = 1;
 showSlides(slideIndex);
@@ -134,6 +131,11 @@ function openPage(pageName,elmnt,color) {
 document.getElementById("defaultOpen").click();
 </script>
 
+</div>
+<div class="w3-container w3-padding-64 w3-black  w3-xlarge" id="about">
+  <div class="w3-content">
+    <img class="img-fluid" src="<?php echo asset('assets/img/com.jpg'); ?>" width="100%" height="" alt=""/>
+  </div>
 </div>
 </div>
 

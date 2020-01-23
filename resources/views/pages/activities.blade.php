@@ -13,7 +13,7 @@
       <div class="grid">
         <div class="card">
           <div class="card__image">
-            <img src="{{ asset('images/'.$activitie->image) }}" class="card-img-top" style="width:355px";>
+            <img src="{{ asset('images/'.$activitie->image) }}" class="card-img-top">
             <div class="card__overlay">
               <div class="card__overlay-content">
                 <ul class="card__meta">
@@ -31,7 +31,7 @@
     </div>
     @endforeach  
     <div>
-      <img class="img-fluid" src="<?php echo asset('assets/img/com.jpg'); ?>" width="100%" height="" alt=""/>
+      <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="500px" height="" alt=""/>
     </div>  
 {!! $activities->render() !!}
 <script>
