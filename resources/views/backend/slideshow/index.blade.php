@@ -22,7 +22,7 @@
                             </td>
                             <td>
                                 <?= Form::open(array('url' => 'bslideshow/' . $slideshow->id, 'method' => 'delete')) ?>
-                                <button type="submit" class="btn">ลบ</button>
+                                <button type="submit" class="btn btn-danger">ลบ</button>
                                 {!! Form::close() !!}
                             </td>
                         </tr>

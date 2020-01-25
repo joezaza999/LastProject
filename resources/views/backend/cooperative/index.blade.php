@@ -27,11 +27,11 @@
                             <td>{{$cooperative->name}}</td>
                             <td>{{$cooperative->text}}</td>
                             <td>
-                                <a href="{{ url('/bcooperative/'.$cooperative->id.'/edit') }}">แก้ไข</a>
+                                <a href="{{ url('/bcooperative/'.$cooperative->id.'/edit') }}" class="btn btn-success">แก้ไข</a>
                             </td>
                             <td>
                                 <?= Form::open(array('url' => 'bcooperative/' . $cooperative->id, 'method' => 'delete')) ?>
-                                <button type="submit" class="btn">ลบ</button>
+                                <button type="submit" class="btn btn-danger">ลบ</button>
                                 {!! Form::close() !!}
                             </td>
                         </tr>
@@ -42,4 +42,5 @@
         </div>
     </div>
 </div>
+
 @endsection

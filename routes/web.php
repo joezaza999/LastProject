@@ -25,11 +25,11 @@ Route::get('/tact','PagesController@tact');
 Route::get('/test','PagesController@test');
 Route::get('/com','PagesController@com');
 Route::get('/activities','ShowactivitiesController@index');
-Route::get('/cooperative','PagesController@cooperative');
-Route::get('/newupdate','PagesController@newupdate');
+Route::get('/cooperative','ShowcooperativeController@index');
+Route::get('/newsupdate','ShownewsupdateController@index');
 Route::get('/about','ShowaboutController@index');
-Route::get('/award','PagesController@award');
-Route::get('/fund','PagesController@fund');
+Route::get('/award','ShowawardController@index');
+Route::get('/fund','ShowfundController@index');
 
 Auth::routes();
 

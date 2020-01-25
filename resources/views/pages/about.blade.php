@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="body">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="home">หน้าแรก</a></li>
-      <li class="breadcrumb-item active" aria-current="page">เกี่ยวกับสาขา</li>
-    </ol>
+<br><br>
+<div class="topnav" id="myTopnav">
+  <a href="" class="">เกี่ยวกับสาขา</a>
+</div>
 <div class="content">
     <div class="container">
 
@@ -20,9 +20,9 @@
 <div class="row">
     @foreach ($members as $member)
     <div class="col-4">
-        <img src="{{ asset('images/'.$member->image) }}" style="width:180px"><br>
+        <img src="{{ asset('images/'.$member->image) }}" style="width:180px"><br><br>
         {{ $member->name }}<br>
-        {{ $member->position->name }}<br><br><br>
+        <b>{{ $member->position->name }}</b><br><br><br>
     </div>
     @endforeach
 </div>

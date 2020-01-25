@@ -2,12 +2,12 @@
 
     @section('content')
     <div class="body">
-      <br><br><br>
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="home">หน้าแรก</a></li>
-        <li class="breadcrumb-item active" aria-current="page">กิจกรรม</li>
-      </ol>
+      <br><br>
+<div class="topnav" id="myTopnav">
+  <a href="" class="">กิจกรรม</a>
+</div>
       <div class="content">
+      <div class="container">
     @foreach($activities as $activitie)
     <div class="wrapper">
       <div class="grid">
@@ -22,7 +22,7 @@
                 </ul>
     
                 <h5><a href="#0" class="card__title">{{ $activitie->title }}</a></h5>
-                <h6><a href="#0" class="card__title">{{ $activitie->content }}</a></h6>
+                <h6><a href="#0" class="card__title1">{{ $activitie->content }}</a></h6>
               </div>
             </div>
           </div>
@@ -31,8 +31,8 @@
     </div>
     @endforeach  
     <div>
-      <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="500px" height="" alt=""/>
-    </div>  
+      <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="100px" height="" alt=""/>
+    </div>
 {!! $activities->render() !!}
 <script>
   (function() {
@@ -43,6 +43,7 @@
   });
 })();
 </script>
+</div>
 </div>
 </div>
 @endsection

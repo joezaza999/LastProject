@@ -32,19 +32,19 @@
           <div class="slideshow-container">
 
               <div class="mySlides">
-                <div class="numbertext">1 / 3</div>
+           
                 <img class="img-fluid" src="<?php echo asset('assets/img/1004.jpg'); ?>" width="100%" height="550px" alt=""/>
                 <div class="text">Caption Text</div>
               </div>
 
               <div class="mySlides">
-                <div class="numbertext">2 / 3</div>
+                
                 <img class="img-fluid" src="<?php echo asset('assets/img/10.jpg'); ?>" width="100%" height="" alt=""/>
                 <div class="text">Caption Two</div>
               </div>
 
               <div class="mySlides">
-                <div class="numbertext">3 / 3</div>
+              
                 <img class="img-fluid" src="<?php echo asset('assets/img/10.jpg'); ?>" width="100%" height="100%" alt=""/>
                 <div class="text">Caption Three</div>
               </div>

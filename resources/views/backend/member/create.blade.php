@@ -19,12 +19,14 @@
 
                 <div class="card-body">
                     {!! Form::open(array('url'=>'bmembers','files'=>true)) !!}
+
                     <div class="col-xs-8">
                         <div class="form-group">
                             <?= Form::label('name','ชื่อบุคลากร'); ?>
                             <?= Form::text('name', null,['class'=>'form-control','placeholder'=>'ชื่อบุคลากร']); ?>
                         </div>
                     </div>
+
                     <div class="col-xs-4">
                         <div class="form-group">
                             {!! Form::label('position_id','ตำแหน่ง'); !!}
@@ -32,6 +34,7 @@
                             ['class'=>'form-control','placeholder'=>'กรุณาเลือกตำแหน่ง...']); ?>
                         </div>
                     </div>
+                    
                     <div class="col-xs-4">
                         <div class="form-group">
                             {!! Form::label('image','รูปภาพ'); !!}<br>

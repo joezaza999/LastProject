@@ -98,7 +98,7 @@ class MemberController extends Controller
     {
         $members = Member::find($id);
         $members->update($request->all());
-
+        
         return redirect()->action('MemberController@index');
     }
 

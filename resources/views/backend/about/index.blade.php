@@ -20,11 +20,11 @@
                         <tr>
                             <td>{{$about->text}}</td>
                             <td>
-                                <a href="{{ url('/babout/'.$about->id.'/edit') }}">แก้ไข</a>
+                                <a href="{{ url('/babout/'.$about->id.'/edit') }}" class="btn btn-success">แก้ไข</a>
                             </td>
                             <td>
                                 <?= Form::open(array('url' => 'babout/' . $about->id, 'method' => 'delete')) ?>
-                                <button type="submit" class="btn">ลบ</button>
+                                <button type="submit"class="btn btn-danger">ลบ</button>
                                 {!! Form::close() !!}
                             </td>
                         </tr>

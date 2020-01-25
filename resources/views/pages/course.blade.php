@@ -1,10 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="home">หน้าแรก</a></li>
-    <li class="breadcrumb-item active" aria-current="page">หลักสูตรและการสอน</li>
-  </ol>
+<div class="body">
+<br><br>
+<div class="topnav" id="myTopnav">
+  <a href="" class="">หลักสูตรและการสอน</a>
+</div>
 
 <div class="content">
     <div class="container">
@@ -26,5 +27,6 @@
       <div>{{ $course->job }}</div>
     @endforeach
     </div>
+</div>
 </div>
 @endsection

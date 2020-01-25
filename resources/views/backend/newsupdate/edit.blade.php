@@ -19,12 +19,21 @@
                     @endif
 
                     <?= Form::model($newsupdates,array('url'=>'bnewsupdate/'.$newsupdates->id,'method'=>'put')) ?>
+                    
                     <div class="col-xs-8">
                         <div class="form-group">
                             <?= Form::label('title','ข้อความ'); ?>
                             <?= Form::text('title', null,['class'=>'form-control','placeholder'=>'ระบุชื่อ']); ?>
                         </div>
                     </div>
+
+                    <div class="col-xs-4">
+                        <div class="form-group">
+                            {!! Form::label('image','รูปภาพ'); !!}<br>
+                            <?= Form::file('image',null,['class'=>'form-control']); ?>
+                        </div>
+                    </div>
+                    
                     <div class="col-xs-8">
                         <div class="form-group">
                             <?= Form::label('content','ข้อความ'); ?>
@@ -40,6 +49,8 @@
                     {!! Form::close() !!}
                 </div>
             </div>
+            <br><br>
+
         </div>
     </div>
 </div>

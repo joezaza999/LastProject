@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="body">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="home">หน้าแรก</a></li>
-      <li class="breadcrumb-item active" aria-current="page">ติดต่อเรา</li>
-    </ol>
+<br><br>
+<div class="topnav" id="myTopnav">
+  <a href="" class="">ติดต่อเรา</a>
+</div>
 <div class="content">
       <h3>แผนที่ตั้ง</h3>
 <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">

@@ -40,6 +40,8 @@
                     {!! Form::close() !!}
                 </div>
             </div>
+            <br><br>
+
         </div>
     </div>
 </div>

@@ -27,11 +27,11 @@
                             </td>
                             <td>{{ $award->content }}</td>
                             <td>
-                                <a href="{{ url('/baward/'.$award->id.'/edit') }}">แก้ไข</a>
+                                <a href="{{ url('/baward/'.$award->id.'/edit') }}" class="btn btn-success">แก้ไข</a>
                             </td>
                             <td>
                                 <?= Form::open(array('url' => 'baward/' . $award->id, 'method' => 'delete')) ?>
-                                <button type="submit" class="btn">ลบ</button>
+                                <button type="submit" class="btn btn-danger">ลบ</button>
                                 {!! Form::close() !!}
                             </td>
                         </tr>

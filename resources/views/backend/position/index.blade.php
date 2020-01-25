@@ -20,11 +20,11 @@
                         <tr>
                             <td>{{$position->name}}</td>
                             <td>
-                                <a href="{{ url('/bposition/'.$position->id.'/edit') }}">แก้ไข</a>
+                                <a href="{{ url('/bposition/'.$position->id.'/edit') }}" class="btn btn-success">แก้ไข</a>
                             </td>
                             <td>
                                 <?= Form::open(array('url' => 'bposition/' . $position->id, 'method' => 'delete')) ?>
-                                <button type="submit" class="btn">ลบ</button>
+                                <button type="submit" class="btn btn-danger">ลบ</button>
                                 {!! Form::close() !!}
                             </td>
                         </tr>

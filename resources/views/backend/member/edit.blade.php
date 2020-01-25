@@ -35,6 +35,13 @@
                         </div>
                     </div>
 
+                    <div class="col-xs-4">
+                        <div class="form-group">
+                            {!! Form::label('image','รูปภาพ'); !!}<br>
+                            <?= Form::file('image',null,['class'=>'form-control']); ?>
+                        </div>
+                    </div>
+                    
                     <div class="form-group">
                         <div class="col-sm-10">
                             <?= Form::submit('บันทึก',['class'=>'btn btn-primary']); ?>
