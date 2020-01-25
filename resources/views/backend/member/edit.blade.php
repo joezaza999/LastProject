@@ -4,50 +4,47 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
+            <div aligh="right">
+                <a href="{{ route('bmembers') }}" class="btn btn-default">กลับ</a>
+            </div>
             <div class="card">
+
                 <div class="card-header">แก้ไขข้อมูลบุคลากร</div>
 
                 <div class="card-body">
-                    @if (count($errors) > 0)
-                    <div class="alert alert-warning">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    @endif
+                    <form method="POST" action="{{ route('bmembers.update' , $members->id) }}" enctype="multipart/form-data">
 
-                    <?= Form::model($members,array('url'=>'bmembers/'.$members->id,'method'=>'put')) ?>
-
-                    <div class="col-xs-8">
+                        @csrf
+                        @method('PATCH')
                         <div class="form-group">
-                            <?= Form::label('name','ชื่อบุคลากร'); ?>
-                            <?= Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'ชื่อบุคลากร']); ?>
+                            <label class="col-md-4 text-right">ชื่อบุคลากร</label>
+                            <div class="col-md-8">
+                                <input type="text" name="name" value="{{ $members->name }}" class="form-control input-lg"/>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xs-4">
+                        <br>
                         <div class="form-group">
-                            {!! Form::label('position_id','ตำแหน่ง'); !!}
-                            <?= Form::select('position_id',App\Position::all()->pluck('name','id'),null,
-                            ['class'=>'form-control','placeholder'=>'กรุณาเลือกตำแหน่ง...']); ?>
+                            <label class="col-md-4 text-right">ตำแหน่ง</label>
+                            <select class="form-control" name="position_id">
+                                @foreach ($positions as $position)
+                                    <option value="{{ $position->id }}">{{ $position->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
-                    </div>
-
-                    <div class="col-xs-4">
+                        <br>
                         <div class="form-group">
-                            {!! Form::label('image','รูปภาพ'); !!}<br>
-                            <?= Form::file('image',null,['class'=>'form-control']); ?>
+                            <label class="col-md-4 text-right">เลือกรูปภาพ</label>
+                            <div class="col-md-8">
+                                <input type="file" name="image" />
+                                <img src="{{ URL::to('/') }}/images/{{ $members->image }}" class="img-thumbnail" width="100" />
+                                <input type="hidden" name="hidden_image" value="{{ $members->image }}" />
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <?= Form::submit('บันทึก',['class'=>'btn btn-primary']); ?>
+                        <br>
+                        <div class="form-group text-center">
+                            <input type="submit" name="submit" class="btn btn-primary input-lg" value="แก้ไข" />
                         </div>
-                    </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
         </div>

@@ -2,25 +2,16 @@
 
 @section('content')
 <div class="container">
-    @if ($message = Session::get('success'))
-    <div class="alert alert-success">
-        <p>{{ $message }}</p>
-    </div>
-    @endif
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
             <br><br>
-
-            <div aligh="right">
-                <a href="{{ route('bmembers.create') }}" class="btn btn-success btn-sm">เพิ่มข้อมูลบุคลากร</a>
-            </div>
-
+            <?= link_to('bmembers/create', $title = 'เพิ่มข้อมูลบุคลากร', ['class' => 'btn btn-primary'], $secure = null); ?>
             <hr>
             <div class="card">
 
                 <div class="card-body">
                     <table class="table table-striped">
-                        <tr  >
+                        <tr>
                             <th>ชื่อบุคลากร</th>
                             <th>ตำแหน่ง</th>
                             <th>รูปภาพ</th>
@@ -32,18 +23,16 @@
                             <td>{{ $member->name }}</td>
                             <td>{{ $member->position->name }}</td>
                             <td>
-                            <img src="{{ URL::to('/') }}/images/{{ $member->image }}"
-                            class="img-thumbnail" width="75" />
+                                <a href="{{ asset('images/'.$member->image)}}">
+                                <img src="{{ asset('images/resize/'.$member->image) }}" style="width:100px"></a>
                             </td>
                             <td>
-                                <a href="{{ route('bmembers.edit' , $member->id ) }}" class="btn btn-success">แก้ไข</a>
+                                <a href="{{ url('/bmembers/'.$member->id.'/edit') }}" class="btn btn-success">แก้ไข</a>
                             </td>
                             <td>
-                                <form action="{{ route('bmembers.destroy', $member->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">ลบ</button>
-                                </form>
+                                <?= Form::open(array('url' => 'bmembers/' . $member->id, 'method' => 'delete')) ?>
+                                <button type="submit" class="btn btn-danger">ลบ</button>
+                                {!! Form::close() !!}
                             </td>
                         </tr>
                         @endforeach
