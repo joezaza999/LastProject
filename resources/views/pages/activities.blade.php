@@ -2,10 +2,19 @@
 
     @section('content')
     <div class="body">
+<<<<<<< Updated upstream
       <br><br>
 <div class="topnav" id="myTopnav">
   <a href="" class="">กิจกรรม</a>
 </div>
+=======
+      <br><br><br>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="home">หน้าแรก</a></li>
+        <li class="breadcrumb-item active" aria-current="page">กิจกรรม</li>
+    </ol>
+
+>>>>>>> Stashed changes
       <div class="content">
       <div class="container">
     @foreach($activities as $activitie)
@@ -31,8 +40,13 @@
     </div>
     @endforeach  
     <div>
+<<<<<<< Updated upstream
       <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="100px" height="" alt=""/>
     </div>
+=======
+      <img class="img-fluid" src="<?php echo asset('assets/img/1.jpg'); ?>" width="100%" height="" alt=""/>
+    </div>  
+>>>>>>> Stashed changes
 {!! $activities->render() !!}
 <script>
   (function() {
