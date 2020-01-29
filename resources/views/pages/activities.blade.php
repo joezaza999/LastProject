@@ -7,7 +7,6 @@
   <a href="" class="">กิจกรรม</a>
 </div>
       <div class="content">
-      <div class="container">
     @foreach($activities as $activitie)
     <div class="wrapper">
       <div class="grid">
@@ -34,6 +33,8 @@
       <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="100px" height="" alt=""/>
     </div>
 {!! $activities->render() !!}
+</div>
+</div>
 <script>
   (function() {
   var $grid = $('.grid').imagesLoaded(function() {
@@ -43,7 +44,4 @@
   });
 })();
 </script>
-</div>
-</div>
-</div>
 @endsection

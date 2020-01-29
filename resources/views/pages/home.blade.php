@@ -2,14 +2,15 @@
 
 @section('content')
 <div class="body">
-  <div class="fakeimg" style="height:100%;"></div><br><br>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="fakeimg" style="height:100%;"></div>
+  <div id="carouselExampleControls" id="myCarousel" class="carousel slide" data-ride="carousel">
+
     <div class="carousel-inner">
 
         @foreach ($slideshows as $slideshow)
 
       <div class="carousel-item @if($loop->first)active @endif">
-      <img class="d-block mx-auto img-fluid" src="{{asset("images/$slideshow->image")}}" width="1520px" height="30px"  alt="">
+      <img class="d-block mx-auto img-fluid" src="{{asset("images/$slideshow->image")}}" width="1200px"   alt="">
       </div>
       @endforeach
     </div>
@@ -25,63 +26,166 @@
 
       <div class="content">
         
-
   <div class="row">
     <div class="leftcolumn">
-      <div class="card">
-          <div class="slideshow-container">
-
-              <div class="mySlides">
-           
-                <img class="img-fluid" src="<?php echo asset('assets/img/1004.jpg'); ?>" width="100%" height="550px" alt=""/>
-                <div class="text">Caption Text</div>
+      <h1><b class="icon-book"></b>กิจกรรม</h1>
+   
+      <div class="">
+        <div class="wrapper">
+          <div class="grid">
+            <div class="card">
+              <div class="card__image">
+                <img src="<?php echo asset('assets/img/23.jpg'); ?>" class="card-img-top">
+                <div class="card__overlay">
+                  <div class="card__overlay-content">
+                    <ul class="card__meta">
+                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
+                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
+                    </ul>
+        
+                    <h5><a href="#0" class="card__title">sdfsdfsdfsdfsdf</a></h5>
+                    <h6><a href="#0" class="card__title1">sdfsdfsdfsdfsdfsd</a></h6>
+                  </div>
+                </div>
               </div>
-
-              <div class="mySlides">
-                
-                <img class="img-fluid" src="<?php echo asset('assets/img/10.jpg'); ?>" width="100%" height="" alt=""/>
-                <div class="text">Caption Two</div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="grid">
+            <div class="card">
+              <div class="card__image">
+                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
+                <div class="card__overlay">
+                  <div class="card__overlay-content">
+                    <ul class="card__meta">
+                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
+                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
+                    </ul>
+        
+                    <h5><a href="#0" class="card__title"></a></h5>
+                    <h6><a href="#0" class="card__title1"></a></h6>
+                  </div>
+                </div>
               </div>
-
-              <div class="mySlides">
-              
-                <img class="img-fluid" src="<?php echo asset('assets/img/10.jpg'); ?>" width="100%" height="100%" alt=""/>
-                <div class="text">Caption Three</div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="grid">
+            <div class="card">
+              <div class="card__image">
+                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
+                <div class="card__overlay">
+                  <div class="card__overlay-content">
+                    <ul class="card__meta">
+                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
+                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
+                    </ul>
+        
+                    <h5><a href="#0" class="card__title"></a></h5>
+                    <h6><a href="#0" class="card__title1"></a></h6>
+                  </div>
+                </div>
               </div>
-
-              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="grid">
+            <div class="card">
+              <div class="card__image">
+                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
+                <div class="card__overlay">
+                  <div class="card__overlay-content">
+                    <ul class="card__meta">
+                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
+                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
+                    </ul>
+        
+                    <h5><a href="#0" class="card__title"></a></h5>
+                    <h6><a href="#0" class="card__title1"></a></h6>
+                  </div>
+                </div>
               </div>
-
-              <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="grid">
+            <div class="card">
+              <div class="card__image">
+                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
+                <div class="card__overlay">
+                  <div class="card__overlay-content">
+                    <ul class="card__meta">
+                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
+                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
+                    </ul>
+        
+                    <h5><a href="#0" class="card__title"></a></h5>
+                    <h6><a href="#0" class="card__title1"></a></h6>
+                  </div>
+                </div>
               </div>
-              <br>
-            
-
-    <!-- /.row -->
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="grid">
+            <div class="card">
+              <div class="card__image">
+                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
+                <div class="card__overlay">
+                  <div class="card__overlay-content">
+                    <ul class="card__meta">
+                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
+                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
+                    </ul>
+        
+                    <h5><a href="#0" class="card__title"></a></h5>
+                    <h6><a href="#0" class="card__title1"></a></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
     <div class="rightcolumn">
-      <div class="card">
-        <div class="w3-container w3-padding w3-indigo">
-          <h4>BIT Video</h4>
-        </div>
-        <br>
-        <div class="fakeimg">
-            <video width="100%" controls>
-              <source src="<?php echo asset('assets/img/bit.mp4'); ?>" type="video/mp4">
-              <source src="<?php echo asset('assets/img/bit.ogg'); ?>" type="video/ogg">
-            </video>
-
-        </div><br>
-
-
+      <h1><b class="icon-calendar"></b>Calendar</h1>
+      <div id="content">     
+        <ul class="timeline">
+          <li class="event" data-date="27 Jan">
+            <h3>ชวนฟัง Tech Talk Season 6 ครั้งที่ 3</h3>
+            <p>Short interval training circuits to</p>
+          </li>
+          <li class="event" data-date="28-29 Jan">
+            <h3>Total tone</h3>
+            <p>Focuses on strength</p>    
+          </li>
+          <li class="event" data-date="31 Jan">
+            <h3>Total tone</h3>
+            <p>Focuses on strength</p>    
+          </li>
+          <li class="event" data-date="27 Jan">
+            <h3>ชวนฟัง Tech Talk Season 6 ครั้งที่ 3</h3>
+            <p>Short interval training circuits to</p>
+          </li>
+          <li class="event" data-date="27 Jan">
+            <h3>ชวนฟัง Tech Talk Season 6 ครั้งที่ 3</h3>
+            <p>Short interval training circuits to</p>
+          </li>
+          <li class="event" data-date="27 Jan">
+            <h3>ชวนฟัง Tech Talk Season 6 ครั้งที่ 3</h3>
+            <p>Short interval training circuits to</p>
+          </li>
+          
+        </ul>
       </div>
+      
 
     </div>
   </div>
@@ -132,11 +236,7 @@ document.getElementById("defaultOpen").click();
 </script>
 
 </div>
-<div class="w3-container w3-padding-64 w3-black  w3-xlarge" id="about">
-  <div class="w3-content">
-    <img class="img-fluid" src="<?php echo asset('assets/img/com.jpg'); ?>" width="100%" height="" alt=""/>
-  </div>
-</div>
+
 </div>
 
 
