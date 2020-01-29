@@ -27,7 +27,7 @@
 		<nav class="navbar navbar-toggleable-md fixed-top scrolling-navbar navbar-expand-lg navbar-inverse">
 			<div class="container">
 				<a class="navbar-brand" href="home">
-					<strong><img  class="img-fluid" src="<?php echo asset('assets/img/so.png'); ?>" width="300px" alt=""></strong>
+					<strong><img src="<?php echo asset('assets/img/maxsum.png'); ?>" width="200px"></strong>
 				</a>
 				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="fa fa-navicon" style="color:#fff; font-size:28px;"></span>
