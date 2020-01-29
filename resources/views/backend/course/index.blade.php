@@ -2,10 +2,19 @@
 
 @section('content')
 <div class="container">
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success">
+        <p>{{ $message }}</p>
+    </div>
+    @endif
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
             <br><br>
-            <?= link_to('bcourse/create', $title = 'เพิ่มข้อมูลหลักสูตร', ['class' => 'btn btn-primary'], $secure = null); ?>
+
+            <div aligh="right">
+                <a href="{{ route('bcourse.create') }}" class="btn btn-success btn-sm">เพิ่มข้อมูลหลักสูตร</a>
+            </div>
+
             <hr>
             <div class="card">
 
@@ -20,28 +29,30 @@
                             <th>คุณสมบัติผู้เข้าศึกษา</th>
                             <th>แนวทางการประกอบอาชีพ</th>
                             <th>แก้ไข</th>
-                            <th>ลบ</th>
                         </tr>
                         @foreach ($courses as $course)
                         <tr>
-                            <td>{{$course->namethai}}</td>
-                            <td>{{$course->nameeng}}</td>
-                            <td>{{$course->group}}</td>
-                            <td>{{$course->credit}}</td>
-                            <td>{{$course->format}}</td>
-                            <td>{{$course->property}}</td>
-                            <td>{{$course->job}}</td>
+                            <td>{{ $course->namethai }}</td>
+                            <td>{{ $course->nameeng }}</td>
+                            <td>{{ $course->group }}</td>
+                            <td>{{ $course->credit }}</td>
+                            <td>{{ $course->format }}</td>
+                            <td>{{ $course->property }}</td>
+                            <td>{{ $course->job }}</td>
                             <td>
-                                <a href="{{ url('/bcourse/'.$course->id.'/edit') }}" class="btn btn-success">แก้ไข</a>
+                                <a href="{{ route('bcourse.edit' , $course->id) }}" class="btn btn-success">แก้ไข</a>
                             </td>
                             <td>
-                                <?= Form::open(array('url' => 'bcourse/' . $course->id, 'method' => 'delete')) ?>
-                                <button type="submit" class="btn btn-danger">ลบ</button>
-                                {!! Form::close() !!}
+                                <form action="{{ route('bcourse.destroy', $course->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
                             </td>
                         </tr>
                         @endforeach
                     </table>
+                    <br>
+                    {!! $courses->render() !!}
                 </div>
             </div>
             <br><br><br><br>

@@ -4,45 +4,48 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
+            <div aligh="right">
+                <a href="{{ route('bactivities') }}" class="btn btn-default">กลับ</a>
+            </div>
             <div class="card">
+
                 <div class="card-header">แก้ไขข้อมูลกิจกรรม</div>
 
                 <div class="card-body">
-                    @if (count($errors) > 0)
-                    <div class="alert alert-warning">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    @endif
+                    <form method="POST" action="{{ route('bactivities.update' , $activities->id) }}" enctype="multipart/form-data">
 
-                    <?= Form::model($activitiess,array('url'=>'bactivities/'.$activitiess->id,'method'=>'put')) ?>
-
-                    <div class="col-xs-8">
+                        @csrf
+                        @method('PATCH')
                         <div class="form-group">
-                            <?= Form::label('title','หัวข้อ'); ?>
-                            <?= Form::text('title', null,['class'=>'form-control','placeholder'=>'ระบุหัวข้อ']); ?>
+                            <label class="col-md-4 text-right">หัวข้อ</label>
+                            <div class="col-md-8">
+                                <input type="text" name="title" value="{{ $activities->title }}" class="form-control input-lg"/>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-8">
+                        <br>
                         <div class="form-group">
-                            <?= Form::label('content','เนื้อหา'); ?>
-                            <?= Form::textarea('content', null,['class'=>'form-control','placeholder'=>'ระบุเนื้อหา']); ?>
+                            <label class="col-md-4 text-right">เนื้อหา</label>
+                            <div class="col-md-8">
+                                <textarea name="content" rows="10" cols="80" value="" class="form-control input-lg">{{ $activities->content }}</textarea>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <?= Form::submit('บันทึก',['class'=>'btn btn-primary']); ?>
+                        <br>
+                        <div class="form-group">
+                            <label class="col-md-4 text-right">เลือกรูปภาพ</label>
+                            <div class="col-md-8">
+                                <input type="file" name="image" />
+                                <img src="{{ URL::to('/') }}/images/{{ $activities->image }}" class="img-thumbnail" width="100" />
+                                <input type="hidden" name="hidden_image" value="{{ $activities->image }}" />
+                            </div>
                         </div>
-                    </div>
-                    {!! Form::close() !!}
+                        <br>
+                        <div class="form-group text-center">
+                            <input type="submit" name="submit" class="btn btn-primary input-lg" value="แก้ไข" />
+                        </div>
+                    </form>
                 </div>
             </div>
-            <br><br>
-
+            <br><br><br>
         </div>
     </div>
 </div>

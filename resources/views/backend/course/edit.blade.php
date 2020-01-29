@@ -4,80 +4,74 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
+            <div aligh="right">
+                <a href="{{ route('bcourse') }}" class="btn btn-default">กลับ</a>
+            </div>
             <div class="card">
-                <div class="card-header">แก้ไขข้อมูลหลักสูตร </div>
+
+                <div class="card-header">แก้ไขข้อมูลหลักสูตร</div>
 
                 <div class="card-body">
-                    @if (count($errors) > 0)
-                    <div class="alert alert-warning">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    @endif
+                    <form method="POST" action="{{ route('bcourse.update' , $course->id) }}" enctype="multipart/form-data">
 
-                    <?= Form::model($courses,array('url'=>'bcourse/'.$courses->id,'method'=>'put')) ?>
-
-                    <div class="col-xs-8">
+                        @csrf
+                        @method('PATCH')
                         <div class="form-group">
-                            <?= Form::label('namethai','ชื่อสาขา(ไทย)'); ?>
-                            <?= Form::text('namethai', null,['class'=>'form-control','placeholder'=>'ระบุสาขาไทย']); ?>
+                            <label class="col-md-4 text-right">ชื่อสาขา(ไทย)</label>
+                            <div class="col-md-8">
+                                <input type="text" name="namethai" value="{{ $course->namethai }}" class="form-control input-lg"/>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xs-8">
+                        <br>
                         <div class="form-group">
-                            <?= Form::label('nameeng','ชื่อสาขา(อังกฤษ)'); ?>
-                            <?= Form::text('nameeng', null,['class'=>'form-control','placeholder'=>'ระบุสาขาอังกฤษ']); ?>
+                            <label class="col-md-4 text-right">ชื่อสาขา(ไทย)</label>
+                            <div class="col-md-8">
+                                <input type="text" name="nameeng" value="{{ $course->nameeng }}" class="form-control input-lg"/>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xs-8">
+                        <br>
                         <div class="form-group">
-                            <?= Form::label('group','กลุ่มวิชา'); ?>
-                            <?= Form::textarea('group', null,['class'=>'form-control','placeholder'=>'ระบุกลุ่มวิชา']); ?>
+                            <label class="col-md-4 text-right">กลุ่มวิชา</label>
+                            <div class="col-md-8">
+                                <textarea name="group" rows="10" cols="80" value="" class="form-control input-lg">{{ $course->group }}</textarea>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xs-8">
+                        <br>
                         <div class="form-group">
-                            <?= Form::label('credit','จำนวนหน่วยกิต'); ?>
-                            <?= Form::text('credit', null,['class'=>'form-control','placeholder'=>'ระบุหน่วยกิต']); ?>
+                            <label class="col-md-4 text-right">จำนวนหน่วยกิต</label>
+                            <div class="col-md-8">
+                                <input type="text" name="credit" value="{{ $course->credit }}" class="form-control input-lg"/>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xs-8">
+                        <br>
                         <div class="form-group">
-                            <?= Form::label('format','รูปแบบหลักสูตร'); ?>
-                            <?= Form::textarea('format', null,['class'=>'form-control','placeholder'=>'ระบุหลักสูตร']); ?>
+                            <label class="col-md-4 text-right">รูปแบบหลักสูตร</label>
+                            <div class="col-md-8">
+                                <textarea name="format" rows="10" cols="80" value="" class="form-control input-lg">{{ $course->format }}</textarea>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xs-8">
+                        <br>
                         <div class="form-group">
-                            <?= Form::label('property','คุณสมบัติผู้เข้าศึกษา'); ?>
-                            <?= Form::textarea('property', null,['class'=>'form-control','placeholder'=>'ระบุคุณสมบัติ']); ?>
+                            <label class="col-md-4 text-right">คุณสมบัติผู้เข้าศึกษา</label>
+                            <div class="col-md-8">
+                                <textarea name="property" rows="10" cols="80" value="" class="form-control input-lg">{{ $course->property }}</textarea>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xs-8">
+                        <br>
                         <div class="form-group">
-                            <?= Form::label('job','แนวทางการประกอบอาชีพ'); ?>
-                            <?= Form::textarea('job', null,['class'=>'form-control','placeholder'=>'ระบุแนวทาง']); ?>
+                            <label class="col-md-4 text-right">แนวทางการประกอบอาชีพ</label>
+                            <div class="col-md-8">
+                                <textarea name="job" rows="10" cols="80" value="" class="form-control input-lg">{{ $course->job }}</textarea>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <?= Form::submit('บันทึก',['class'=>'btn btn-primary']); ?>
+                        <br>
+                        <div class="form-group text-center">
+                            <input type="submit" name="submit" class="btn btn-primary input-lg" value="แก้ไข" />
                         </div>
-                    </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
-            <br><br><br><br>
+            <br><br><br>
         </div>
     </div>
 </div>

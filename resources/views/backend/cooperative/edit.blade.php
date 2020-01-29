@@ -4,44 +4,48 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
+            <div aligh="right">
+                <a href="{{ route('bcooperative') }}" class="btn btn-default">กลับ</a>
+            </div>
             <div class="card">
-                <div class="card-header">แก้ไขข้อมูลสหกิจศึกษา </div>
+
+                <div class="card-header">แก้ไขข้อมูลสหกิจ</div>
 
                 <div class="card-body">
-                    @if (count($errors) > 0)
-                    <div class="alert alert-warning">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    @endif
+                    <form method="POST" action="{{ route('bcooperative.update' , $cooperatives->id) }}" enctype="multipart/form-data">
 
-                    <?= Form::model($cooperatives,array('url'=>'bcooperative/'.$cooperatives->id,'method'=>'put')) ?>
-                    <div class="col-xs-8">
+                        @csrf
+                        @method('PATCH')
                         <div class="form-group">
-                            <?= Form::label('name','ข้อความ'); ?>
-                            <?= Form::text('name', null,['class'=>'form-control','placeholder'=>'ระบุชื่อ']); ?>
+                            <label class="col-md-4 text-right">ชื่อ</label>
+                            <div class="col-md-8">
+                                <input type="text" name="name" value="{{ $cooperatives->name }}" class="form-control input-lg"/>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-8">
+                        <br>
                         <div class="form-group">
-                            <?= Form::label('text','ข้อความ'); ?>
-                            <?= Form::textarea('text', null,['class'=>'form-control','placeholder'=>'ระบุเนื้อหา']); ?>
+                            <label class="col-md-4 text-right">ผลงาน</label>
+                            <div class="col-md-8">
+                                <textarea name="text" rows="10" cols="80" value="" class="form-control input-lg">{{ $cooperatives->text }}</textarea>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <?= Form::submit('บันทึก',['class'=>'btn btn-primary']); ?>
+                        <br>
+                        <div class="form-group">
+                            <label class="col-md-4 text-right">เลือกรูปภาพ</label>
+                            <div class="col-md-8">
+                                <input type="file" name="image" />
+                                <img src="{{ URL::to('/') }}/images/{{ $cooperatives->image }}" class="img-thumbnail" width="100" />
+                                <input type="hidden" name="hidden_image" value="{{ $cooperatives->image }}" />
+                            </div>
                         </div>
-                    </div>
-                    {!! Form::close() !!}
+                        <br>
+                        <div class="form-group text-center">
+                            <input type="submit" name="submit" class="btn btn-primary input-lg" value="แก้ไข" />
+                        </div>
+                    </form>
                 </div>
             </div>
-            <br><br>
-
+            <br><br><br>
         </div>
     </div>
 </div>

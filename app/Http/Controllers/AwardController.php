@@ -21,10 +21,10 @@ class AwardController extends Controller
      */
     public function index()
     {
-        $awards = Award::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง award เก็บไว้ที่ตัวแปร
-            return view('backend.award.index',[
-                'awards' => $awards
-            ]);
+        $awards = Award::paginate(5);
+        return view('backend.award.index',[
+            'awards'=> $awards
+        ]);
     }
 
     /**
@@ -34,7 +34,10 @@ class AwardController extends Controller
      */
     public function create()
     {
-        return view('backend.award.create');
+        $award = Award::all(['id', 'title']);
+        return view('backend.award.create',[
+            'awards' => $award        
+            ]);
     }
 
     /**
@@ -45,21 +48,25 @@ class AwardController extends Controller
      */
     public function store(Request $request)
     {
-        $awards = new Award();
-        $awards->id = $request->id;
-        $awards->title = $request->title;
-        $awards->content = $request->content;
-        if ($request->hasFile('image')) {
-            $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
-            $request->file('image')->move(public_path() . '/images/', $filename);
-            Image::make(public_path() . '/images/' . $filename)->resize(50,50)->save(public_path() . '/images/resize/' . $filename);
-            $awards->image = $filename;
-        }
-        else {
-            $awards->image = 'nopic.png';
-        }
-        $awards->save();
-        return redirect()->action('AwardController@index');
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'image' => 'required|image|max:2048'
+        ]);
+
+        $image = $request->file('image');
+
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $new_name);
+        $form_data = array(
+            'title' => $request->title,
+            'content' => $request->content,
+            'image' => $new_name
+        );
+
+        Award::create($form_data);
+
+        return redirect('baward')->with('success', 'เพิ่มข้อมูลรางวัลสำเร็จ');
     }
 
     /**
@@ -81,10 +88,8 @@ class AwardController extends Controller
      */
     public function edit($id)
     {
-        $awards = Award::findOrFail($id);
-        return view('backend.award.edit',[
-            'awards' => $awards
-        ]);
+        $award = Award::findOrFail($id);
+        return view('backend.award.edit', compact('award'));
     }
 
     /**
@@ -96,10 +101,35 @@ class AwardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $awards = Award::find($id);
-        $awards->update($request->all());
+        $image_name = $request->hidden_image;
+        $image = $request->file('image');
 
-        return redirect()->action('AwardController@index');
+        if($image != '')
+        {
+            $request->validate([
+                'title' => 'required',
+                'content' => 'required',
+                'image' => 'required|image|max:2048'
+            ]);
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $image_name);
+        }
+        else
+        {
+            $request->validate([
+                'title' => 'required',
+                'content' => 'required',
+            ]);
+        }
+
+        $form_data = array(
+            'title' => $request->title,
+            'content' => $request->content,
+            'image' => $image_name
+        );
+
+        Award::whereId($id)->update($form_data);
+        return redirect('baward')->with('success', 'แก้ไขข้อมูลรางวัลสำเร็จ');
     }
 
     /**
@@ -116,6 +146,6 @@ class AwardController extends Controller
             File::delete(public_path() . '\\images\\resize\\' . $awards->image);
         }
         $awards->delete();
-        return redirect()->action('AwardController@index');
+        return redirect('baward')->with('success', 'ลบข้อมูลรางวัลสำเร็จ');
     }
 }

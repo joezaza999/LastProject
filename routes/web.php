@@ -23,13 +23,11 @@ Route::get('/member','PagesController@member');
 Route::get('/course','ShowcourseController@index');
 Route::get('/tact','PagesController@tact');
 Route::get('/test','PagesController@test');
-Route::get('/com','PagesController@com');
 Route::get('/activities','ShowactivitiesController@index');
 Route::get('/cooperative','ShowcooperativeController@index');
 Route::get('/newsupdate','ShownewsupdateController@index');
 Route::get('/about','ShowaboutController@index');
 Route::get('/award','ShowawardController@index');
-Route::get('/fund','ShowfundController@index');
 
 Auth::routes();
 
@@ -43,7 +41,8 @@ Route::resource('/babout','AboutController')->name('index','babout');
 Route::resource('/bactivities','ActivitiesController')->name('index','bactivities');
 Route::resource('/bcooperative','CooperativeController')->name('index','bcooperative');
 Route::resource('/baward','AwardController')->name('index','baward');
-Route::resource('/bfund','FundController')->name('index','bfund');
 Route::resource('/bnewsupdate','NewsupdateController')->name('index','bnewsupdate');
 Route::resource('/bactivities','ActivitiesController')->name('index','bactivities');
 Route::resource('/bslideshow','SlideshowController')->name('index','bslideshow');
+Route::resource('/bapprentice','ApprenticeController')->name('index','bapprentice');
+

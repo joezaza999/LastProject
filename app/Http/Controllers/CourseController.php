@@ -18,10 +18,10 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง course เก็บไว้ที่ตัวแปร
-            return view('backend.course.index',[
-                'courses' => $courses
-            ]);
+        $courses = Course::paginate(5);
+        return view('backend.course.index',[
+            'courses'=> $courses
+        ]);
     }
 
     /**
@@ -31,7 +31,10 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('backend.course.create');
+        $course = Course::all(['id', 'namethai']);
+        return view('backend.course.create',[
+            'courses' => $course     
+            ]);
     }
 
     /**
@@ -41,18 +44,30 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $courses = new Course();
-        $courses->namethai = $request->namethai;
-        $courses->nameeng = $request->nameeng;
-        $courses->group = $request->group;
-        $courses->credit = $request->credit;
-        $courses->format = $request->format;
-        $courses->property = $request->property;
-        $courses->job = $request->job;
+    { 
+        $request->validate([
+            'namethai' => 'required',
+            'nameeng' => 'required',
+            'group' => 'required',
+            'credit' => 'required',
+            'format' => 'required',
+            'property' => 'required',
+            'job' => 'required'
+        ]);
 
-        $courses->save();
-        return redirect()->action('CourseController@index');
+        $form_data = array(
+            'namethai' => $request->namethai,
+            'nameeng' => $request->nameeng,
+            'group' => $request->group,
+            'credit' => $request->credit,
+            'format' => $request->format,
+            'property' => $request->property,
+            'job' => $request->job
+        );
+
+        Course::create($form_data);
+
+        return redirect('bcourse')->with('success', 'เพิ่มข้อมูลหลักสูตรสำเร็จ');
     }
 
     /**
@@ -74,10 +89,8 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        $courses = Course::findOrFail($id);
-        return view('backend.course.edit',[
-            'courses' => $courses
-        ]);
+        $course = Course::findOrFail($id);
+        return view('backend.course.edit', compact('course'));
     }
 
     /**
@@ -89,10 +102,28 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $courses = Course::find($id);
-        $courses->update($request->all());
+         $request->validate([
+            'namethai' => 'required',
+            'nameeng' => 'required',
+            'group' => 'required',
+            'credit' => 'required',
+            'format' => 'required',
+             'property' => 'required',
+            'job' => 'required'
+        ]);
 
-        return redirect()->action('CourseController@index');
+        $form_data = array(
+            'namethai' => $request->namethai,
+            'nameeng' => $request->nameeng,
+            'group' => $request->group,
+            'credit' => $request->credit,
+            'format' => $request->format,
+            'property' => $request->property,
+            'job' => $request->job
+        );
+
+        Course::whereId($id)->update($form_data);
+        return redirect('bcourse')->with('success', 'แก้ไขข้อมูลหลักสูตรสำเร็จ');
     }
 
     /**
@@ -105,6 +136,6 @@ class CourseController extends Controller
     {
         $courses = Course::find($id);
         $courses->delete();
-        return redirect()->action('CourseController@index');
+        return redirect('bcourse')->with('success', 'ลบข้อมูลหลักสูตรสำเร็จ');
     }
 }

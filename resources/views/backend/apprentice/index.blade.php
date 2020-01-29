@@ -12,7 +12,7 @@
             <br><br>
 
             <div aligh="right">
-                <a href="{{ route('bactivities.create') }}" class="btn btn-success btn-sm">เพิ่มข้อมูลกิจกรรม</a>
+                <a href="{{ route('bapprentice.create') }}" class="btn btn-success btn-sm">เพิ่มข้อมูลฝึกงาน</a>
             </div>
 
             <hr>
@@ -21,25 +21,25 @@
                 <div class="card-body">
                     <table class="table table-striped">
                         <tr>
-                            <th>หัวข้อ</th>
+                            <th>ชื่อ</th>
                             <th>เนื้อหา</th>
                             <th>รูปภาพ</th>
                             <th>แก้ไข</th>
                             <th>ลบ</th>
                         </tr>
-                        @foreach ($activitiess as $activities)
+                        @foreach ($apprentices as $apprentice)
                         <tr>
-                            <td>{{ $activities->title }}</td>
-                            <td>{{ $activities->content }}</td>
+                            <td>{{ $apprentice->name }}</td>
+                            <td>{{ $apprentice->text }}</td>
                             <td>
-                            <img src="{{ URL::to('/') }}/images/{{ $activities->image }}"
+                            <img src="{{ URL::to('/') }}/images/{{ $apprentice->image }}"
                             class="img-thumbnail" width="75" />
                             </td>
                             <td>
-                                <a href="{{ route('bactivities.edit' , $activities->id ) }}" class="btn btn-success">แก้ไข</a>
+                                <a href="{{ route('bapprentice.edit' , $apprentice->id ) }}" class="btn btn-success">แก้ไข</a>
                             </td>
                             <td>
-                                <form action="{{ route('bactivities.destroy', $activities->id) }}" method="POST">
+                                <form action="{{ route('bapprentice.destroy', $apprentice->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">ลบ</button>
@@ -49,7 +49,7 @@
                         @endforeach
                     </table>
                     <br>
-                    {!! $activitiess->render() !!}
+                    {!! $apprentices->render() !!}
                 </div>
             </div>
             <br><br><br><br>

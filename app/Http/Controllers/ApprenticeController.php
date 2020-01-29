@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Cooperative;
-use App\Http\Requests\CooperativeRequest;
+use App\Apprentice;
+use App\Http\Requests\ApprenticeRequest;
 use Intervention\Image\Facades\Image;
 use illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
-class CooperativeController extends Controller
+class ApprenticeController extends Controller
 {
     public function __construct() {
         $this->middleware('auth', ['except' => ['show']]);
@@ -21,9 +21,9 @@ class CooperativeController extends Controller
      */
     public function index()
     {
-        $cooperatives = Cooperative::paginate(5);
-        return view('backend.cooperative.index',[
-            'cooperatives'=> $cooperatives
+        $apprentices = Apprentice::paginate(5);
+        return view('backend.apprentice.index',[
+            'apprentices'=> $apprentices
         ]);
     }
 
@@ -34,11 +34,12 @@ class CooperativeController extends Controller
      */
     public function create()
     {
-        $cooperatives = Cooperative::all(['id', 'name']);
-        return view('backend.cooperative.create',[
-            'cooperatives' => $cooperatives      
+        $apprentices = Apprentice::all(['id', 'name']);
+        return view('backend.apprentice.create',[
+            'apprentices' => $apprentices      
             ]);
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -63,9 +64,9 @@ class CooperativeController extends Controller
             'image' => $new_name
         );
 
-        Cooperative::create($form_data);
+        Apprentice::create($form_data);
 
-        return redirect('bcooperative')->with('success', 'เพิ่มข้อมูลสหกิจศึกษาสำเร็จ');
+        return redirect('bapprentice')->with('success', 'เพิ่มข้อมูลฝึกงานสำเร็จ');
     }
 
     /**
@@ -87,8 +88,8 @@ class CooperativeController extends Controller
      */
     public function edit($id)
     {
-        $cooperatives = Cooperative::findOrFail($id);
-        return view('backend.cooperative.edit', compact('cooperatives'));
+        $apprentices = Apprentice::findOrFail($id);
+        return view('backend.apprentice.edit', compact('apprentices'));
     }
 
     /**
@@ -127,8 +128,8 @@ class CooperativeController extends Controller
             'image' => $image_name
         );
 
-        Cooperative::whereId($id)->update($form_data);
-        return redirect('bcooperative')->with('success', 'แก้ไขข้อมูลสหกิจศึกษาสำเร็จ');
+        Apprentice::whereId($id)->update($form_data);
+        return redirect('bapprentice')->with('success', 'แก้ไขข้อมูลฝึกงานสำเร็จ');
     }
 
     /**
@@ -139,12 +140,12 @@ class CooperativeController extends Controller
      */
     public function destroy($id)
     {
-        $cooperatives = Cooperative::find($id);
-        if ($cooperatives->image != 'nopic.png') {
-            File::delete(public_path() . '\\images\\' . $cooperatives->image);
-            File::delete(public_path() . '\\images\\resize\\' . $cooperatives->image);
+        $apprentices = Apprentice::find($id);
+        if ($apprentices->image != 'nopic.png') {
+            File::delete(public_path() . '\\images\\' . $apprentices->image);
+            File::delete(public_path() . '\\images\\resize\\' . $apprentices->image);
         }
-        $cooperatives->delete();
-        return redirect('bcooperative')->with('success', 'ลบข้อมูลสหกิจศึกษาสำเร็จ');
+        $apprentices->delete();
+        return redirect('bapprentice')->with('success', 'ลบข้อมูลฝึกงานสำเร็จ');
     }
 }

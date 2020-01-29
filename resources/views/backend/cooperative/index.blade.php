@@ -2,10 +2,19 @@
 
 @section('content')
 <div class="container">
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success">
+        <p>{{ $message }}</p>
+    </div>
+    @endif
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
             <br><br>
-            <?= link_to('bcooperative/create', $title = 'เพิ่มข้อมูลสหกิจศึกษา', ['class' => 'btn btn-primary'], $secure = null); ?>
+
+            <div aligh="right">
+                <a href="{{ route('bcooperative.create') }}" class="btn btn-success btn-sm">เพิ่มข้อมูลสหกิจศึกษา</a>
+            </div>
+
             <hr>
             <div class="card">
 
@@ -13,34 +22,38 @@
                     <table class="table table-striped">
                         <tr>
                             <th>ชื่อ</th>
-                            <th>รูปภาพ</th>
                             <th>เนื้อหา</th>
+                            <th>รูปภาพ</th>
                             <th>แก้ไข</th>
                             <th>ลบ</th>
                         </tr>
                         @foreach ($cooperatives as $cooperative)
                         <tr>
-                        <td>
-                                <a href="{{ asset('images/'.$cooperative->image)}}">
-                                <img src="{{ asset('images/resize/'.$cooperative->image) }}" style="width:100px"></a>
-                            </td>
-                            <td>{{$cooperative->name}}</td>
-                            <td>{{$cooperative->text}}</td>
+                            <td>{{ $cooperative->name }}</td>
+                            <td>{{ $cooperative->text }}</td>
                             <td>
-                                <a href="{{ url('/bcooperative/'.$cooperative->id.'/edit') }}" class="btn btn-success">แก้ไข</a>
+                            <img src="{{ URL::to('/') }}/images/{{ $cooperative->image }}"
+                            class="img-thumbnail" width="75" />
                             </td>
                             <td>
-                                <?= Form::open(array('url' => 'bcooperative/' . $cooperative->id, 'method' => 'delete')) ?>
-                                <button type="submit" class="btn btn-danger">ลบ</button>
-                                {!! Form::close() !!}
+                                <a href="{{ route('bcooperative.edit' , $cooperative->id ) }}" class="btn btn-success">แก้ไข</a>
+                            </td>
+                            <td>
+                                <form action="{{ route('bcooperative.destroy', $cooperative->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">ลบ</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
                     </table>
+                    <br>
+                    {!! $cooperatives->render() !!}
                 </div>
             </div>
+            <br><br><br><br>
         </div>
     </div>
 </div>
-
 @endsection

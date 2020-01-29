@@ -2,81 +2,82 @@
 
 @section('content')
 <div class="container">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
+
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
-            <br><br>
-            @if (count($errors) > 0)
-            <div class="alert alert-warning">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+            <div aligh="right">
+                <a href="{{ route('bcourse') }}" class="btn btn-default">กลับ</a>
             </div>
-             @endif
+            <br><br>
+
             <div class="card">
                 <div class="card-header">เพิ่มข้อมูลหลักสูตร</div>
 
                 <div class="card-body">
-                    {!! Form::open(array('url'=>'bcourse','files'=>true)) !!}
-                    <div class="col-xs-8">
-                        <div class="form-group">
-                            <?= Form::label('namethai','ชื่อสาขา(ไทย)'); ?>
-                            <?= Form::text('namethai', null,['class'=>'form-control','placeholder'=>'ระบุสาขาไทย']); ?>
-                        </div>
-                    </div>
+                    <form method="POST" action="{{ route('bcourse.store') }}" enctype="multipart/form-data">
+                        @csrf
 
-                    <div class="col-xs-8">
                         <div class="form-group">
-                            <?= Form::label('nameeng','ชื่อสาขา(อังกฤษ)'); ?>
-                            <?= Form::text('nameeng', null,['class'=>'form-control','placeholder'=>'ระบุสาขาอังกฤษ']); ?>
+                            <label class="col-md-4 text-right">ชื่อสาขา(ไทย)</label>
+                            <div class="col-md-8">
+                                <input type="text" name="namethai" class="form-control input-lg" placeholder="กรุณากรอกชื่อกิจกรรม"/>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xs-8">
+                        <br>
                         <div class="form-group">
-                            <?= Form::label('group','กลุ่มวิชา'); ?>
-                            <?= Form::textarea('group', null,['class'=>'form-control','placeholder'=>'ระบุกลุ่มวิชา']); ?>
+                            <label class="col-md-4 text-right">ชื่อสาขา(อังกฤษ)</label>
+                            <div class="col-md-8">
+                                <input type="text" name="nameeng" class="form-control input-lg" placeholder="กรุณากรอกชื่อกิจกรรม"/>  
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xs-8">
                         <div class="form-group">
-                            <?= Form::label('credit','จำนวนหน่วยกิต'); ?>
-                            <?= Form::text('credit', null,['class'=>'form-control','placeholder'=>'ระบุหน่วยกิต']); ?>
+                            <label class="col-md-4 text-right">กลุ่มวิชา</label>
+                            <div class="col-md-8">
+                                <textarea rows="10" cols="80" name="group" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"></textarea>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xs-8">
                         <div class="form-group">
-                            <?= Form::label('format','รูปแบบหลักสูตร'); ?>
-                            <?= Form::textarea('format', null,['class'=>'form-control','placeholder'=>'ระบุหลักสูตร']); ?>
+                            <label class="col-md-4 text-right">จำนวนหน่วยกิต</label>
+                            <div class="col-md-8">
+                                <input type="text" name="credit" class="form-control input-lg" placeholder="กรุณากรอกชื่อกิจกรรม"/>  
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xs-8">
                         <div class="form-group">
-                            <?= Form::label('property','คุณสมบัติผู้เข้าศึกษา'); ?>
-                            <?= Form::textarea('property', null,['class'=>'form-control','placeholder'=>'ระบุคุณสมบัติ']); ?>
+                            <label class="col-md-4 text-right">รูปแบบหลักสูตร</label>
+                            <div class="col-md-8">
+                                <textarea rows="10" cols="80" name="format" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"></textarea>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xs-8">
                         <div class="form-group">
-                            <?= Form::label('job','แนวทางการประกอบอาชีพ'); ?>
-                            <?= Form::textarea('job', null,['class'=>'form-control','placeholder'=>'ระบุแนวทาง']); ?>
+                            <label class="col-md-4 text-right">คุณสมบัติผู้เข้าศึกษา</label>
+                            <div class="col-md-8">
+                                <textarea rows="10" cols="80" name="property" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"></textarea>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <?= Form::submit('บันทึก',['class'=>'btn btn-primary']); ?>
+                        <div class="form-group">
+                            <label class="col-md-4 text-right">แนวทางการประกอบอาชีพ</label>
+                            <div class="col-md-8">
+                                <textarea rows="10" cols="80" name="job" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    {!! Form::close() !!}
+                        <br>
+                        <div class="form-group text-center">
+                            <input type="submit" name="submit" class="btn btn-primary input-lg" value="เพิ่มข้อมูล" />
+                        </div>
+                    </form>
                 </div>
             </div>
-            <br><br><br><br>
+            <br><br><br>
         </div>
     </div>
 </div>

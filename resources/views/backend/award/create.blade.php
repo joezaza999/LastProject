@@ -2,51 +2,59 @@
 
 @section('content')
 <div class="container">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
+
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
-            <br><br>
-            @if (count($errors) > 0)
-            <div class="alert alert-warning">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+            <div aligh="right">
+                <a href="{{ route('baward') }}" class="btn btn-default">กลับ</a>
             </div>
-             @endif
+            <br><br>
+
             <div class="card">
-                <div class="card-header">เพิ่มข้อมูลรางวัล</div>
+                <div class="card-header">เพิ่มข้อมูลกิจกรรม</div>
 
                 <div class="card-body">
-                    {!! Form::open(array('url'=>'baward','files'=>true)) !!}
-                    <div class="col-xs-8">
+                    <form method="POST" action="{{ route('baward.store') }}" enctype="multipart/form-data">
+                        @csrf
+
                         <div class="form-group">
-                            <?= Form::label('title','หัวข้อ'); ?>
-                            <?= Form::text('title', null,['class'=>'form-control','placeholder'=>'ระบุหัวข้อ']); ?>
+                            <label class="col-md-4 text-right">หัวข้อ</label>
+                            <div class="col-md-8">
+                                <input type="text" name="title" class="form-control input-lg" placeholder="กรุณากรอกชื่อรางวัล"/>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-4">
+                        <br>
                         <div class="form-group">
-                            {!! Form::label('image','รูปภาพ'); !!}<br>
-                            <?= Form::file('image',null,['class'=>'form-control']); ?>
+                            <label class="col-md-4 text-right">เนื้อหา</label>
+                            <div class="col-md-8">
+                                <textarea rows="10" cols="80" name="content" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-8">
+                        <br>
                         <div class="form-group">
-                            <?= Form::label('content','เนื้อหา'); ?>
-                            <?= Form::textarea('content', null,['class'=>'form-control','placeholder'=>'ระบุเนื้อหา']); ?>
+                            <label class="col-md-4 text-right">เลือกรูปภาพ</label>
+                            <div class="col-md-8">
+                                <input type="file" name="image" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <?= Form::submit('บันทึก',['class'=>'btn btn-primary']); ?>
+                        <br>
+                        <div class="form-group text-center">
+                            <input type="submit" name="submit" class="btn btn-primary input-lg" value="เพิ่มข้อมูล" />
                         </div>
-                    </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
-            <br><br>
-
+            <br><br><br>
         </div>
     </div>
 </div>

@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cooperative extends Model
+class Success extends Model
 {
-    protected $table = 'cooperative';
+    protected $table = 'success';
     protected $fillable = ['name','text','image'];
 }
