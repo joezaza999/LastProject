@@ -72,196 +72,23 @@
 		<!--/.Navbar-->
 		
 		@yield('content')
-<!-- Footer -->
-<!-- <section id="footer">
-	<div class="container">
-		<div class="row text-center text-xs-center text-sm-left text-md-left">
-			<div class="col-xs-12 col-sm-4 col-md-4">
-				<h5>รายละเอียด</h5>
-				
-					<a>สาขาวิชาเทคโนโลยีสารสนเทศทางธุรกิจ</a><br><br>
-					<a>264 ถนนจักรวรรดิ แขวงจักรวรรดิ</a><br><br>
-					<a>เขตสัมพันธวงศ์ กรุงเทพฯ 10100</a><br><br>
-					<a>โทร : 0-2222-2814 ต่อ 5319,5330,5350</a>
-					<a></a>
-		
-			</div>
-			<div class="col-xs-12 col-sm-4 col-md-4">
-				<h5>เมนู</h5>
-				<ul class="list-unstyled quick-links">
-					<li><a href="activities"><i class="fa fa-angle-double-right"></i>กิจกรรม</a></li>
-					<li><a href="course"><i class="fa fa-angle-double-right"></i>หลักสูตรและการสอน</a></li>
-					<li><a href="about"><i class="fa fa-angle-double-right"></i>เกี่ยวกับสาขาวิชา</a></li>
-					<li><a href="tact"><i class="fa fa-angle-double-right"></i>ติดต่อเรา</a></li>
-					<li><a href="cooperative"><i class="fa fa-angle-double-right"></i>สหกิจศึกษา</a></li>
-					<li><a href="award"><i class="fa fa-angle-double-right"></i>รางวัล</a></li>
-					<li><a href="fund"><i class="fa fa-angle-double-right"></i>ทุนการศึกษา</a></li>
-					<li><a href="newsupdate"><i class="fa fa-angle-double-right"></i>ประชาสัมพันธ์</a></li>
-			
-				</ul>
-			</div>
-			<div class="col-xs-12 col-sm-4 col-md-4">
-				<h5>หน่วยงานอื่น</h5>
-				<ul class="list-unstyled quick-links">
-					<li><a href="https://www.rmutr.ac.th/" target="_blank"><i class="fa fa-angle-double-right"></i>มทร.รัตนโกสินทร์</a></li>
-					<li><a href="https://bua.rmutr.ac.th/" target="_blank"><i class="fa fa-angle-double-right"></i>คณะบริหารธุรกิจ</a></li>
-					<li><a href="https://reg.rmutr.ac.th/registrar/login.asp" target="_blank"><i class="fa fa-angle-double-right"></i>งานทะเบียน</a></li>
-					<li><a href="https://www.facebook.com/%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%AF-%E0%B8%9A%E0%B8%9E%E0%B8%B4%E0%B8%95%E0%B8%A3%E0%B8%9E%E0%B8%B4%E0%B8%A1%E0%B8%B8%E0%B8%82-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A7%E0%B8%A3%E0%B8%A3%E0%B8%94%E0%B8%B4-858180540866398/" target="_blank">
-						<i class="fa fa-angle-double-right"></i>งานกองทุน</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-				<ul class="list-unstyled list-inline social text-center">
-					<li class="list-inline-item"><a href="https://bua.rmutr.ac.th/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-				</ul>
-			</div>
-			<hr>
-		</div>	
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-				<p>สาขาเทคโนโลยีสารสนเทศทางธุรกิจ</p>
-				<p> มหาวิทยาลัยเทคโนโลยีราชมงคลรัตนโกสินทร์ บพิตรพิมุข จักรวรรดิ</p>
-			</div>
-			<hr>
-		</div>	
-	</div>
-</section> -->
-		
-		<!-- Footer -->
-<!-- <footer class="page-footer font-small blue"> -->
-
-<!-- Copyright -->
-<!-- <div class="footer-copyright text-center py-3">© 2020 Copyright:
-  <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-</div> -->
-<!-- Copyright -->
-
-<!-- </footer> -->
-<!-- Footer -->
-
 <footer class="footer-area footer--light">
   <div class="footer-big">
     <!-- start .container -->
     <div class="container">
       <div class="row">
-        <div class="col-md-3 col-sm-12">
+        <div class="">
           <div class="footer-widget">
             <div class="widget-about">
-              <img src="http://placehold.it/250x80" alt="" class="img-fluid">
-              <p>Что если тут написать другой текст на русском языке, для проверки шрифта Rubik )</p>
-              <ul class="contact-details">
-                <li>
-                  <span class="icon-earphones"></span> Call Us:
-                  <a href="tel:344-755-111">344-755-111</a>
-                </li>
-                <li>
-                  <span class="icon-envelope-open"></span>
-                  <a href="mailto:support@aazztech.com">support@aazztech.com</a>
-                </li>
-              </ul>
+         
+              <p>สาขาวิชาเทคโนโลยีสารสนเทศทางธุรกิจ<br> 
+              264 ถนนจักรวรรดิ แขวงจักรวรรดิ	เขตสัมพันธวงศ์ กรุงเทพฯ 10100<br>
+               โทร : 0-2222-2814 ต่อ 5319,5330,5350
+					</p>
             </div>
           </div>
           <!-- Ends: .footer-widget -->
         </div>
-        <!-- end /.col-md-4 -->
-        <div class="col-md-3 col-sm-4">
-          <div class="footer-widget">
-            <div class="footer-menu footer-menu--1">
-              <h4 class="footer-widget-title">Popular Category</h4>
-              <ul>
-                <li>
-                  <a href="#">Wordpress</a>
-                </li>
-                <li>
-                  <a href="#">Plugins</a>
-                </li>
-                <li>
-                  <a href="#">Joomla Template</a>
-                </li>
-                <li>
-                  <a href="#">Admin Template</a>
-                </li>
-                <li>
-                  <a href="#">HTML Template</a>
-                </li>
-              </ul>
-            </div>
-            <!-- end /.footer-menu -->
-          </div>
-          <!-- Ends: .footer-widget -->
-        </div>
-        <!-- end /.col-md-3 -->
-
-        <div class="col-md-3 col-sm-4">
-          <div class="footer-widget">
-            <div class="footer-menu">
-              <h4 class="footer-widget-title">Our Company</h4>
-              <ul>
-                <li>
-                  <a href="#">About Us</a>
-                </li>
-                <li>
-                  <a href="#">How It Works</a>
-                </li>
-                <li>
-                  <a href="#">Affiliates</a>
-                </li>
-                <li>
-                  <a href="#">Testimonials</a>
-                </li>
-                <li>
-                  <a href="#">Contact Us</a>
-                </li>
-                <li>
-                  <a href="#">Plan &amp; Pricing</a>
-                </li>
-                <li>
-                  <a href="#">Blog</a>
-                </li>
-              </ul>
-            </div>
-            <!-- end /.footer-menu -->
-          </div>
-          <!-- Ends: .footer-widget -->
-        </div>
-        <!-- end /.col-lg-3 -->
-
-        <div class="col-md-3 col-sm-4">
-          <div class="footer-widget">
-            <div class="footer-menu no-padding">
-              <h4 class="footer-widget-title">Help Support</h4>
-              <ul>
-                <li>
-                  <a href="#">Support Forum</a>
-                </li>
-                <li>
-                  <a href="#">Terms &amp; Conditions</a>
-                </li>
-                <li>
-                  <a href="#">Support Policy</a>
-                </li>
-                <li>
-                  <a href="#">Refund Policy</a>
-                </li>
-                <li>
-                  <a href="#">FAQs</a>
-                </li>
-                <li>
-                  <a href="#">Buyers Faq</a>
-                </li>
-                <li>
-                  <a href="#">Sellers Faq</a>
-                </li>
-              </ul>
-            </div>
-            <!-- end /.footer-menu -->
-          </div>
-          <!-- Ends: .footer-widget -->
-        </div>
-        <!-- Ends: .col-lg-3 -->
-
       </div>
       <!-- end /.row -->
     </div>
@@ -278,10 +105,6 @@
               <a href="#">DigiPro</a>. All rights reserved. Created by
               <a href="#">AazzTech</a>
             </p>
-          </div>
-
-          <div class="go_top">
-            <span class="icon-arrow-up"></span>
           </div>
         </div>
       </div>

@@ -26,6 +26,9 @@
       <h4>แนวทางการประกอบอาชีพ</h4>
       <div>{{ $course->job }}</div>
     @endforeach
+    <div>
+      <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="500px" height="" alt=""/>
+    </div> 
     </div>
 </div>
 </div>

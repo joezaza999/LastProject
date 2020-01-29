@@ -31,6 +31,9 @@
   <hr>
 </div>
 @endforeach
+<div>
+      <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="500px" height="" alt=""/>
+    </div> 
 {!! $awards->render() !!}
 </div>
 </div>

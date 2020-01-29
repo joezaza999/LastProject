@@ -6,16 +6,9 @@
 <div class="topnav" id="myTopnav">
   <a href="" class="">สหกิจศึกษา</a>
 </div>
-<<<<<<< Updated upstream
       <div class="content">
       <div class="container">
       
-=======
-
-
-<div class="content">
-      <div class="container">
->>>>>>> Stashed changes
     @foreach($cooperatives as $cooperative)
     <div class="wrapper">
       <div class="grid">
@@ -39,12 +32,8 @@
     </div>
     @endforeach  
     <div>
-<<<<<<< Updated upstream
-      <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="100px" height="" alt=""/>
-=======
-      <img class="img-fluid" src="<?php echo asset('assets/img/1.jpg'); ?>" width="100%" height="" alt=""/>
->>>>>>> Stashed changes
-    </div>  
+      <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="500px" height="" alt=""/>
+    </div> 
 {!! $cooperatives->render() !!}
 <script>
   (function() {

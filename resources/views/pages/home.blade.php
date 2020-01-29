@@ -153,6 +153,7 @@
         </div>
 
       </div>
+      <div class="textright"><a href="activities">ดูทั้งหมด</a></div>
     </div>
     <div class="rightcolumn">
       <h1><b class="icon-calendar"></b>Calendar</h1>
@@ -184,10 +185,168 @@
           </li>
           
         </ul>
+        <div><a href="newsupdate">ดูทั้งหมด</a></div>
       </div>
-      
-
     </div>
+    <div class="leftcolumn">
+      <h1><b class="icon-book"></b>กิจกรรม</h1>
+   
+      <div class="">
+        <div class="wrapper">
+          <div class="grid">
+            <div class="card">
+              <div class="card__image">
+                <img src="<?php echo asset('assets/img/23.jpg'); ?>" class="card-img-top">
+                <div class="card__overlay">
+                  <div class="card__overlay-content">
+                    <ul class="card__meta">
+                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
+                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
+                    </ul>
+        
+                    <h5><a href="#0" class="card__title">sdfsdfsdfsdfsdf</a></h5>
+                    <h6><a href="#0" class="card__title1">sdfsdfsdfsdfsdfsd</a></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="grid">
+            <div class="card">
+              <div class="card__image">
+                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
+                <div class="card__overlay">
+                  <div class="card__overlay-content">
+                    <ul class="card__meta">
+                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
+                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
+                    </ul>
+        
+                    <h5><a href="#0" class="card__title"></a></h5>
+                    <h6><a href="#0" class="card__title1"></a></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="grid">
+            <div class="card">
+              <div class="card__image">
+                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
+                <div class="card__overlay">
+                  <div class="card__overlay-content">
+                    <ul class="card__meta">
+                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
+                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
+                    </ul>
+        
+                    <h5><a href="#0" class="card__title"></a></h5>
+                    <h6><a href="#0" class="card__title1"></a></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="grid">
+            <div class="card">
+              <div class="card__image">
+                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
+                <div class="card__overlay">
+                  <div class="card__overlay-content">
+                    <ul class="card__meta">
+                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
+                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
+                    </ul>
+        
+                    <h5><a href="#0" class="card__title"></a></h5>
+                    <h6><a href="#0" class="card__title1"></a></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="grid">
+            <div class="card">
+              <div class="card__image">
+                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
+                <div class="card__overlay">
+                  <div class="card__overlay-content">
+                    <ul class="card__meta">
+                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
+                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
+                    </ul>
+        
+                    <h5><a href="#0" class="card__title"></a></h5>
+                    <h6><a href="#0" class="card__title1"></a></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="grid">
+            <div class="card">
+              <div class="card__image">
+                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
+                <div class="card__overlay">
+                  <div class="card__overlay-content">
+                    <ul class="card__meta">
+                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
+                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
+                    </ul>
+        
+                    <h5><a href="#0" class="card__title"></a></h5>
+                    <h6><a href="#0" class="card__title1"></a></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="textright"><a href="activities">ดูทั้งหมด</a></div>
+    </div>
+    <div class="rightcolumn">
+     <!-- Posts -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding w3-orange">
+      <h4>หน่วยงานภายใน</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-5">
+        <a href="">dsfsdfsdfd</a>
+      </li>
+      <li class="w3-padding-5">
+        <a href="">dsfsdfsdfd</a>
+      </li>
+      </li> 
+      <li class="w3-padding-5">
+        <a href="">dsfsdfsdfd</a>
+      </li>
+      </li>   
+      <li class="w3-padding-5">
+        <a href="">dsfsdfsdfd</a>
+      </li>
+    </ul>
+  </div>
+  <div class="w3 w3-margin">
+    <div class="w3-container w3-padding w3-orange">
+      <h4>video</h4>
+    </div>
+    <iframe width="100%"  src="https://www.youtube.com/embed/RKqq6kX0H5Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+    </div>
+    
   </div>
   <br>
 <script>

@@ -30,8 +30,8 @@
     </div>
     @endforeach  
     <div>
-      <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="100px" height="" alt=""/>
-    </div>
+      <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="500px" height="" alt=""/>
+    </div> 
 {!! $activities->render() !!}
 </div>
 </div>
