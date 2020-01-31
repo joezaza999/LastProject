@@ -144,6 +144,11 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>{{ __('ฝึกงาน') }}</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('bsuccess') }}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>{{ __('ศิษย์เก่า') }}</span></a>
+      </li>
       @endguest
     </ul>
 

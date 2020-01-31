@@ -45,4 +45,6 @@ Route::resource('/bnewsupdate','NewsupdateController')->name('index','bnewsupdat
 Route::resource('/bactivities','ActivitiesController')->name('index','bactivities');
 Route::resource('/bslideshow','SlideshowController')->name('index','bslideshow');
 Route::resource('/bapprentice','ApprenticeController')->name('index','bapprentice');
+Route::resource('/bsuccess','SuccessController')->name('index','bsuccess');
+
 

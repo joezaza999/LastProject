@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Success;
+use App\Http\Requests\SuccessRequest;
+use Intervention\Image\Facades\Image;
+use illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class SuccessController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth', ['except' => ['show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,10 @@ class SuccessController extends Controller
      */
     public function index()
     {
-        //
+        $successs = Success::paginate(5);
+        return view('backend.success.index',[
+            'successs'=> $successs
+        ]);
     }
 
     /**
@@ -23,7 +34,10 @@ class SuccessController extends Controller
      */
     public function create()
     {
-        //
+        $successs = Success::all(['id', 'name']);
+        return view('backend.success.create',[
+            'successs' => $successs     
+            ]);
     }
 
     /**
@@ -34,7 +48,25 @@ class SuccessController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'text' => 'required',
+            'image' => 'required|image|max:2048'
+        ]);
+
+        $image = $request->file('image');
+
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $new_name);
+        $form_data = array(
+            'name' => $request->name,
+            'text' => $request->text,
+            'image' => $new_name
+        );
+
+        Success::create($form_data);
+
+        return redirect('bsuccess')->with('success', 'เพิ่มข้อมูลศิษย์เก่าสำเร็จ');
     }
 
     /**
@@ -56,7 +88,8 @@ class SuccessController extends Controller
      */
     public function edit($id)
     {
-        //
+        $successs = Success::findOrFail($id);
+        return view('backend.success.edit', compact('successs'));
     }
 
     /**
@@ -68,7 +101,35 @@ class SuccessController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $image_name = $request->hidden_image;
+        $image = $request->file('image');
+
+        if($image != '')
+        {
+            $request->validate([
+                'name' => 'required',
+                'text' => 'required',
+                'image' => 'required|image|max:2048'
+            ]);
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $image_name);
+        }
+        else
+        {
+            $request->validate([
+                'name' => 'required',
+                'text' => 'required',
+            ]);
+        }
+
+        $form_data = array(
+            'name' => $request->name,
+            'text' => $request->text,
+            'image' => $image_name
+        );
+
+        Success::whereId($id)->update($form_data);
+        return redirect('bsuccess')->with('success', 'แก้ไขข้อมูลศิษย์เก่าสำเร็จ');
     }
 
     /**
@@ -79,6 +140,12 @@ class SuccessController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $successs = Success::find($id);
+        if ($successs->image != 'nopic.png') {
+            File::delete(public_path() . '\\images\\' . $successs->image);
+            File::delete(public_path() . '\\images\\resize\\' . $successs->image);
+        }
+        $apprentices->delete();
+        return redirect('bsuccess')->with('success', 'ลบข้อมูลศิษย์เก่าสำเร็จ');
     }
 }
