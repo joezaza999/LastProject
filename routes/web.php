@@ -24,6 +24,7 @@ Route::get('/course','ShowcourseController@index');
 Route::get('/tact','PagesController@tact');
 Route::get('/test','PagesController@test');
 Route::get('/activities','ShowactivitiesController@index');
+Route::get('/activities/show/{id}','ShowactivitiesController@show');
 Route::get('/cooperative','ShowcooperativeController@index');
 Route::get('/newsupdate','ShownewsupdateController@index');
 Route::get('/about','ShowaboutController@index');

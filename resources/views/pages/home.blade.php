@@ -26,139 +26,40 @@
   </div>
 
       <div class="content">
-        
+
   <div class="row">
     <div class="leftcolumn">
       <h1><b class="icon-book"></b>กิจกรรม</h1>
-   
-      <div class="">
-        <div class="wrapper">
-          <div class="grid">
-            <div class="card">
-              <div class="card__image">
-                <img src="<?php echo asset('assets/img/23.jpg'); ?>" class="card-img-top">
-                <div class="card__overlay">
-                  <div class="card__overlay-content">
-                    <ul class="card__meta">
-                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
-                    </ul>
-        
-                    <h5><a href="#0" class="card__title">sdfsdfsdfsdfsdf</a></h5>
-                    <h6><a href="#0" class="card__title1">sdfsdfsdfsdfsdfsd</a></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <div class="grid">
-            <div class="card">
-              <div class="card__image">
-                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
-                <div class="card__overlay">
-                  <div class="card__overlay-content">
-                    <ul class="card__meta">
-                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
-                    </ul>
-        
-                    <h5><a href="#0" class="card__title"></a></h5>
-                    <h6><a href="#0" class="card__title1"></a></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <div class="grid">
-            <div class="card">
-              <div class="card__image">
-                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
-                <div class="card__overlay">
-                  <div class="card__overlay-content">
-                    <ul class="card__meta">
-                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
-                    </ul>
-        
-                    <h5><a href="#0" class="card__title"></a></h5>
-                    <h6><a href="#0" class="card__title1"></a></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <div class="grid">
-            <div class="card">
-              <div class="card__image">
-                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
-                <div class="card__overlay">
-                  <div class="card__overlay-content">
-                    <ul class="card__meta">
-                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
-                    </ul>
-        
-                    <h5><a href="#0" class="card__title"></a></h5>
-                    <h6><a href="#0" class="card__title1"></a></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <div class="grid">
-            <div class="card">
-              <div class="card__image">
-                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
-                <div class="card__overlay">
-                  <div class="card__overlay-content">
-                    <ul class="card__meta">
-                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
-                    </ul>
-        
-                    <h5><a href="#0" class="card__title"></a></h5>
-                    <h6><a href="#0" class="card__title1"></a></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <div class="grid">
-            <div class="card">
-              <div class="card__image">
-                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
-                <div class="card__overlay">
-                  <div class="card__overlay-content">
-                    <ul class="card__meta">
-                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
-                    </ul>
-        
-                    <h5><a href="#0" class="card__title"></a></h5>
-                    <h6><a href="#0" class="card__title1"></a></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
+      @foreach ($activities as $activitie)
+      <div class="wrapper">
+        <div class="grid">
+          <div class="card">
+            <div class="card__image">
+              <img src="{{ asset('images/'.$activitie->image) }}" class="card-img-top">
+              <div class="card__overlay">
+                <div class="card__overlay-content">
+                  <ul class="card__meta">
+                    <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
+                    <li><a href="#0"><i class="fa fa-clock-o"></i>{{ $activitie->updated_at }}</a></li>
+                  </ul>
+
+                  <h5><a href="#0" class="card__title">{{ $activitie->title }}</a></h5>
+                  <h6><a href="#0" class="card__title1">{{ $activitie->content }}</a></h6><br>
+                  <a href="{{ url('/activities/show/'.$activitie->id)  }}">ดูรายละเอียด</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      @endforeach
+
       <div class="textright"><a href="activities">ดูทั้งหมด</a></div>
     </div>
     <div class="rightcolumn">
       <h1><b class="icon-calendar"></b>Calendar</h1>
-      <div id="content">     
+      <div id="content">
         <ul class="timeline">
           <li class="event" data-date="27 Jan">
             <h3>ชวนฟัง Tech Talk Season 6 ครั้งที่ 3</h3>
@@ -166,11 +67,11 @@
           </li>
           <li class="event" data-date="28-29 Jan">
             <h3>Total tone</h3>
-            <p>Focuses on strength</p>    
+            <p>Focuses on strength</p>
           </li>
           <li class="event" data-date="31 Jan">
             <h3>Total tone</h3>
-            <p>Focuses on strength</p>    
+            <p>Focuses on strength</p>
           </li>
           <li class="event" data-date="27 Jan">
             <h3>ชวนฟัง Tech Talk Season 6 ครั้งที่ 3</h3>
@@ -184,14 +85,14 @@
             <h3>ชวนฟัง Tech Talk Season 6 ครั้งที่ 3</h3>
             <p>Short interval training circuits to</p>
           </li>
-          
+
         </ul>
         <div><a href="newsupdate">ดูทั้งหมด</a></div>
       </div>
     </div>
     <div class="leftcolumn">
       <h1><b class="icon-book"></b>กิจกรรม</h1>
-   
+
       <div class="">
         <div class="wrapper">
           <div class="grid">
@@ -204,7 +105,7 @@
                       <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
                       <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
                     </ul>
-        
+
                     <h5><a href="#0" class="card__title">sdfsdfsdfsdfsdf</a></h5>
                     <h6><a href="#0" class="card__title1">sdfsdfsdfsdfsdfsd</a></h6>
                   </div>
@@ -224,7 +125,7 @@
                       <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
                       <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
                     </ul>
-        
+
                     <h5><a href="#0" class="card__title"></a></h5>
                     <h6><a href="#0" class="card__title1"></a></h6>
                   </div>
@@ -244,7 +145,7 @@
                       <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
                       <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
                     </ul>
-        
+
                     <h5><a href="#0" class="card__title"></a></h5>
                     <h6><a href="#0" class="card__title1"></a></h6>
                   </div>
@@ -264,7 +165,7 @@
                       <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
                       <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
                     </ul>
-        
+
                     <h5><a href="#0" class="card__title"></a></h5>
                     <h6><a href="#0" class="card__title1"></a></h6>
                   </div>
@@ -284,7 +185,7 @@
                       <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
                       <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
                     </ul>
-        
+
                     <h5><a href="#0" class="card__title"></a></h5>
                     <h6><a href="#0" class="card__title1"></a></h6>
                   </div>
@@ -304,7 +205,7 @@
                       <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
                       <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
                     </ul>
-        
+
                     <h5><a href="#0" class="card__title"></a></h5>
                     <h6><a href="#0" class="card__title1"></a></h6>
                   </div>
@@ -330,11 +231,11 @@
       <li class="w3-padding-5">
         <a href="">dsfsdfsdfd</a>
       </li>
-      </li> 
+      </li>
       <li class="w3-padding-5">
         <a href="">dsfsdfsdfd</a>
       </li>
-      </li>   
+      </li>
       <li class="w3-padding-5">
         <a href="">dsfsdfsdfd</a>
       </li>
@@ -347,7 +248,7 @@
     <iframe width="100%"  src="https://www.youtube.com/embed/RKqq6kX0H5Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
     </div>
-    
+
   </div>
   <br>
 <script>
