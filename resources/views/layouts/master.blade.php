@@ -21,24 +21,20 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
-
-
-		<    <!--Navbar-->
-		<nav class="navbar navbar-toggleable-md fixed-top scrolling-navbar navbar-expand-lg navbar-inverse">
-			<div class="container">
-				<a class="navbar-brand" href="home">
-					<strong><img src="<?php echo asset('assets/img/maxsum.png'); ?>" width="200px"></strong>
-				</a>
-				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="fa fa-navicon" style="color:#fff; font-size:28px;"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav1">
-					<ul class="nav navbar-nav navbar-right navbar-nav navbar-nav ml-auto">
-						<li class="{{ Request::path() == 'home' ? 'active' : '' }}">
+    <header>
+		<nav id="main-navbar" class="navbar navbar-toggleable-md fixed-top scrolling-navbar navbar-expand-lg navbar-inverse">
+			<div class="container navbar-container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            
+          <span class="fa fa-navicon" style="color:#fff; font-size:28px;"></span>
+					</button>
+					<a class="navbar-brand" href="#"> <img class="img-fluid" src="<?php echo asset('assets/img/maxsum.png'); ?>" width="200px" alt=""/></a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+          <li class="{{ Request::path() == 'home' ? 'active' : '' }}">
 							<a class="nav-link" href="home">หน้าหลัก</a>
-						</li>
-						<li class="{{ Request::path() == 'activities' ? 'active' : '' }}">
-							<a class="nav-link" href="activities">กิจกรรม</a>
 						</li>
 						  <li class="dropdown ">
 							<a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">ข้อมูลสาขาวิชา <b class="caret fa fa-caret-down"></b></a>
@@ -46,30 +42,39 @@
 							  <li class="{{ Request::path() == 'course' ? 'active' : '' }}">
 								<a class="nav-link" href="course">หลักสูตรและการสอน</a></li>
 							  <li class="{{ Request::path() == 'about' ? 'active' : '' }}">
-								<a class="nav-link" href="about">เกี่ยวกับสาขาวิชา</a></li>
-							  <li class="{{ Request::path() == 'tact' ? 'active' : '' }}">
-								<a class="nav-link" href="tact">ติดต่อเรา</a></li>
+                <a class="nav-link" href="about">คณาจารย์</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
 							<a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">นักศึกษา <b class="caret fa fa-caret-down"></b></a>
 							<ul class="dropdown-content ">
-							  <li class="{{ Request::path() == 'cooperative' ? 'active' : '' }}">
-								<a class="nav-link" href="cooperative">สหกิจศึกษา</a></li>
+              <li class="{{ Request::path() == 'form' ? 'active' : '' }}">
+								<a class="nav-link" href="form">แบบฟอร์ม</a></li>
 							  <li class="{{ Request::path() == 'award' ? 'active' : '' }}">
-								<a class="nav-link" href="award">รางวัล</a></li>
-							  <li class="{{ Request::path() == 'fund' ? 'active' : '' }}">
-								<a class="nav-link" href="fund">ทุนการศึกษา</a></li>
+                <a class="nav-link" href="award">รางวัล</a></li>
+                <li class="{{ Request::path() == 'success' ? 'active' : '' }}">
+								<a class="nav-link" href="success">ความสำเร็จของศิษย์เก่า</a></li>
+                <li class="{{ Request::path() == 'cooperative' ? 'active' : '' }}">
+                <a class="nav-link" href="cooperative">ผลงานสหกิจศึกษา</a></li>
+                <li class="{{ Request::path() == 'apprentice' ? 'active' : '' }}">
+                <a class="nav-link" href="apprentice">ผลงานฝึกงาน</a></li>
+                <li class="{{ Request::path() == 'student' ? 'active' : '' }}">
+                <a class="nav-link" href="student">รายชื่อนักศึกษา</a></li>
 							</ul>
-						</li>
-						<li class="{{ Request::path() == 'newsupdate' ? 'active' : '' }}">
-							<a class="nav-link" href="newsupdate">ประชาสัมพันธ์</a>
-						</li>
-						</ul>
+            </li>
+            <li class="{{ Request::path() == 'tact' ? 'active' : '' }}">
+								<a class="nav-link" href="tact">ติดต่อเรา</a></li>
+					</ul>
+				</div>
+				<div class="top-social">
+					<ul id="top-social-menu">
+						<li><a href="#">เข้าสู่ระบบ</a></li>
+						<li><a href="#">Careers</a></li>
+					</ul>
 				</div>
 			</div>
 		</nav>
-		<!--/.Navbar-->
+	</header>
 		
 		@yield('content')
 <footer class="footer-area footer--light">
@@ -128,21 +133,14 @@ $('nav ul li').click(function(){
 });
 
 });
-$(window).scroll(function(){
-    if ($(window).scrollTop() >= 300) {
-        $('nav').addClass('fixed-header');
-        $('nav div').addClass('visible-title');
-    }
-    else {
-        $('nav').removeClass('fixed-header');
-		$('nav div').removeClass('visible-title');
-		$(document).ready(function() {
-      $(".nav a").on("click", function(){
-      $(".nav").find(".active").removeClass("active");
-      $(this).parent().addClass("active");
-   });
-});
-    }
+$(window).scroll(function () {
+	var sc = $(window).scrollTop()
+	if (sc > 150) {
+		$("#main-navbar").addClass("navbar-scroll")
+	} 
+	else {
+		$("#main-navbar").removeClass("navbar-scroll")
+	}
 });
 
 </script>

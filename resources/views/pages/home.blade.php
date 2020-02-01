@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="body">
+  <br><br><br>
   <div class="fakeimg" style="height:100%;"></div>
   <div id="carouselExampleControls" id="myCarousel" class="carousel slide" data-ride="carousel">
 
