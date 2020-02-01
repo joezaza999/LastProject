@@ -8,7 +8,7 @@
 </div>
       <div class="content">
       <div class="container">
-      
+
     @foreach($cooperatives as $cooperative)
     <div class="wrapper">
       <div class="grid">
@@ -21,19 +21,21 @@
                   <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
                   <li><a href="#0"><i class="fa fa-clock-o"></i>{{ $cooperative->updated_at }}</a></li>
                 </ul>
-    
+
                 <p><a href="#0" class="card__title">{{ $cooperative->name }}</a></p>
-                <p><a href="#0" class="card__title1">{{ $cooperative->text }}</a></p>
+                <p><a href="#0" class="card__title1">{{ $cooperative->text }}</a></p><br>
+                <a href="files/{{ $cooperative->file }}" download="{{ $cooperative->file }}">
+                    <button type="button" class="btn btn-primary">ดาวน์โหลดไฟล์</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    @endforeach  
+    @endforeach
     <div>
       <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="500px" height="" alt=""/>
-    </div> 
+    </div>
 {!! $cooperatives->render() !!}
 <script>
   (function() {

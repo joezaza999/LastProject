@@ -47,6 +47,12 @@
                                 <input type="file" name="image" />
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="col-md-4 text-right">เลือกไฟล์</label>
+                            <div class="col-md-8">
+                                <input type="file" name="file" />
+                            </div>
+                        </div>
                         <br>
                         <div class="form-group text-center">
                             <input type="submit" name="submit" class="btn btn-primary input-lg" value="เพิ่มข้อมูล" />

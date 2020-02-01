@@ -36,7 +36,7 @@ class CooperativeController extends Controller
     {
         $cooperatives = Cooperative::all(['id', 'name']);
         return view('backend.cooperative.create',[
-            'cooperatives' => $cooperatives      
+            'cooperatives' => $cooperatives
             ]);
     }
     /**
@@ -50,17 +50,25 @@ class CooperativeController extends Controller
         $request->validate([
             'name' => 'required',
             'text' => 'required',
-            'image' => 'required|image|max:2048'
+            'image' => 'required|mimes:jpeg,jpg,png',
+            'file' => 'required|mimes:doc,docx,pdf,xls'
         ]);
 
+        //เพิ่มรูป
         $image = $request->file('image');
-
         $new_name = rand() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images'), $new_name);
+
+        //เพิ่มไฟล์
+        $file = $request->file('file');
+        $fileName = $file->getClientOriginalName();
+        $file->move(public_path('files'), $fileName);
+
         $form_data = array(
             'name' => $request->name,
             'text' => $request->text,
-            'image' => $new_name
+            'image' => $new_name,
+            'file' => $fileName
         );
 
         Cooperative::create($form_data);
@@ -103,15 +111,30 @@ class CooperativeController extends Controller
         $image_name = $request->hidden_image;
         $image = $request->file('image');
 
+        $fileName = $request->hidden_file;
+        $file = $request->file('file');
+
         if($image != '')
         {
             $request->validate([
                 'name' => 'required',
                 'text' => 'required',
-                'image' => 'required|image|max:2048'
+                'image' => 'required|mimes:jpeg,jpg,png',
             ]);
+
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images'), $image_name);
+        }
+        elseif($file != '')
+        {
+            $request->validate([
+                'name' => 'required',
+                'text' => 'required',
+                'file' => 'required|mimes:doc,docx,pdf,xls'
+            ]);
+
+            $fileName = $file->getClientOriginalName();
+            $file->move(public_path('files'), $fileName);
         }
         else
         {
@@ -124,7 +147,8 @@ class CooperativeController extends Controller
         $form_data = array(
             'name' => $request->name,
             'text' => $request->text,
-            'image' => $image_name
+            'image' => $image_name,
+            'file' => $fileName
         );
 
         Cooperative::whereId($id)->update($form_data);
@@ -144,6 +168,7 @@ class CooperativeController extends Controller
             File::delete(public_path() . '\\images\\' . $cooperatives->image);
             File::delete(public_path() . '\\images\\resize\\' . $cooperatives->image);
         }
+        File::delete(public_path() . '\\files\\' . $cooperatives->file);
         $cooperatives->delete();
         return redirect('bcooperative')->with('success', 'ลบข้อมูลสหกิจศึกษาสำเร็จ');
     }

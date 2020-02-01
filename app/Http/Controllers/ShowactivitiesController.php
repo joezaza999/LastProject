@@ -50,7 +50,8 @@ class ShowactivitiesController extends Controller
      */
     public function show($id)
     {
-        //
+        $activities = Activities::findOrFail($id);
+        return view('pages.readactivitie', compact('activities'));
     }
 
     /**
