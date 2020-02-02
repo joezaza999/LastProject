@@ -2,10 +2,19 @@
 
 @section('content')
 <div class="container">
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success">
+        <p>{{ $message }}</p>
+    </div>
+    @endif
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
             <br><br>
-            <?= link_to('bnewsupdate/create', $title = 'เพิ่มข้อมูลประชาสัมพันธ์', ['class' => 'btn btn-primary'], $secure = null); ?>
+
+            <div aligh="right">
+                <a href="{{ route('bnewsupdate.create') }}" class="btn btn-success btn-sm">เพิ่มข้อมูลประชาสัมพันธ์</a>
+            </div>
+
             <hr>
             <div class="card">
 
@@ -13,30 +22,36 @@
                     <table class="table table-striped">
                         <tr>
                             <th>หัวข้อ</th>
-                            <th>รูปภาพ</th>
                             <th>เนื้อหา</th>
+                            <th>วันที่</th>
+                            <th>รูปภาพ</th>
                             <th>แก้ไข</th>
                             <th>ลบ</th>
                         </tr>
                         @foreach ($newsupdates as $newsupdate)
                         <tr>
-                            <td>{{ $newsupdate->title }}</td> 
-                            <td>
-                                <a href="{{ asset('images/'.$newsupdate->image)}}">
-                                <img src="{{ asset('images/resize/'.$newsupdate->image) }}" style="width:100px"></a>
-                            </td>
+                            <td>{{ $newsupdate->title }}</td>
                             <td>{{ $newsupdate->content }}</td>
+                            <td>{{ $newsupdate->date }}</td>
                             <td>
-                                <a href= "{{ url('/bnewsupdate/'.$newsupdate->id.'/edit') }}" class="btn btn-success">แก้ไข</a>
+                            <img src="{{ URL::to('/') }}/images/{{ $newsupdate->image }}"
+                            class="img-thumbnail" width="75" />
                             </td>
                             <td>
-                                <?= Form::open(array('url' => 'bnewsupdate/' . $newsupdate->id, 'method' => 'delete')) ?>
-                                <button type="submit" class="btn btn-danger">ลบ</button>
-                                {!! Form::close() !!}
+                                <a href="{{ route('bnewsupdate.edit' , $newsupdate->id ) }}" class="btn btn-success">แก้ไข</a>
+                            </td>
+                            <td>
+                                <form action="{{ route('bnewsupdate.destroy', $newsupdate->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">ลบ</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
                     </table>
+                    <br>
+                    {!! $newsupdates->render() !!}
                 </div>
             </div>
             <br><br><br><br>

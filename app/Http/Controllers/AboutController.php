@@ -18,10 +18,10 @@ class AboutController extends Controller
      */
     public function index()
     {
-            $abouts = About::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง about เก็บไว้ที่ตัวแปร
-            return view('backend.about.index',[
-                'abouts' => $abouts
-            ]);
+        $abouts = About::paginate(5);
+        return view('backend.about.index',[
+            'abouts'=> $abouts
+        ]);
     }
 
     /**
@@ -31,6 +31,7 @@ class AboutController extends Controller
      */
     public function create()
     {
+
         return view('backend.about.create');
     }
 
@@ -42,11 +43,17 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        $abouts = new About();
-        $abouts->text = $request->text;
-        $abouts->save();
+        $request->validate([
+            'text' => 'required'
+        ]);
+    
+        $form_data = array(
+            'text' => $request->text
+        );
 
-        return redirect()->action('AboutController@index');
+        About::create($form_data);
+
+        return redirect('babout')->with('success', 'เพิ่มข้อมูลเกี่ยวกับเราสำเร็จ');
     }
 
     /**
@@ -68,10 +75,8 @@ class AboutController extends Controller
      */
     public function edit($id)
     {
-        $abouts = About::findOrFail($id);
-        return view('backend.about.edit',[
-            'abouts' => $abouts
-        ]);
+        $about = About::findOrFail($id);
+        return view('backend.about.edit', compact('about'));
     }
 
     /**
@@ -83,10 +88,22 @@ class AboutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $abouts = About::find($id);
-        $abouts->update($request->all());
+        
+            $request->validate([
+                'text' => 'required'
+            ]);
+        {
+            $request->validate([
+                'text' => 'required'
+            ]);
+        }
 
-        return redirect()->action('AboutController@index');
+        $form_data = array(
+            'text' => $request->text
+        );
+
+        About::whereId($id)->update($form_data);
+        return redirect('babout')->with('success', 'แก้ไขข้อมูลเกี่ยวกับเราสำเร็จ');
     }
 
     /**
@@ -98,7 +115,8 @@ class AboutController extends Controller
     public function destroy($id)
     {
         $abouts = About::find($id);
+
         $abouts->delete();
-        return redirect()->action('AboutController@index');
+        return redirect('babout')->with('success', 'ลบข้อมูลเกี่ยวกับเราสำเร็จ');
     }
 }

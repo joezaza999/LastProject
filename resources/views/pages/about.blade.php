@@ -2,25 +2,17 @@
 
 @section('content')
 <div class="body">
-<br><br>
+<br><br><br><br><br>
 <div class="topnav" id="myTopnav">
-  <a href="" class="">เกี่ยวกับสาขา</a>
+  <a href="" class="">คณาจารย์</a>
 </div>
 <div class="content">
     <div class="container">
-
-    @foreach ($abouts as $about)
-    <div>
-        {{ $about->text }}
-    </div>
-    @endforeach
-
-<br><br>
-
+<h1>คณาจารย์สาขาวิชาเทคโนโลยีสารสนเทศทางธุรกิจ</h1><br>
 <div class="row">
     @foreach ($members as $member)
     <div class="col-4">
-        <img src="{{ asset('images/'.$member->image) }}" style="width:180px"><br><br>
+        <img src="{{ asset('images/'.$member->image) }}" style="width:150px"><br><br>
         {{ $member->name }}<br>
         <b>{{ $member->position->name }}</b><br><br><br>
     </div>

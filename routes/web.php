@@ -19,7 +19,10 @@ use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/home','ShowhomeController@index');
-Route::get('/member','PagesController@member');
+Route::get('/form','ShowformController@index');
+Route::get('/success','ShowsuccessController@index');
+Route::get('/student','ShowstudentController@index');
+Route::get('/apprentice','ShowapprenticeController@index');
 Route::get('/course','ShowcourseController@index');
 Route::get('/tact','PagesController@tact');
 Route::get('/test','PagesController@test');
@@ -29,6 +32,8 @@ Route::get('/cooperative','ShowcooperativeController@index');
 Route::get('/newsupdate','ShownewsupdateController@index');
 Route::get('/about','ShowaboutController@index');
 Route::get('/award','ShowawardController@index');
+Route::get('/uploadactivities','ActivitiesController@index');
+
 
 Auth::routes();
 
@@ -47,5 +52,6 @@ Route::resource('/bactivities','ActivitiesController')->name('index','bactivitie
 Route::resource('/bslideshow','SlideshowController')->name('index','bslideshow');
 Route::resource('/bapprentice','ApprenticeController')->name('index','bapprentice');
 Route::resource('/bsuccess','SuccessController')->name('index','bsuccess');
+Route::resource('/bform','FormController')->name('index','bform');
 
 

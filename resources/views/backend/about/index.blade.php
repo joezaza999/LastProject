@@ -2,10 +2,19 @@
 
 @section('content')
 <div class="container">
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success">
+        <p>{{ $message }}</p>
+    </div>
+    @endif
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
             <br><br>
-            <?= link_to('babout/create', $title = 'เพิ่มข้อมูลเกี่ยวกับเรา', ['class' => 'btn btn-primary'], $secure = null); ?>
+
+            <div aligh="right">
+                <a href="{{ route('babout.create') }}" class="btn btn-success btn-sm">เพิ่มข้อมูลเกี่ยวกับเรา</a>
+            </div>
+
             <hr>
             <div class="card">
 
@@ -18,20 +27,25 @@
                         </tr>
                         @foreach ($abouts as $about)
                         <tr>
-                            <td>{{$about->text}}</td>
+                            <td>{{ $about->text }}</td>
                             <td>
-                                <a href="{{ url('/babout/'.$about->id.'/edit') }}" class="btn btn-success">แก้ไข</a>
+                                <a href="{{ route('babout.edit' , $about->id ) }}" class="btn btn-success">แก้ไข</a>
                             </td>
                             <td>
-                                <?= Form::open(array('url' => 'babout/' . $about->id, 'method' => 'delete')) ?>
-                                <button type="submit"class="btn btn-danger">ลบ</button>
-                                {!! Form::close() !!}
+                                <form action="{{ route('babout.destroy', $about->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">ลบ</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
                     </table>
+                    <br>
+                    {!! $abouts->render() !!}
                 </div>
             </div>
+            <br><br><br><br>
         </div>
     </div>
 </div>

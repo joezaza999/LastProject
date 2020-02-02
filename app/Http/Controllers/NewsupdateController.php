@@ -21,10 +21,10 @@ class NewsupdateController extends Controller
      */
     public function index()
     {
-        $newsupdates = Newsupdate::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง newsupdate เก็บไว้ที่ตัวแปร
-            return view('backend.newsupdate.index',[
-                'newsupdates' => $newsupdates
-            ]);
+        $newsupdates = Newsupdate::paginate(5);
+        return view('backend.newsupdate.index',[
+            'newsupdates'=> $newsupdates
+        ]);
     }
 
     /**
@@ -34,7 +34,10 @@ class NewsupdateController extends Controller
      */
     public function create()
     {
-        return view('backend.newsupdate.create');
+        $newsupdate = Newsupdate::all(['id', 'title']);
+        return view('backend.newsupdate.create',[
+            'newsupdates' => $newsupdate   
+            ]);
     }
 
     /**
@@ -45,21 +48,27 @@ class NewsupdateController extends Controller
      */
     public function store(Request $request)
     {
-        $newsupdates = new Newsupdate();
-        $newsupdates->id = $request->id;
-        $newsupdates->title = $request->title;
-        $newsupdates->content = $request->content;
-        if ($request->hasFile('image')) {
-            $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
-            $request->file('image')->move(public_path() . '/images/', $filename);
-            Image::make(public_path() . '/images/' . $filename)->resize(50,50)->save(public_path() . '/images/resize/' . $filename);
-            $newsupdates->image = $filename;
-        }
-        else {
-            $newsupdates->image = 'nopic.png';
-        }
-        $newsupdates->save();
-        return redirect()->action('NewsupdateController@index');
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'image' => 'required|image|max:2048',
+            'date' => 'required'
+        ]);
+
+        $image = $request->file('image');
+
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $new_name);
+        $form_data = array(
+            'title' => $request->title,
+            'content' => $request->content,
+            'image' => $new_name,
+            'date' => $request->date
+        );
+
+        Newsupdate::create($form_data);
+
+        return redirect('bnewsupdate')->with('success', 'เพิ่มข้อมูลประชาสัมพันธ์สำเร็จ');
     }
 
     /**
@@ -81,10 +90,8 @@ class NewsupdateController extends Controller
      */
     public function edit($id)
     {
-        $newsupdates = Newsupdate::findOrFail($id);
-        return view('backend.newsupdate.edit',[
-            'newsupdates' => $newsupdates
-        ]);
+        $newsupdate = Newsupdate::findOrFail($id);
+        return view('backend.newsupdate.edit', compact('newsupdate'));
     }
 
     /**
@@ -96,10 +103,37 @@ class NewsupdateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $newsupdates = Newsupdate::find($id);
-        $newsupdates->update($request->all());
+        $image_name = $request->hidden_image;
+        $image = $request->file('image');
 
-        return redirect()->action('NewsupdateController@index');
+        if($image != '')
+        {
+            $request->validate([
+                'title' => 'required',
+                'content' => 'required',
+                'image' => 'required|image|max:2048',
+                'date' => 'required'
+            ]);
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $image_name);
+        }
+        else
+        {
+            $request->validate([
+                'title' => 'required',
+                'content' => 'required',
+            ]);
+        }
+
+        $form_data = array(
+            'title' => $request->title,
+            'content' => $request->content,
+            'image' => $image_name,
+            'date' => $request->date
+        );
+
+        Newsupdate::whereId($id)->update($form_data);
+        return redirect('bnewsupdate')->with('success', 'แก้ไขข้อมูลประชาสัมพันธ์สำเร็จ');
     }
     
 
@@ -117,6 +151,6 @@ class NewsupdateController extends Controller
             File::delete(public_path() . '\\images\\resize\\' . $newsupdates->image);
         }
         $newsupdates->delete();
-        return redirect()->action('NewsupdateController@index');
+        return redirect('bnewsupdate')->with('success', 'ลบข้อมูลประชาสัมพันธ์สำเร็จ');
     }
 }

@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Student;
+use App\Success;
 
-class StudentController extends Controller
+
+class ShowsuccessController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student = Student::paginate(9);
-        return view('pages.student',[
-            'student' => $student
+        $success = Success::paginate(9);
+        return view('pages.success',[
+            'success' => $success
         ]);
     }
 

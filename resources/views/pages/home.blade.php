@@ -29,13 +29,13 @@
 
   <div class="row">
     <div class="leftcolumn">
-      <h1><b class="icon-book"></b>กิจกรรม</h1>
+      <h3><i style="font-size:24px" class="fa">&#xf1ea;</i> กิจกรรม</h3>
 
       @foreach ($activities as $activitie)
       <div class="wrapper">
         <div class="grid">
           <div class="card">
-            <div class="card__image">
+            <div class="card__image1">
               <img src="{{ asset('images/'.$activitie->image) }}" class="card-img-top">
               <div class="card__overlay">
                 <div class="card__overlay-content">
@@ -44,8 +44,8 @@
                     <li><a href="#0"><i class="fa fa-clock-o"></i>{{ $activitie->updated_at }}</a></li>
                   </ul>
 
-                  <h5><a href="#0" class="card__title">{{ $activitie->title }}</a></h5>
-                  <h6><a href="#0" class="card__title1">{{ $activitie->content }}</a></h6><br>
+                  <h6 class="card__title">{{ $activitie->title }}</h6>
+                  <p class="card__title1">{{ $activitie->content }}</p><br>
                   <a href="{{ url('/activities/show/'.$activitie->id)  }}">ดูรายละเอียด</a>
                 </div>
               </div>
@@ -58,7 +58,7 @@
       <div class="textright"><a href="activities">ดูทั้งหมด</a></div>
     </div>
     <div class="rightcolumn">
-      <h1><b class="icon-calendar"></b>Calendar</h1>
+      <h3><b class="icon-calendar"></b>ปฎิทิน/ประชาสัมพันธ์</h3>
       <div id="content">
         <ul class="timeline">
           <li class="event" data-date="27 Jan">
@@ -91,132 +91,13 @@
       </div>
     </div>
     <div class="leftcolumn">
-      <h1><b class="icon-book"></b>กิจกรรม</h1>
+      <h3><b class="icon-book"></b>เกี่ยวกับเรา</h3><br>
 
-      <div class="">
-        <div class="wrapper">
-          <div class="grid">
-            <div class="card">
-              <div class="card__image">
-                <img src="<?php echo asset('assets/img/23.jpg'); ?>" class="card-img-top">
-                <div class="card__overlay">
-                  <div class="card__overlay-content">
-                    <ul class="card__meta">
-                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
-                    </ul>
-
-                    <h5><a href="#0" class="card__title">sdfsdfsdfsdfsdf</a></h5>
-                    <h6><a href="#0" class="card__title1">sdfsdfsdfsdfsdfsd</a></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <div class="grid">
-            <div class="card">
-              <div class="card__image">
-                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
-                <div class="card__overlay">
-                  <div class="card__overlay-content">
-                    <ul class="card__meta">
-                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
-                    </ul>
-
-                    <h5><a href="#0" class="card__title"></a></h5>
-                    <h6><a href="#0" class="card__title1"></a></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <div class="grid">
-            <div class="card">
-              <div class="card__image">
-                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
-                <div class="card__overlay">
-                  <div class="card__overlay-content">
-                    <ul class="card__meta">
-                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
-                    </ul>
-
-                    <h5><a href="#0" class="card__title"></a></h5>
-                    <h6><a href="#0" class="card__title1"></a></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <div class="grid">
-            <div class="card">
-              <div class="card__image">
-                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
-                <div class="card__overlay">
-                  <div class="card__overlay-content">
-                    <ul class="card__meta">
-                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
-                    </ul>
-
-                    <h5><a href="#0" class="card__title"></a></h5>
-                    <h6><a href="#0" class="card__title1"></a></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <div class="grid">
-            <div class="card">
-              <div class="card__image">
-                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
-                <div class="card__overlay">
-                  <div class="card__overlay-content">
-                    <ul class="card__meta">
-                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
-                    </ul>
-
-                    <h5><a href="#0" class="card__title"></a></h5>
-                    <h6><a href="#0" class="card__title1"></a></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <div class="grid">
-            <div class="card">
-              <div class="card__image">
-                <img src="<?php echo asset('assets/img/1.jpg'); ?>" class="card-img-top">
-                <div class="card__overlay">
-                  <div class="card__overlay-content">
-                    <ul class="card__meta">
-                      <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                      <li><a href="#0"><i class="fa fa-clock-o"></i></a></li>
-                    </ul>
-
-                    <h5><a href="#0" class="card__title"></a></h5>
-                    <h6><a href="#0" class="card__title1"></a></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="textright"><a href="activities">ดูทั้งหมด</a></div>
+      @foreach ($abouts as $about)
+    <div class="indent2">
+        <p>{{ $about->text }}</p>
+    </div>
+    @endforeach
     </div>
     <div class="rightcolumn">
      <!-- Posts -->
@@ -226,18 +107,18 @@
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
       <li class="w3-padding-5">
-        <a href="">dsfsdfsdfd</a>
+        <a href="https://bua.rmutr.ac.th/">คณะบริหารธุรกิจ</a>
       </li>
       <li class="w3-padding-5">
-        <a href="">dsfsdfsdfd</a>
-      </li>
-      </li>
-      <li class="w3-padding-5">
-        <a href="">dsfsdfsdfd</a>
+        <a href="https://reg.rmutr.ac.th/registrar/home.asp">งานทะเบียน</a>
       </li>
       </li>
       <li class="w3-padding-5">
-        <a href="">dsfsdfsdfd</a>
+        <a href="https://th-th.facebook.com/pages/category/College---University/งานกองทุนฯ-บพิตรพิมุข-จักรวรรดิ-858180540866398/">ระบบงานกองทุน</a>
+      </li>
+      </li>
+      <li class="w3-padding-5">
+        <a href="https://th-th.facebook.com/งานทะเบียนและฐานข้อมูล-บพิตรพิมุข-จักรวรรดิ-576140065834581/">ระบบฐานข้อมูล</a>
       </li>
     </ul>
   </div>

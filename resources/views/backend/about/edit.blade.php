@@ -4,37 +4,32 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
+            <div aligh="right">
+                <a href="{{ route('babout') }}" class="btn btn-default">กลับ</a>
+            </div>
             <div class="card">
-                <div class="card-header">แก้ไขข้อมูลเกี่ยวกับเรา </div>
+
+                <div class="card-header">แก้ไขข้อมูลเกี่ยวกับเรา</div>
 
                 <div class="card-body">
-                    @if (count($errors) > 0)
-                    <div class="alert alert-warning">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    @endif
+                    <form method="POST" action="{{ route('babout.update' , $about->id) }}" enctype="multipart/form-data">
 
-                    <?= Form::model($abouts,array('url'=>'babout/'.$abouts->id,'method'=>'put')) ?>
-
-                    <div class="col-xs-8">
+                        @csrf
+                        @method('PATCH')
                         <div class="form-group">
-                            <?= Form::label('text','ข้อความ'); ?>
-                            <?= Form::textarea('text', null,['class'=>'form-control','placeholder'=>'ระบุเนื้อหา']); ?>
+                            <label class="col-md-4 text-right">เนื้อหา</label>
+                            <div class="col-md-8">
+                                <textarea name="text" rows="10" cols="80" value="" class="form-control input-lg">{{ $about->content }}</textarea>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <?= Form::submit('บันทึก',['class'=>'btn btn-primary']); ?>
+                        <br>
+                        <div class="form-group text-center">
+                            <input type="submit" name="submit" class="btn btn-primary input-lg" value="แก้ไข" />
                         </div>
-                    </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
+            <br><br><br>
         </div>
     </div>
 </div>

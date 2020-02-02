@@ -98,6 +98,7 @@ h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  font-size: 17px;
 }
 
 abbr[title],
@@ -413,7 +414,7 @@ h4,
 
 h5,
 .h5 {
-  font-size: 1.125rem;
+  font-size: 1.100rem;
 }
 
 h6,
@@ -11374,7 +11375,7 @@ a.text-dark:focus {
 
 .carousel-inner {
   height: 100%;
-  background: #eeeeee;
+  background: white;
 }
 
 .carousel-caption{padding-bottom:80px;}
@@ -11419,6 +11420,12 @@ a.text-dark:focus {
 .leftcolumn {
   float: left;
   width: 70%;
+  
+}
+.leftcolumn1 {
+  float: left;
+  width: 70%;
+  
 }
 
 .left {
@@ -11496,6 +11503,10 @@ h1 {
   text-align: center;
   display: block;
 }
+h3 {
+  text-align: center;
+  display: block;
+}
 img {
   height: auto;
   max-width: 100%;
@@ -11508,6 +11519,13 @@ a:hover {
   text-decoration: underline;
 }
 .site__wrapper {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+.wrapper1 {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -11543,7 +11561,16 @@ a:hover {
   -moz-border-radius: 3px;
   border-radius: 3px;
   display: block;
-  min-height: 300px;
+  min-height: 410px;
+  overflow: hidden;
+  position: relative;
+}
+.card__image1 {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+  min-height: 320px;
   overflow: hidden;
   position: relative;
 }
@@ -11565,7 +11592,7 @@ a:hover {
   transform: scale(1.2);
 }
 .card__title {
-  color: #000080;
+  color: #000000;
   display: inline-block;
   font-family: 'Kanit', sans-serif;
   font-size: 1.5em;
@@ -11578,7 +11605,7 @@ a:hover {
   transition: all 0.3s ease-out;
 }
 .card__title1 {
-  color: #000080;
+  color: #000000;
   display: inline-block;
   font-family: 'Kanit', sans-serif;
   font-size: 1.0em;
@@ -11588,10 +11615,7 @@ a:hover {
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.card__title:hover {
-  color:#000000;
-  text-decoration: none;
-}
+
 .card__overlay {
   content: "";
   bottom: 0;
@@ -11615,6 +11639,7 @@ a:hover {
 .card__overlay-content {
   position: absolute;
   bottom: 0;
+  background: white;
   padding: 1.5em;
   z-index: 3;
 }
@@ -11784,4 +11809,10 @@ h1 {
 }
 .textright{
   padding-left: 780px;
+}
+.indent2{  
+   text-indent: 30px; 
+}
+.space2{
+  white-space: normal;  
 }

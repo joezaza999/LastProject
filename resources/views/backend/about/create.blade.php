@@ -2,38 +2,45 @@
 
 @section('content')
 <div class="container">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
+
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
-            <br><br>
-            @if (count($errors) > 0)
-            <div class="alert alert-warning">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+            <div aligh="right">
+                <a href="{{ route('babout') }}" class="btn btn-default">กลับ</a>
             </div>
-             @endif
+            <br><br>
+
             <div class="card">
                 <div class="card-header">เพิ่มข้อมูลเกี่ยวกับเรา</div>
 
                 <div class="card-body">
-                    {!! Form::open(array('url'=>'babout','files'=>true)) !!}
-                    <div class="col-xs-8">
-                        <div class="form-group">
-                            <?= Form::label('text','ข้อความ'); ?>
-                            <?= Form::textarea('text', null,['class'=>'form-control','placeholder'=>'ระบุเนื้อหา']); ?>
-                        </div>
-                    </div>
+                    <form method="POST" action="{{ route('babout.store') }}" enctype="multipart/form-data">
+                        @csrf
 
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <?= Form::submit('บันทึก',['class'=>'btn btn-primary']); ?>
+                        <div class="form-group">
+                            <label class="col-md-4 text-right">เนื้อหา</label>
+                            <div class="col-md-8">
+                                <textarea rows="10" cols="80" name="text" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    {!! Form::close() !!}
+                        <br>
+                        <div class="form-group text-center">
+                            <input type="submit" name="submit" class="btn btn-primary input-lg" value="เพิ่มข้อมูล" />
+                        </div>
+                    </form>
                 </div>
             </div>
+            <br><br><br>
         </div>
     </div>
 </div>

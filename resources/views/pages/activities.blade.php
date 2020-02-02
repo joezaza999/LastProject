@@ -19,10 +19,9 @@
                   <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
                   <li><a href="#0"><i class="fa fa-clock-o"></i>{{ $activitie->updated_at }}</a></li>
                 </ul>
-
-                <h5><a href="#0" class="card__title">{{ $activitie->title }}</a></h5>
-                <h6><a href="#0" class="card__title1">{{ $activitie->content }}</a></h6><br>
-                <a href="{{ url('/activities/show/'.$activitie->id)  }}">ดูรายละเอียด</a>
+                <h6 class="card__title">{{ $activitie->title }}</h6>
+                  <p class="card__title1">{{ $activitie->content }}</p><br>
+                  <a href="{{ url('/activities/show/'.$activitie->id)  }}">ดูรายละเอียด</a>
               </div>
             </div>
           </div>

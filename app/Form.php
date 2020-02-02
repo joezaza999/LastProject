@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class Form extends Model
 {
-    protected $table = 'student';
+    protected $table = 'form';
     protected $fillable = ['name','file'];
 }

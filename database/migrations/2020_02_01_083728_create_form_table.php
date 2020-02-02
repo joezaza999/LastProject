@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFundTable extends Migration
+class CreateFormTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateFundTable extends Migration
      */
     public function up()
     {
-        Schema::create('fund', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->string('content');
-            $table->string('image');
+        Schema::create('form', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('file');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateFundTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fund');
+        Schema::dropIfExists('form');
     }
 }
