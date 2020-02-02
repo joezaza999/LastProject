@@ -19,6 +19,8 @@ class CreateMemberTable extends Migration
             $table->integer('position_id')->unsigned();
             $table->foreign('position_id')->references('id')->on('position');
             $table->string('image');
+            $table->string('tel');
+            $table->string('email');
             $table->timestamps();
         });
     }

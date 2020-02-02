@@ -41,6 +41,20 @@
                             </div>
                         </div>
                         <br>
+                        <div class="form-group">
+                            <label class="col-md-4 text-right">เบอร์โทรศัพท์</label>
+                            <div class="col-md-8">
+                                <input type="text" name="tel" value="{{ $members->tel }}" class="form-control input-lg"/>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label class="col-md-4 text-right">อีเมลล์</label>
+                            <div class="col-md-8">
+                                <input type="text" name="email" value="{{ $members->email }}" class="form-control input-lg"/>
+                            </div>
+                        </div>
+                        <br>
                         <div class="form-group text-center">
                             <input type="submit" name="submit" class="btn btn-primary input-lg" value="แก้ไข" />
                         </div>

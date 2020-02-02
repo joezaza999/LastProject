@@ -24,6 +24,8 @@
                             <th>ชื่อบุคลากร</th>
                             <th>ตำแหน่ง</th>
                             <th>รูปภาพ</th>
+                            <th>เบอร์โทรศัพท์</th>
+                            <th>อีเมลล์</th>
                             <th>แก้ไข</th>
                             <th>ลบ</th>
                         </tr>
@@ -35,6 +37,8 @@
                             <img src="{{ URL::to('/') }}/images/{{ $member->image }}"
                             class="img-thumbnail" width="75" />
                             </td>
+                            <td>{{ $member->tel }}</td>
+                            <td>{{ $member->email }}</td>
                             <td>
                                 <a href="{{ route('bmembers.edit' , $member->id ) }}" class="btn btn-success">แก้ไข</a>
                             </td>

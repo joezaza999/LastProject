@@ -73,7 +73,9 @@ class MemberController extends Controller
         $request->validate([
             'name' => 'required',
             'position_id' => 'required',
-            'image' => 'required|image|max:2048'
+            'image' => 'required|image|max:2048',
+            'tel' => 'required',
+            'email' => 'required'
         ]);
 
         $image = $request->file('image');
@@ -83,7 +85,9 @@ class MemberController extends Controller
         $form_data = array(
             'name' => $request->name,
             'position_id' => $request->position_id,
-            'image' => $new_name
+            'image' => $new_name,
+            'tel' => $request->tel,
+            'email' => $request->email
         );
 
         Member::create($form_data);
@@ -148,7 +152,9 @@ class MemberController extends Controller
             $request->validate([
                 'name' => 'required',
                 'position_id' => 'required',
-                'image' => 'required|image|max:2048'
+                'image' => 'required|image|max:2048',
+                'tel' => 'required',
+                'email' => 'required'
             ]);
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images'), $image_name);
@@ -158,13 +164,17 @@ class MemberController extends Controller
             $request->validated([
                 'name' => 'required',
                 'position_id' => 'required',
+                'tel' => 'required',
+                'email' => 'required'
             ]);
         }
 
         $form_data = array(
             'name' => $request->name,
             'position_id' => $request->position_id,
-            'image' => $image_name
+            'image' => $image_name,
+            'tel' => $request->tel,
+            'email' => $request->email
         );
 
         Member::whereId($id)->update($form_data);
