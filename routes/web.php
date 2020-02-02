@@ -53,5 +53,7 @@ Route::resource('/bslideshow','SlideshowController')->name('index','bslideshow')
 Route::resource('/bapprentice','ApprenticeController')->name('index','bapprentice');
 Route::resource('/bsuccess','SuccessController')->name('index','bsuccess');
 Route::resource('/bform','FormController')->name('index','bform');
+Route::resource('/bstudent','StudentController')->name('index','bstudent');
+
 
 

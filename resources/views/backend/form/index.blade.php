@@ -12,7 +12,7 @@
             <br><br>
 
             <div aligh="right">
-                <a href="{{ route('bstudent.create') }}" class="btn btn-success btn-sm">เพิ่มข้อมูลนักศึกษา</a>
+                <a href="{{ route('bform.create') }}" class="btn btn-success btn-sm">เพิ่มข้อมูลแบบฟอร์ม</a>
             </div>
 
             <hr>
@@ -21,27 +21,24 @@
                 <div class="card-body">
                     <table class="table table-striped">
                         <tr>
-                            <th>รหัสนักศึกษา</th>
                             <th>ชื่อ</th>
-                            <th>รุ่น</th>
-                            <th>รูปภาพ</th>
+                            <th>ไฟล์</th>
                             <th>แก้ไข</th>
                             <th>ลบ</th>
                         </tr>
-                        @foreach ($students as $student)
+                        @foreach ($forms as $form)
                         <tr>
-                            <td>{{ $student->studentcode }}</td>
-                            <td>{{ $student->name }}</td>
-                            <td>{{ $student->generation }}</td>
+                            <td>{{ $form->name }}</td>
                             <td>
-                            <img src="{{ URL::to('/') }}/images/{{ $student->image }}"
-                            class="img-thumbnail" width="75" />
+                            <a href="files/{{ $form->file }}" download="{{ $form->file }}">
+                            <button type="button" class="btn btn-primary">ดาวน์โหลดไฟล์</button>
+                            </a>
                             </td>
                             <td>
-                                <a href="{{ route('bstudent.edit' , $student->id ) }}" class="btn btn-success">แก้ไข</a>
+                                <a href="{{ route('bform.edit' , $form->id ) }}" class="btn btn-success">แก้ไข</a>
                             </td>
                             <td>
-                                <form action="{{ route('bstudent.destroy', $student->id) }}" method="POST">
+                                <form action="{{ route('bform.destroy', $form->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">ลบ</button>
@@ -51,7 +48,7 @@
                         @endforeach
                     </table>
                     <br>
-                    {!! $students->render() !!}
+                    {!! $forms->render() !!}
                 </div>
             </div>
             <br><br><br><br>

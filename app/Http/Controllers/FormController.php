@@ -33,9 +33,9 @@ class FormController extends Controller
      */
     public function create()
     {
-        $forms = Form::all(['id', 'file']);
+        $forms = Form::all(['id', 'name']);
         return view('backend.form.create',[
-            'forms' => $forms      
+            'forms' => $forms
             ]);
     }
 
@@ -49,16 +49,17 @@ class FormController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'file' => 'required|file'
+            'file' => 'required|mimes:doc,docx,pdf,xls'
         ]);
 
-        $image = $request->file('file');
+        //เพิ่มไฟล์
+        $file = $request->file('file');
+        $fileName = $file->getClientOriginalName();
+        $file->move(public_path('files'), $fileName);
 
-        $new_name = rand() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images'), $new_name);
         $form_data = array(
             'name' => $request->name,
-            'file' => $request->file
+            'file' => $fileName
         );
 
         Form::create($form_data);
@@ -85,7 +86,8 @@ class FormController extends Controller
      */
     public function edit($id)
     {
-        //
+        $forms = Form::findOrFail($id);
+        return view('backend.form.edit', compact('forms'));
     }
 
     /**
@@ -97,7 +99,32 @@ class FormController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $fileName = $request->hidden_file;
+        $file = $request->file('file');
+
+            $request->validate([
+                'name' => 'required',
+            ]);
+ 
+            $request->validate([
+                'name' => 'required',
+                'file' => 'required|mimes:doc,docx,pdf,xls'
+            ]);
+
+            $fileName = $file->getClientOriginalName();
+            $file->move(public_path('files'), $fileName);
+      
+            $request->validate([
+                'name' => 'required',
+            ]);
+
+        $form_data = array(
+            'name' => $request->name,
+            'file' => $fileName
+        );
+
+        Form::whereId($id)->update($form_data);
+        return redirect('bform')->with('success', 'แก้ไขข้อมูลแบบฟอร์มสำเร็จ');
     }
 
     /**
@@ -108,6 +135,10 @@ class FormController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $forms = Form::find($id);
+
+        File::delete(public_path() . '\\files\\' . $forms->file);
+        $forms->delete();
+        return redirect('bform')->with('success', 'ลบข้อมูลแบบฟอร์มสำเร็จ');
     }
 }

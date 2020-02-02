@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
             <br><br>
-            <?= link_to('bposition/create', $title = 'เพิ่มข้อมูลตำแหน่ง', ['class' => 'btn btn-primary'], $secure = null); ?>
+            <?= link_to('bposition/create', $title = 'เพิ่มข้อมูลตำแหน่ง', ['class' => 'btn btn-success btn-sm'], $secure = null); ?>
             <hr>
             <div class="card">
 

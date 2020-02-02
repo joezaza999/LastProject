@@ -51,17 +51,25 @@ class ApprenticeController extends Controller
         $request->validate([
             'name' => 'required',
             'text' => 'required',
-            'image' => 'required|image|max:2048'
+            'image' => 'required|image|max:2048',
+            'file' => 'required|mimes:doc,docx,pdf,xls'
         ]);
 
+        //เพิ่มรูป
         $image = $request->file('image');
-
         $new_name = rand() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images'), $new_name);
+
+        //เพิ่มไฟล์
+        $file = $request->file('file');
+        $fileName = $file->getClientOriginalName();
+        $file->move(public_path('files'), $fileName);
+
         $form_data = array(
             'name' => $request->name,
             'text' => $request->text,
-            'image' => $new_name
+            'image' => $new_name,
+            'file' => $fileName
         );
 
         Apprentice::create($form_data);
@@ -104,15 +112,30 @@ class ApprenticeController extends Controller
         $image_name = $request->hidden_image;
         $image = $request->file('image');
 
+        $fileName = $request->hidden_file;
+        $file = $request->file('file');
+
         if($image != '')
         {
             $request->validate([
                 'name' => 'required',
                 'text' => 'required',
-                'image' => 'required|image|max:2048'
+                'image' => 'required|mimes:jpeg,jpg,png',
             ]);
+
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images'), $image_name);
+        }
+        elseif($file != '')
+        {
+            $request->validate([
+                'name' => 'required',
+                'text' => 'required',
+                'file' => 'required|mimes:doc,docx,pdf,xls'
+            ]);
+
+            $fileName = $file->getClientOriginalName();
+            $file->move(public_path('files'), $fileName);
         }
         else
         {
@@ -125,7 +148,8 @@ class ApprenticeController extends Controller
         $form_data = array(
             'name' => $request->name,
             'text' => $request->text,
-            'image' => $image_name
+            'image' => $image_name,
+            'file' => $fileName
         );
 
         Apprentice::whereId($id)->update($form_data);
@@ -145,6 +169,7 @@ class ApprenticeController extends Controller
             File::delete(public_path() . '\\images\\' . $apprentices->image);
             File::delete(public_path() . '\\images\\resize\\' . $apprentices->image);
         }
+        File::delete(public_path() . '\\files\\' . $apprentices->file);
         $apprentices->delete();
         return redirect('bapprentice')->with('success', 'ลบข้อมูลฝึกงานสำเร็จ');
     }

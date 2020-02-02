@@ -24,6 +24,7 @@
                             <th>ชื่อ</th>
                             <th>เนื้อหา</th>
                             <th>รูปภาพ</th>
+                            <th>ไฟล์</th>
                             <th>แก้ไข</th>
                             <th>ลบ</th>
                         </tr>
@@ -34,6 +35,11 @@
                             <td>
                             <img src="{{ URL::to('/') }}/images/{{ $apprentice->image }}"
                             class="img-thumbnail" width="75" />
+                            </td>
+                            <td>
+                            <a href="files/{{ $apprentice->file }}" download="{{ $apprentice->file }}">
+                            <button type="button" class="btn btn-primary">ดาวน์โหลดไฟล์</button>
+                            </a>
                             </td>
                             <td>
                                 <a href="{{ route('bapprentice.edit' , $apprentice->id ) }}" class="btn btn-success">แก้ไข</a>

@@ -16,35 +16,21 @@
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
             <div aligh="right">
-                <a href="{{ route('bapprentice') }}" class="btn btn-default">กลับ</a>
+                <a href="{{ route('bform') }}" class="btn btn-default">กลับ</a>
             </div>
             <br><br>
 
             <div class="card">
-                <div class="card-header">เพิ่มข้อมูลฝึกงาน</div>
+                <div class="card-header">เพิ่มข้อมูลแบบฟอร์ม</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('bapprentice.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('bform.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
                             <label class="col-md-4 text-right">ชื่อ</label>
                             <div class="col-md-8">
-                                <input type="text" name="name" class="form-control input-lg" placeholder="กรุณากรอกชื่อฝึกงาน"/>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label class="col-md-4 text-right">เนื้อหา</label>
-                            <div class="col-md-8">
-                                <textarea rows="10" cols="80" name="text" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"></textarea>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label class="col-md-4 text-right">เลือกรูปภาพ</label>
-                            <div class="col-md-8">
-                                <input type="file" name="image" />
+                                <input type="text" name="name" class="form-control input-lg" placeholder="กรุณากรอกชื่อแบบฟอร์ม"/>
                             </div>
                         </div>
                         <br>
