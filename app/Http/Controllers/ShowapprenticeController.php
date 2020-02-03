@@ -17,7 +17,7 @@ class ShowapprenticeController extends Controller
     {
         $apprentice = Apprentice::paginate(9);
         return view('pages.apprentice',[
-            'apprentice' => $apprentice
+            'apprentices' => $apprentice
         ]);
     }
 

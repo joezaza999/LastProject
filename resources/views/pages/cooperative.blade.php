@@ -2,13 +2,11 @@
 
 @section('content')
 <div class="body">
-<br><br>
-<div class="topnav" id="myTopnav">
-  <a href="" class="">สหกิจศึกษา</a>
-</div>
-      <div class="content">
-      <div class="container">
-
+<br><br><br><br><br>
+<div class="content">
+      <h2>สหกิจศึกษา</h2>
+      <div class="row">
+    <div class="leftcolumn1">
     @foreach($cooperatives as $cooperative)
     <div class="wrapper">
       <div class="grid">
@@ -21,9 +19,8 @@
                   <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
                   <li><a href="#0"><i class="fa fa-clock-o"></i>{{ $cooperative->updated_at }}</a></li>
                 </ul>
-
-                <p><a href="#0" class="card__title">{{ $cooperative->name }}</a></p>
-                <p><a href="#0" class="card__title1">{{ $cooperative->text }}</a></p><br>
+                <p class="card__title">{{ $cooperative->name }}</p>
+                <p class="card__title1">{{ $cooperative->text }}</p><br>
                 <a href="files/{{ $cooperative->file }}" download="{{ $cooperative->file }}">
                     <button type="button" class="btn btn-primary">ดาวน์โหลดไฟล์</button>
               </div>
@@ -33,9 +30,7 @@
       </div>
     </div>
     @endforeach
-    <div>
-      <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="500px" height="" alt=""/>
-    </div>
+
 {!! $cooperatives->render() !!}
 <script>
   (function() {
@@ -48,5 +43,6 @@
 </script>
 </div>
 </div>
+      </div>
 </div>
 @endsection

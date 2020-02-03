@@ -21,9 +21,9 @@ class SuccessController extends Controller
      */
     public function index()
     {
-        $successs = Success::paginate(5);
+        $success = Success::paginate(5);
         return view('backend.success.index',[
-            'successs'=> $successs
+            'success'=> $success
         ]);
     }
 
@@ -34,9 +34,9 @@ class SuccessController extends Controller
      */
     public function create()
     {
-        $successs = Success::all(['id', 'name']);
+        $success = Success::all(['id', 'name']);
         return view('backend.success.create',[
-            'successs' => $successs     
+            'success' => $success     
             ]);
     }
 
@@ -88,8 +88,8 @@ class SuccessController extends Controller
      */
     public function edit($id)
     {
-        $successs = Success::findOrFail($id);
-        return view('backend.success.edit', compact('successs'));
+        $success = Success::findOrFail($id);
+        return view('backend.success.edit', compact('success'));
     }
 
     /**
@@ -140,12 +140,13 @@ class SuccessController extends Controller
      */
     public function destroy($id)
     {
-        $successs = Success::find($id);
-        if ($successs->image != 'nopic.png') {
-            File::delete(public_path() . '\\images\\' . $successs->image);
-            File::delete(public_path() . '\\images\\resize\\' . $successs->image);
+        $success = Success::find($id);
+        if ($success->image != 'nopic.png') {
+            File::delete(public_path() . '\\images\\' . $success->image);
+            File::delete(public_path() . '\\images\\resize\\' . $success->image);
         }
-        $apprentices->delete();
+        $success->delete();
         return redirect('bsuccess')->with('success', 'ลบข้อมูลศิษย์เก่าสำเร็จ');
     }
+    
 }

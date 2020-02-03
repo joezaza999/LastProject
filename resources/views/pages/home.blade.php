@@ -11,7 +11,7 @@
         @foreach ($slideshows as $slideshow)
 
       <div class="carousel-item @if($loop->first)active @endif">
-      <img class="d-block mx-auto img-fluid" src="{{asset("images/$slideshow->image")}}" width="1200px"   alt="">
+      <img class="d-block mx-auto img-fluid" src="{{asset("images/$slideshow->image")}}" width="1160px"   alt="">
       </div>
       @endforeach
     </div>
@@ -23,7 +23,7 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-  </div>
+  </div><br>
 
       <div class="content">
 
@@ -32,18 +32,13 @@
       <h3><i style="font-size:24px" class="fa">&#xf1ea;</i> กิจกรรม</h3>
 
       @foreach ($activities as $activitie)
-      <div class="wrapper">
+      <div class="wrapper1">
         <div class="grid">
           <div class="card">
             <div class="card__image1">
               <img src="{{ asset('images/'.$activitie->image) }}" class="card-img-top">
               <div class="card__overlay">
                 <div class="card__overlay-content">
-                  <ul class="card__meta">
-                    <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                    <li><a href="#0"><i class="fa fa-clock-o"></i>{{ $activitie->updated_at }}</a></li>
-                  </ul>
-
                   <h6 class="card__title">{{ $activitie->title }}</h6>
                   <p class="card__title1">{{ $activitie->content }}</p><br>
                   <a href="{{ url('/activities/show/'.$activitie->id)  }}">ดูรายละเอียด</a>
@@ -55,55 +50,25 @@
       </div>
       @endforeach
 
-      <div class="textright"><a href="activities">ดูทั้งหมด</a></div>
+      <div class="textright"><a href="{{ route('activities') }}">ดูทั้งหมด</a></div>
     </div>
     <div class="rightcolumn">
-      <h3><b class="icon-calendar"></b>ปฎิทิน/ประชาสัมพันธ์</h3>
+      <h3><c class="icon-calendar"></c> ปฎิทิน/ประชาสัมพันธ์</h3>
       <div id="content">
+        
+      @foreach ($newsupdate as $newsupdate)
         <ul class="timeline">
           <li class="event" data-date="27 Jan">
-            <h3>ชวนฟัง Tech Talk Season 6 ครั้งที่ 3</h3>
-            <p>Short interval training circuits to</p>
+            <h3><a href="{{ url('/newsupdate/show/'.$newsupdate->id)  }}">{{ $newsupdate->title }}</a></h3>
+            <p>{{ $newsupdate->content }}</p>
           </li>
-          <li class="event" data-date="28-29 Jan">
-            <h3>Total tone</h3>
-            <p>Focuses on strength</p>
-          </li>
-          <li class="event" data-date="31 Jan">
-            <h3>Total tone</h3>
-            <p>Focuses on strength</p>
-          </li>
-          <li class="event" data-date="27 Jan">
-            <h3>ชวนฟัง Tech Talk Season 6 ครั้งที่ 3</h3>
-            <p>Short interval training circuits to</p>
-          </li>
-          <li class="event" data-date="27 Jan">
-            <h3>ชวนฟัง Tech Talk Season 6 ครั้งที่ 3</h3>
-            <p>Short interval training circuits to</p>
-          </li>
-          <li class="event" data-date="27 Jan">
-            <h3>ชวนฟัง Tech Talk Season 6 ครั้งที่ 3</h3>
-            <p>Short interval training circuits to</p>
-          </li>
-
         </ul>
+        @endforeach
         <div><a href="newsupdate">ดูทั้งหมด</a></div>
-      </div>
-    </div>
-    <div class="leftcolumn">
-      <h3><b class="icon-book"></b>เกี่ยวกับเรา</h3><br>
-
-      @foreach ($abouts as $about)
-    <div class="indent2">
-        <p>{{ $about->text }}</p>
-    </div>
-    @endforeach
-    </div>
-    <div class="rightcolumn">
-     <!-- Posts -->
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding w3-orange">
-      <h4>หน่วยงานภายใน</h4>
+      </div><br><br>
+      <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding w3">
+      <h5>หน่วยงานภายใน</h5>
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
       <li class="w3-padding-5">
@@ -122,9 +87,22 @@
       </li>
     </ul>
   </div>
+    </div>
+    <div class="leftcolumn">
+      <br>
+      <h3><c class="icon-book"></c> เกี่ยวกับเรา</h3><br>
+
+      @foreach ($abouts as $about)
+    <div class="indent2">
+        <p>{{ $about->text }}</p>
+    </div>
+    @endforeach
+    </div>
+    <div class="rightcolumn">
+     <!-- Posts -->
   <div class="w3 w3-margin">
-    <div class="w3-container w3-padding w3-orange">
-      <h4>video</h4>
+    <div class="w3-container w3-padding w3">
+      <h5>video</h5>
     </div>
     <iframe width="100%"  src="https://www.youtube.com/embed/RKqq6kX0H5Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>

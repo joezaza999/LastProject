@@ -27,19 +27,19 @@
                             <th>แก้ไข</th>
                             <th>ลบ</th>
                         </tr>
-                        @foreach ($successs as $success)
+                        @foreach ($success as $succes)
                         <tr>
-                            <td>{{ $success->name }}</td>
-                            <td>{{ $success->text }}</td>
+                            <td>{{ $succes->name }}</td>
+                            <td>{{ $succes->text }}</td>
                             <td>
-                            <img src="{{ URL::to('/') }}/images/{{ $success->image }}"
+                            <img src="{{ URL::to('/') }}/images/{{ $succes->image }}"
                             class="img-thumbnail" width="75" />
                             </td>
                             <td>
-                                <a href="{{ route('bsuccess.edit' , $success->id ) }}" class="btn btn-success">แก้ไข</a>
+                                <a href="{{ route('bsuccess.edit' , $succes->id ) }}" class="btn btn-success">แก้ไข</a>
                             </td>
                             <td>
-                                <form action="{{ route('bsuccess.destroy', $success->id) }}" method="POST">
+                                <form action="{{ route('bsuccess.destroy', $succes->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">ลบ</button>
@@ -49,7 +49,7 @@
                         @endforeach
                     </table>
                     <br>
-                    {!! $successs->render() !!}
+                    {!! $success->render() !!}
                 </div>
             </div>
             <br><br><br><br>

@@ -12,21 +12,21 @@
                 <div class="card-header">แก้ไขข้อมูลศิษย์เก่า</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('bsuccess.update' , $successs->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('bsuccess.update' , $success->id) }}" enctype="multipart/form-data">
 
                         @csrf
                         @method('PATCH')
                         <div class="form-group">
                             <label class="col-md-4 text-right">ชื่อ</label>
                             <div class="col-md-8">
-                                <input type="text" name="name" value="{{ $successs->name }}" class="form-control input-lg"/>
+                                <input type="text" name="name" value="{{ $success->name }}" class="form-control input-lg"/>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
                             <label class="col-md-4 text-right">เนื้อหา</label>
                             <div class="col-md-8">
-                                <textarea name="text" rows="10" cols="80" value="" class="form-control input-lg">{{ $successs->text }}</textarea>
+                                <textarea name="text" rows="10" cols="80" value="" class="form-control input-lg">{{ $success->text }}</textarea>
                             </div>
                         </div>
                         <br>
@@ -34,8 +34,8 @@
                             <label class="col-md-4 text-right">เลือกรูปภาพ</label>
                             <div class="col-md-8">
                                 <input type="file" name="image" />
-                                <img src="{{ URL::to('/') }}/images/{{ $successs->image }}" class="img-thumbnail" width="100" />
-                                <input type="hidden" name="hidden_image" value="{{ $successs->image }}" />
+                                <img src="{{ URL::to('/') }}/images/{{ $success->image }}" class="img-thumbnail" width="100" />
+                                <input type="hidden" name="hidden_image" value="{{ $success->image }}" />
                             </div>
                         </div>
                         <br>

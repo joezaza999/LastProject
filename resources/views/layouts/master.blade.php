@@ -34,42 +34,41 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
           <li class="{{ Request::path() == 'home' ? 'active' : '' }}">
-							<a class="nav-link" href="home">หน้าหลัก</a>
+							<a class="nav-link" href="{{ route('home') }}">หน้าหลัก</a>
 						</li>
 						  <li class="dropdown ">
 							<a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">ข้อมูลสาขาวิชา <b class="caret fa fa-caret-down"></b></a>
 							<ul class="dropdown-content ">
 							  <li class="{{ Request::path() == 'course' ? 'active' : '' }}">
-								<a class="nav-link" href="course">หลักสูตรและการสอน</a></li>
+								<a class="nav-link" href="{{ route('course') }}">หลักสูตรและการสอน</a></li>
 							  <li class="{{ Request::path() == 'about' ? 'active' : '' }}">
-                <a class="nav-link" href="about">คณาจารย์</a></li>
+                <a class="nav-link" href="{{ route('about') }}">คณาจารย์</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
 							<a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">นักศึกษา <b class="caret fa fa-caret-down"></b></a>
 							<ul class="dropdown-content ">
               <li class="{{ Request::path() == 'form' ? 'active' : '' }}">
-								<a class="nav-link" href="form">แบบฟอร์ม</a></li>
+								<a class="nav-link" href="{{ route('form') }}">แบบฟอร์ม</a></li>
 							  <li class="{{ Request::path() == 'award' ? 'active' : '' }}">
-                <a class="nav-link" href="award">รางวัล</a></li>
+                <a class="nav-link" href="{{ route('award') }}">รางวัล</a></li>
                 <li class="{{ Request::path() == 'success' ? 'active' : '' }}">
-								<a class="nav-link" href="success">ความสำเร็จของศิษย์เก่า</a></li>
+								<a class="nav-link" href="{{ route('success') }}">ความสำเร็จของศิษย์เก่า</a></li>
                 <li class="{{ Request::path() == 'cooperative' ? 'active' : '' }}">
-                <a class="nav-link" href="cooperative">ผลงานสหกิจศึกษา</a></li>
+                <a class="nav-link" href="{{ route('cooperative') }}">ผลงานสหกิจศึกษา</a></li>
                 <li class="{{ Request::path() == 'apprentice' ? 'active' : '' }}">
-                <a class="nav-link" href="apprentice">ผลงานฝึกงาน</a></li>
+                <a class="nav-link" href="{{ route('apprentice') }}">ผลงานฝึกงาน</a></li>
                 <li class="{{ Request::path() == 'student' ? 'active' : '' }}">
-                <a class="nav-link" href="student">รายชื่อนักศึกษา</a></li>
+                <a class="nav-link" href="{{ route('student') }}">รายชื่อนักศึกษา</a></li>
 							</ul>
             </li>
             <li class="{{ Request::path() == 'tact' ? 'active' : '' }}">
-								<a class="nav-link" href="tact">ติดต่อเรา</a></li>
+								<a class="nav-link" href="{{ route('tact') }}">ติดต่อเรา</a></li>
 					</ul>
 				</div>
 				<div class="top-social">
 					<ul id="top-social-menu">
 						<li><a href="#">เข้าสู่ระบบ</a></li>
-						<li><a href="#">Careers</a></li>
 					</ul>
 				</div>
 			</div>
@@ -107,8 +106,8 @@
         <div class="col-md-12">
           <div class="copyright-text">
             <p>© 2018
-              <a href="#">DigiPro</a>. All rights reserved. Created by
-              <a href="#">AazzTech</a>
+              <a>DigiPro</a>. All rights reserved. Created by
+              <a>BIT</a>
             </p>
           </div>
         </div>

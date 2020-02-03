@@ -9,7 +9,8 @@
 
 
 <div class="content">
-<div class="container">
+<div class="row">
+    <div class="leftcolumn1">
     @foreach($newsupdates as $newsupdate)
     <div class="wrapper">
       <div class="grid">
@@ -23,8 +24,9 @@
                   <li><a href="#0"><i class="fa fa-clock-o"></i>{{ $newsupdate->updated_at }}</a></li>
                 </ul>
     
-                <h5><a href="#0" class="card__title">{{ $newsupdate->title }}</a></h5>
-                <h6><a href="#0" class="card__title1">{{ $newsupdate->content }}</a></h6>
+                <h6 class="card__title">{{ $newsupdate->title }}</h6>
+                  <p class="card__title1">{{ $newsupdate->content }}</p><br>
+                <a href="{{ url('/newsupdate/show/'.$newsupdate->id)  }}">ดูรายละเอียด</a>
               </div>
             </div>
           </div>
@@ -32,9 +34,6 @@
       </div>
     </div>
     @endforeach  
-    <div>
-      <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="500px" height="" alt=""/>
-    </div> 
 {!! $newsupdates->render() !!}
 <script>
   (function() {
@@ -45,6 +44,7 @@
   });
 })();
 </script>
+</div>
 </div>
 </div>
 </div>

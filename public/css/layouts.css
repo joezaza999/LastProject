@@ -344,9 +344,10 @@
 	border-bottom-color: #003300
   }
   .content {
-	  max-width: 1200px;
+	  max-width: 1180px;
 	  margin: auto;
 	  background: #ffffff;
+	  padding: 20px;
 	 
 	}
   

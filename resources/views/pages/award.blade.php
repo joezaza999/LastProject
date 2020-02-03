@@ -1,43 +1,47 @@
 @extends('layouts.master')
 
-@section('content')
-<div class="body">
-  <<br><br>
-<div class="topnav" id="myTopnav">
-  <a href="" class="">รางวัล</a>
-</div>
-
-
+    @section('content')
+    <div class="body">
+    <br><br><br><br><br>
 <div class="content">
-<div class="container">
-@foreach($awards as $award)
-<div class="col l8 s12">
-  <div class="w3-card-4 w3-margin w3-white">
-    <img src="{{ asset('images/'.$award->image) }}" style="width:100px">
-    <div class="w3-container">
-      <h3><b>{{ $award->title }}</b></h3>
-      <h5>Title description, <span class="w3-opacity">{{ $award->updated_at }}</span></h5>
-    </div>
-
-    <div class="w3-container">
-      <p>{{ $award->content }}</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+      <h2>รางวัล</h2>
+      <div class="row">
+    <div class="leftcolumn1">
+    @foreach($awards as $award)
+    <div class="wrapper">
+      <div class="grid">
+        <div class="card">
+          <div class="card__image">
+            <img src="{{ asset('images/'.$award->image) }}" class="card-img-top">
+            <div class="card__overlay">
+              <div class="card__overlay-content">
+                <ul class="card__meta">
+                  <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
+                  <li><a href="#0"><i class="fa fa-clock-o"></i>{{ $award->updated_at }}</a></li>
+                </ul>
+                <h6 class="card__title">{{ $award->title }}</h6>
+                  <p class="card__title1">{{ $award->content }}</p><br>
+                  <a href="{{ url('/award/show/'.$award->id)  }}">ดูรายละเอียด</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <hr>
-</div>
-@endforeach
-<div>
-      <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="500px" height="" alt=""/>
-    </div> 
-{!! $awards->render() !!}
+    @endforeach
+  
+    {!! $awards->render() !!}
 </div>
 </div>
-</div>
-
-
+      </div>
+    </div>
+<script>
+  (function() {
+  var $grid = $('.grid').imagesLoaded(function() {
+    $('.site__wrapper').masonry({
+      itemSelector: '.grid'
+    });
+  });
+})();
+</script>
 @endsection

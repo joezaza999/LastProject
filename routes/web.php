@@ -18,21 +18,22 @@ use Illuminate\Support\Facades\Auth;
  });
 
 
-Route::get('/home','ShowhomeController@index');
-Route::get('/form','ShowformController@index');
-Route::get('/success','ShowsuccessController@index');
-Route::get('/student','ShowstudentController@index');
-Route::get('/apprentice','ShowapprenticeController@index');
-Route::get('/course','ShowcourseController@index');
-Route::get('/tact','PagesController@tact');
-Route::get('/test','PagesController@test');
-Route::get('/activities','ShowactivitiesController@index');
+Route::get('/home','ShowhomeController@index')->name('home');
+Route::get('/form','ShowformController@index')->name('form');
+Route::get('/success','ShowsuccessController@index')->name('success');
+Route::get('/success/show/{id}','ShowsuccessController@show');
+Route::get('/student','ShowstudentController@index')->name('student');
+Route::get('/apprentice','ShowapprenticeController@index')->name('apprentice');
+Route::get('/course','ShowcourseController@index')->name('course');
+Route::get('/tact','PagesController@tact')->name('tact');
+Route::get('/activities','ShowactivitiesController@index')->name('activities');
 Route::get('/activities/show/{id}','ShowactivitiesController@show');
-Route::get('/cooperative','ShowcooperativeController@index');
-Route::get('/newsupdate','ShownewsupdateController@index');
-Route::get('/about','ShowaboutController@index');
-Route::get('/award','ShowawardController@index');
-Route::get('/uploadactivities','ActivitiesController@index');
+Route::get('/cooperative','ShowcooperativeController@index')->name('cooperative');
+Route::get('/newsupdate','ShownewsupdateController@index')->name('newsupdate');
+Route::get('/newsupdate/show/{id}','ShownewsupdateController@show');
+Route::get('/about','ShowaboutController@index')->name('about');
+Route::get('/award','ShowawardController@index')->name('award');
+Route::get('/award/show/{id}','ShowawardController@show');
 
 
 Auth::routes();

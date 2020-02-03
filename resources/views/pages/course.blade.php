@@ -2,12 +2,9 @@
 
 @section('content')
 <div class="body">
-<br><br>
-<div class="topnav" id="myTopnav">
-  <a href="" class="">หลักสูตรและการสอน</a>
-</div>
-
+<br><br><br><br><br>
 <div class="content">
+      <h2>หลักสูตรและการสอน</h2>
     <div class="container">
       
     @foreach ($courses as $course)

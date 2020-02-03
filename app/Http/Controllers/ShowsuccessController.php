@@ -50,7 +50,8 @@ class ShowsuccessController extends Controller
      */
     public function show($id)
     {
-        //
+        $success = Success::findOrFail($id);
+        return view('pages.readsuccess', compact('success'));
     }
 
     /**

@@ -17,7 +17,7 @@ class ShowformController extends Controller
     {
         $form = Form::paginate(9);
         return view('pages.form',[
-            'form' => $form
+            'forms' => $form
         ]);
     }
 
