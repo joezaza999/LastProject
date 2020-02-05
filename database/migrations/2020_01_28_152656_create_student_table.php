@@ -17,7 +17,8 @@ class CreateStudentTable extends Migration
             $table->increments('id');
             $table->string('studentcode');
             $table->string('name');
-            $table->string('generation');
+            $table->integer('generation_id')->unsigned();
+            $table->foreign('generation_id')->references('id')->on('generation');
             $table->string('image');
             $table->timestamps();
         });

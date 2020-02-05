@@ -15,7 +15,6 @@ class CreateHeaderTable extends Migration
     {
         Schema::create('header', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tel');
             $table->string('image');
             $table->timestamps();
         });

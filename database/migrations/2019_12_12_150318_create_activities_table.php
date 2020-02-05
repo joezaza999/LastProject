@@ -18,6 +18,7 @@ class CreateActivitiesTable extends Migration
             $table->string('title');
             $table->string('content',1000);
             $table->string('image');
+            $table->date('date');
             $table->timestamps();
         });
     }

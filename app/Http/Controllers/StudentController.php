@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
-use App\Http\Requests\StudentRequest;
+use App\Generation;
+use App\Http\Requests\GenerationRequest;
 use Intervention\Image\Facades\Image;
 use illuminate\Support\Str;
-
+use Illuminate\Support\Facades\File;
 
 class StudentController extends Controller
 {
@@ -21,7 +22,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::paginate(5);
+        $students = Student::with('generation')->orderBy('generation_id','desc')->paginate(5);
         return view('backend.student.index',[
             'students'=> $students
         ]);
@@ -34,10 +35,10 @@ class StudentController extends Controller
      */
     public function create()
     {
-        $students = Student::all(['id', 'name']);
+        $generations = Generation::all(['id', 'name']);
         return view('backend.student.create',[
-            'students' => $students
-            ]);
+            'generations' => $generations
+        ]);
     }
 
     /**
@@ -51,25 +52,23 @@ class StudentController extends Controller
         $request->validate([
             'studentcode' => 'required',
             'name' => 'required',
-            'generation' => 'required',
-            'image' => 'required|mimes:jpeg,jpg,png'
+            'generation_id' => 'required',
+            'image' => 'required|image|max:2048',
         ]);
 
-        //เพิ่มรูป
         $image = $request->file('image');
+
         $new_name = rand() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images'), $new_name);
-
         $form_data = array(
-            'studentcode' => $request->studentcode,
             'name' => $request->name,
-            'generation' => $request->generation,
-            'image' => $new_name
+            'generation_id' => $request->generation_id,
+            'image' => $new_name,
         );
 
         Student::create($form_data);
 
-        return redirect('bstudent')->with('success', 'เพิ่มข้อมูลนักศึกษาสำเร็จ');
+        return redirect('bstudent')->with('success', 'เพิ่มนักศึกษาสำเร็จ');
     }
 
     /**
@@ -91,8 +90,9 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        $students = Student::findOrFail($id);
-        return view('backend.student.edit', compact('students'));
+        $generations = Generation::all(['id', 'name']);
+        $student = Student::findOrFail($id);
+        return view('backend.student.edit', compact('students','generations'));
     }
 
     /**
