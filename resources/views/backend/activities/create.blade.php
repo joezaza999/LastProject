@@ -42,9 +42,16 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <label class="col-md-4 text-right">เลือกรูปภาพ</label>
+                            <label class="col-md-4 text-right">เลือกรูปภาพหลัก</label>
                             <div class="col-md-8">
                                 <input type="file" name="image" />
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label class="col-md-4 text-right">เลือกรูปภาพกิจกรรม</label>
+                            <div class="col-md-8">
+                                <input type="file" name="images[]" multiple="">
                             </div>
                         </div>
                         <br>

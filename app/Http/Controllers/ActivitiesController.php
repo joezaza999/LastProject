@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Activities;
+use App\ActivitieImage;
 use App\Http\Requests\ActivitiesRequest;
 use Intervention\Image\Facades\Image;
 use illuminate\Support\Str;
@@ -34,10 +35,7 @@ class ActivitiesController extends Controller
      */
     public function create()
     {
-        $activities = Activities::all(['id', 'title']);
-        return view('backend.activities.create',[
-            'activitiess' => $activities        
-            ]);
+        return view('backend.activities.create');
     }
 
     /**
@@ -48,39 +46,45 @@ class ActivitiesController extends Controller
      */
     public function store(Request $request)
     {
-        // $activitiess = new Activities();
-        // $activitiess->id = $request->id;
-        // $activitiess->title = $request->title;
-        // $activitiess->content = $request->content;
-        // if ($request->hasFile('image')) {
-        //     $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
-        //     $request->file('image')->move(public_path() . '/images/', $filename);
-        //     Image::make(public_path() . '/images/' . $filename)->resize(50,50)->save(public_path() . '/images/resize/' . $filename);
-        //     $activitiess->image = $filename;
-        // }
-        // else {
-        //     $activitiess->image = 'nopic.png';
-        // }
-        // $activitiess->save();
-        // return redirect()->action('ActivitiesController@index');
-        
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'image' => 'required|image|max:2048'
+            'image' => 'required|image|max:2048',
         ]);
 
-        $image = $request->file('image');
+        $activitiess = new Activities();
+        $activitiess->title = $request->title;
+        $activitiess->content = $request->content;
+        $request->hasFile('image');
+        $filename = rand() . '.' . $request->file('image')->getClientOriginalExtension();
+        $request->file('image')->move(public_path() . '/images/', $filename);
+        $activitiess->image = $filename;
 
-        $new_name = rand() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images'), $new_name);
-        $form_data = array(
-            'title' => $request->title,
-            'content' => $request->content,
-            'image' => $new_name
-        );
+        $activitiess->save();
+        // return redirect()->action('ActivitiesController@index');
 
-        Activities::create($form_data);
+
+        // $image = $request->file('image');
+        // $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        // $image->move(public_path('images'), $new_name);
+
+
+        // $form_data = array(
+        //     'title' => $request->title,
+        //     'content' => $request->content,
+        //     'image' => $new_name
+        // );
+
+        // Activities::create($form_data);
+
+        foreach ($request->file('images') as $image) {
+            $activitieImage = new ActivitieImage;
+            $name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path().'/images/activitie/' . $activitiess->id , $name);
+            $activitieImage->activitie_id = $activitiess->id;
+            $activitieImage->image_path = $name;
+            $activitieImage->save();
+        }
 
         return redirect('bactivities')->with('success', 'เพิ่มข้อมูลกิจกรรมสำเร็จ');
     }
@@ -121,7 +125,7 @@ class ActivitiesController extends Controller
         // $activitiess->update($request->all());
 
         // return redirect()->action('ActivitiesController@index');
-       
+
         $image_name = $request->hidden_image;
         $image = $request->file('image');
 
