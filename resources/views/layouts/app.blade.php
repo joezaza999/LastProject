@@ -35,7 +35,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="bhome">หลังบ้าน</a>
+    <a class="navbar-brand mr-1" href="bhome">การจัดการหลังบ้าน</a>
 
     <!-- Navbar Search -->
     @guest

@@ -11,7 +11,7 @@
         @foreach ($slideshows as $slideshow)
 
       <div class="carousel-item @if($loop->first)active @endif">
-      <img class="d-block mx-auto img-fluid" src="{{asset("images/$slideshow->image")}}" width="1160px"   alt="">
+      <img class="d-block mx-auto img-fluid" src="{{asset("images/$slideshow->image")}}" width="1180px"   alt="">
       </div>
       @endforeach
     </div>
@@ -23,7 +23,8 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-  </div><br>
+  </div>
+  
 
       <div class="content">
 
@@ -91,10 +92,9 @@
     <div class="leftcolumn">
       <br>
       <h3><c class="icon-book"></c> เกี่ยวกับเรา</h3><br>
-
       @foreach ($abouts as $about)
     <div class="indent2">
-        <p>{{ $about->text }}</p>
+        <p>{{ $about->text }}</p>  
     </div>
     @endforeach
     </div>

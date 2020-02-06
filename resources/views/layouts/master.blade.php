@@ -37,14 +37,16 @@
 							<a class="nav-link" href="{{ route('home') }}">หน้าหลัก</a>
 						</li>
 						  <li class="dropdown ">
-							<a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">ข้อมูลสาขาวิชา <b class="caret fa fa-caret-down"></b></a>
+							<a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">หลักสูตร <b class="caret fa fa-caret-down"></b></a>
 							<ul class="dropdown-content ">
 							  <li class="{{ Request::path() == 'course' ? 'active' : '' }}">
-								<a class="nav-link" href="{{ route('course') }}">หลักสูตรและการสอน</a></li>
-							  <li class="{{ Request::path() == 'about' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('about') }}">คณาจารย์</a></li>
+								<a class="nav-link" href="{{ route('course') }}">เทคโนโลยีสารสนเทศทางธุรกิจ-พัฒนาซอฟท์แวร์</a></li>
+							  <li class="{{ Request::path() == 'course' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('course') }}">การจัดการเทคโนโลยีสารสนเทศ</a></li>
 							</ul>
-						</li>
+            </li>
+            <li class="{{ Request::path() == 'about' ? 'active' : '' }}">
+              <a class="nav-link" href="{{ route('about') }}">คณาจารย์</a></li>
 						<li class="dropdown">
 							<a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">นักศึกษา <b class="caret fa fa-caret-down"></b></a>
 							<ul class="dropdown-content ">
