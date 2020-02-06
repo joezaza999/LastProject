@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Generation;
-use App\Http\Requests\GenerationRequest;
+use App\Category;
+use App\Http\Requests\CategoryRequest;
 
-class GenerationController extends Controller
+class CategoryController extends Controller
 {
     public function __construct() {
         $this->middleware('auth', ['except' => ['show']]);
@@ -18,9 +18,9 @@ class GenerationController extends Controller
      */
     public function index()
     {
-        $generations = Generation::all(); //ดึงข้อมูลตำแหน่งทั้งหมดจากตาราง generation เก็บไว้ที่ตัวแปร
-        return view('backend.generation.index',[
-            'generations' => $generations
+        $categorys = Category::paginate(5);
+        return view('backend.category.index',[
+            'categorys'=> $categorys
         ]);
     }
 
@@ -31,7 +31,7 @@ class GenerationController extends Controller
      */
     public function create()
     {
-        return view('backend.generation.create');
+        return view('backend.category.create');
     }
 
     /**
@@ -42,11 +42,19 @@ class GenerationController extends Controller
      */
     public function store(Request $request)
     {
-        $generations = new Generation();
-        $generations->name = $request->name;
-        $generations->save();
+        $request->validate([
+            'name' => 'required',
+            'credit' => 'required'
+        ]);
+    
+        $form_data = array(
+            'name' => $request->name,
+            'credit' => $request->credit
+        );
 
-        return redirect()->action('GenerationController@index');
+        Category::create($form_data);
+
+        return redirect('bcategory')->with('success', 'เพิ่มข้อมูลหมวดวิชาสำเร็จ');
     }
 
     /**
@@ -68,10 +76,8 @@ class GenerationController extends Controller
      */
     public function edit($id)
     {
-        $generations = Generation::findOrFail($id);
-        return view('backend.generation.edit',[
-            'generations' => $generations
-        ]);
+        $category = Category::findOrFail($id);
+        return view('backend.category.edit', compact('category'));
     }
 
     /**
@@ -83,10 +89,18 @@ class GenerationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $generations = Generation::find($id);
-        $generations->update($request->all());
+        $request->validate([
+            'name' => 'required',
+            'credit' => 'required'
+        ]);
 
-        return redirect()->action('GenerationController@index');
+        $form_data = array(
+            'name' => $request->name,
+            'credit' => $request->credit,
+        );
+
+    Category::whereId($id)->update($form_data);
+    return redirect('bcategory')->with('success', 'แก้ไขข้อมูลหมวดวิชาสำเร็จ');
     }
 
     /**
@@ -97,8 +111,9 @@ class GenerationController extends Controller
      */
     public function destroy($id)
     {
-        $generations = Generation::find($id);
-        $generations->delete();
-        return redirect()->action('GenerationController@index');
+        $categorys = Category::find($id);
+
+        $categorys->delete();
+        return redirect('bcategory')->with('success', 'ลบข้อมูลหมวดวิชาสำเร็จ');
     }
 }

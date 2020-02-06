@@ -15,14 +15,14 @@
             </div>
              @endif
             <div class="card">
-                <div class="card-header">เพิ่มข้อมูลตำแหน่ง</div>
+                <div class="card-header">เพิ่มข้อมูลรุ่น</div>
 
                 <div class="card-body">
-                    {!! Form::open(array('url'=>'bposition','files'=>true)) !!}
-                    <div class="col-md-8">
-                        <div class="form-group">
-                            <?= Form::label('name','ตำแหน่ง'); ?>
-                            <?= Form::text('name', null,['class'=>'form-control','placeholder'=>'ระบุตำแหน่ง']); ?>
+                    {!! Form::open(array('url'=>'bgeneration','files'=>true)) !!}
+                        <div class="col-md-8">
+                            <div class="form-group">
+                            <?= Form::label('name','พ.ศ.'); ?>
+                            <?= Form::text('name', null,['class'=>'form-control','placeholder'=>'ระบุข้อมูลรุ่น']); ?>
                         </div>
                     </div>
 

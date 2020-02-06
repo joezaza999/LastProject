@@ -55,6 +55,12 @@ Route::resource('/bapprentice','ApprenticeController')->name('index','bapprentic
 Route::resource('/bsuccess','SuccessController')->name('index','bsuccess');
 Route::resource('/bform','FormController')->name('index','bform');
 Route::resource('/bstudent','StudentController')->name('index','bstudent');
+Route::resource('/bgeneration','GenerationController')->name('index','bgeneration');
+Route::resource('/bcategory','CategoryController')->name('index','bcategory');
+Route::resource('/bsubgroup','SubgroupController')->name('index','bsubgroup');
+Route::resource('/bsubject','SubjectController')->name('index','bsubject');
+
+
 
 
 

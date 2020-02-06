@@ -5,46 +5,43 @@
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
             <div aligh="right">
-            <br>
-                <a href="{{ route('bapprentice') }}" class="btn btn-default">กลับ</a>
+                <a href="{{ route('bsubject') }}" class="btn btn-default">กลับ</a>
             </div>
-            
-            <div class="card"></div>
-                <div class="card-header">แก้ไขข้อมูลฝึกงาน</div>
+            <div class="card">
+
+                <div class="card-header">แก้ไขข้อมูลวิชา</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('bapprentice.update' , $apprentices->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('bsubject.update' , $subject->id) }}" enctype="multipart/form-data">
 
                         @csrf
                         @method('PATCH')
+
                         <div class="form-group">
-                            <label class="col-md-4 text-left">ชื่อ</label>
+                            <label class="col-md-4 text-left">รหัสวิชา</label>
                             <div class="col-md-8">
-                                <input type="text" name="name" value="{{ $apprentices->name }}" class="form-control input-lg"/>
+                                <input type="text" name="subcode" value="{{ $subject->subcode }}" class="form-control input-lg"/>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <label class="col-md-4 text-left">เนื้อหา</label>
+                            <label class="col-md-4 text-left">ชื่อวิชา</label>
                             <div class="col-md-8">
-                                <textarea name="text" rows="10" cols="80" value="" class="form-control input-lg">{{ $apprentices->text }}</textarea>
+                                <textarea name="name" rows="10" cols="80" value="" class="form-control input-lg">{{ $subject->name }}</textarea>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <label class="col-md-4 text-left">เลือกรูปภาพ</label>
+                            <label class="col-md-4 text-left">จำนวนหน่วยกิต</label>
                             <div class="col-md-8">
-                                <input type="file" name="image" />
-                                <img src="{{ URL::to('/') }}/images/{{ $apprentices->image }}" class="img-thumbnail" width="100" />
-                                <input type="hidden" name="hidden_image" value="{{ $apprentices->image }}" />
+                                <input type="text" name="credit" value="{{ $subject->credit }}" class="form-control input-lg"/>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <label class="col-md-4 text-left">เลือกไฟล์</label>
+                            <label class="col-md-4 text-left">รายละเอียด</label>
                             <div class="col-md-8">
-                                <input type="file" name="file" />
-                                <input type="hidden" name="hidden_file" value="{{ $apprentices->file }}" />
+                                <textarea name="text" rows="10" cols="80" value="" class="form-control input-lg">{{ $subject->text }}</textarea>
                             </div>
                         </div>
                         <br>

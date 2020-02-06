@@ -35,9 +35,9 @@ class StudentController extends Controller
      */
     public function create()
     {
-        $generations = Generation::all(['id', 'name']);
+        $generation = Generation::all(['id', 'name']);
         return view('backend.student.create',[
-            'generations' => $generations
+            'generations' => $generation
         ]);
     }
 
@@ -61,6 +61,7 @@ class StudentController extends Controller
         $new_name = rand() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images'), $new_name);
         $form_data = array(
+            'studentcode' => $request->studentcode,
             'name' => $request->name,
             'generation_id' => $request->generation_id,
             'image' => $new_name,
@@ -92,7 +93,7 @@ class StudentController extends Controller
     {
         $generations = Generation::all(['id', 'name']);
         $student = Student::findOrFail($id);
-        return view('backend.student.edit', compact('students','generations'));
+        return view('backend.student.edit', compact('student','generations'));
     }
 
     /**
@@ -112,7 +113,7 @@ class StudentController extends Controller
             $request->validate([
                 'studentcode' => 'required',
                 'name' => 'required',
-                'generation' => 'required',
+                'generation_id' => 'required',
                 'image' => 'required|mimes:jpeg,jpg,png'
             ]);
 
@@ -124,14 +125,14 @@ class StudentController extends Controller
             $request->validate([
                 'studentcode' => 'required',
                 'name' => 'required',
-                'generation' => 'required'
+                'generation_id' => 'required'
             ]);
         }
 
         $form_data = array(
             'studentcode' => $request->studentcode,
             'name' => $request->name,
-            'generation' => $request->generation,
+            'generation_id' => $request->generation_id,
             'image' => $image_name
         );
 

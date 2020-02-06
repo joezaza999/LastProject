@@ -15,42 +15,43 @@
 
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
-        <br>
             <div aligh="right">
-                <a href="{{ route('bcooperative') }}" class="btn btn-default">กลับ</a>
+                <a href="{{ route('bsubject') }}" class="btn btn-default">กลับ</a>
             </div>
+            <br><br>
 
             <div class="card">
-                <div class="card-header">เพิ่มข้อมูลสหกิจศึกษา</div>
+                <div class="card-header">เพิ่มข้อมูลวิชา</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('bcooperative.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('bsubject.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
-                            <label class="col-md-4 text-left">ชื่อ</label>
+                            <label class="col-md-4 text-left">รหัสวิชา</label>
                             <div class="col-md-8">
-                                <input type="text" name="name" class="form-control input-lg" placeholder="กรุณากรอกชื่อสหกิจศึกษา"/>
+                                <input type="text" name="subcode" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"/>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <label class="col-md-4 text-left">เนื้อหา</label>
+                            <label class="col-md-4 text-left">ชื่อวิชา</label>
+                            <div class="col-md-8">
+                                <textarea rows="10" cols="80" name="name" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"></textarea>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label class="col-md-4 text-left">จำนวนหน่วยกิต</label>
+                            <div class="col-md-8">
+                                <input type="text" name="credit" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"/>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label class="col-md-4 text-left">รายละเอียด</label>
                             <div class="col-md-8">
                                 <textarea rows="10" cols="80" name="text" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"></textarea>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label class="col-md-4 text-left">เลือกรูปภาพ</label>
-                            <div class="col-md-8">
-                                <input type="file" name="image" />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-4 text-left">เลือกไฟล์</label>
-                            <div class="col-md-8">
-                                <input type="file" name="file" />
                             </div>
                         </div>
                         <br>

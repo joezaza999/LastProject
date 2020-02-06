@@ -28,14 +28,16 @@
                         @csrf
 
                         <div class="form-group">
-                            <label class="col-md-4 text-right">เนื้อหา</label>
+                            <label class="col-md-4 text-left">เนื้อหา</label>
                             <div class="col-md-8">
                                 <textarea rows="10" cols="80" name="text" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"></textarea>
                             </div>
                         </div>
                         <br>
-                        <div class="form-group text-center">
-                            <input type="submit" name="submit" class="btn btn-primary input-lg" value="เพิ่มข้อมูล" />
+                        <div class="form-group text-left">
+                            <div class="col-md-10">
+                                <input type="submit" name="submit" class="btn btn-primary input-lg" value="เพิ่มข้อมูล" />
+                            </div>
                         </div>
                     </form>
                 </div>

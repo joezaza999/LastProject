@@ -16,28 +16,28 @@
     <div class="row justify-content-center">
         <div class="col-md-10 col-md-offset-1">
             <div aligh="right">
-            <br>
-                <a href="{{ route('bform') }}" class="btn btn-default">กลับ</a>
+                <a href="{{ route('bsubgroup') }}" class="btn btn-default">กลับ</a>
             </div>
+            <br><br>
 
             <div class="card">
-                <div class="card-header">เพิ่มข้อมูลแบบฟอร์ม</div>
+                <div class="card-header">เพิ่มข้อมูลกลุ่มวิชา</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('bform.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('bsubgroup.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
-                            <label class="col-md-4 text-left">ชื่อ</label>
+                            <label class="col-md-4 text-left">ชื่อกลุ่มวิชา</label>
                             <div class="col-md-8">
-                                <input type="text" name="name" class="form-control input-lg" placeholder="กรุณากรอกชื่อแบบฟอร์ม"/>
+                                <textarea rows="10" cols="80" name="name" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"></textarea>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <label class="col-md-4 text-left">เลือกไฟล์</label>
+                            <label class="col-md-4 text-left">จำนวนหน่วยกิต</label>
                             <div class="col-md-8">
-                                <input type="file" name="file" />
+                            <input type="text" name="credit" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"/>
                             </div>
                         </div>
                         <br>
