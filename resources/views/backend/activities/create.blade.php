@@ -42,16 +42,21 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <label class="col-md-4 text-left">เลือกรูปภาพ</label>
+                            <label class="col-md-4 text-right">เลือกรูปภาพหลัก</label>
                             <div class="col-md-8">
                                 <input type="file" name="image" />
                             </div>
                         </div>
                         <br>
-                        <div class="form-group text-left">
-                        <div class="col-md-8">
-                                <input type="submit" name="submit" class="btn btn-primary input-lg" value="เพิ่มข้อมูล" />
+                        <div class="form-group">
+                            <label class="col-md-4 text-right">เลือกรูปภาพกิจกรรม</label>
+                            <div class="col-md-8">
+                                <input type="file" name="images[]" multiple="">
                             </div>
+                        </div>
+                        <br>
+                        <div class="form-group text-center">
+                            <input type="submit" name="submit" class="btn btn-primary input-lg" value="เพิ่มข้อมูล" />
                         </div>
                     </form>
                 </div>
