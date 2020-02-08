@@ -51,6 +51,7 @@ class ApprenticeController extends Controller
         $request->validate([
             'name' => 'required',
             'text' => 'required',
+            'location' => 'required',
             'image' => 'required|image|max:2048',
             'file' => 'required|mimes:doc,docx,pdf,xls'
         ]);
@@ -68,6 +69,7 @@ class ApprenticeController extends Controller
         $form_data = array(
             'name' => $request->name,
             'text' => $request->text,
+            'location' => $request->location,
             'image' => $new_name,
             'file' => $fileName
         );
@@ -120,6 +122,7 @@ class ApprenticeController extends Controller
             $request->validate([
                 'name' => 'required',
                 'text' => 'required',
+                'location' => 'required',
                 'image' => 'required|mimes:jpeg,jpg,png',
             ]);
 
@@ -131,6 +134,7 @@ class ApprenticeController extends Controller
             $request->validate([
                 'name' => 'required',
                 'text' => 'required',
+                'location' => 'required',
                 'file' => 'required|mimes:doc,docx,pdf,xls'
             ]);
 
@@ -142,12 +146,14 @@ class ApprenticeController extends Controller
             $request->validate([
                 'name' => 'required',
                 'text' => 'required',
+                'location' => 'required',
             ]);
         }
 
         $form_data = array(
             'name' => $request->name,
             'text' => $request->text,
+            'location' => $request->location,
             'image' => $image_name,
             'file' => $fileName
         );

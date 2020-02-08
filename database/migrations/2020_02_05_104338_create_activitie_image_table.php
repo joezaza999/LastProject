@@ -17,7 +17,6 @@ class CreateActivitieImageTable extends Migration
             $table->increments('id');
             $table->integer('activitie_id');
             $table->string('image_path');
-            $table->timestamps();
         });
     }
 

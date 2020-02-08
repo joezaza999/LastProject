@@ -15,13 +15,12 @@ class CreateMemberTable extends Migration
     {
         Schema::create('member', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name',50);
             $table->integer('position_id')->unsigned();
             $table->foreign('position_id')->references('id')->on('position');
-            $table->string('image');
-            $table->string('tel');
-            $table->string('email');
-            $table->timestamps();
+            $table->string('image',100);
+            $table->string('tel',10);
+            $table->string('email',50);
         });
     }
 

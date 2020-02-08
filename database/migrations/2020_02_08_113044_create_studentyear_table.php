@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGenerationTable extends Migration
+class CreateStudentyearTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateGenerationTable extends Migration
      */
     public function up()
     {
-        Schema::create('generation', function (Blueprint $table) {
+        Schema::create('studentyear', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateGenerationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('generation');
+        Schema::dropIfExists('studentyear');
     }
 }

@@ -15,7 +15,7 @@ class CreateSlideshowTable extends Migration
     {
         Schema::create('slideshow', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('image');
+            $table->string('image',100);
             $table->timestamps();
         });
     }

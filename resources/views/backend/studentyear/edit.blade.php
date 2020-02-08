@@ -18,7 +18,7 @@
                     </div>
                     @endif
 
-                    <?= Form::model($generations,array('url'=>'bgeneration/'.$generations->id,'method'=>'put')) ?>
+                    <?= Form::model($studentyears,array('url'=>'bstudentyear/'.$studentyears->id,'method'=>'put')) ?>
 
                     <div class="col-md-8">
                         <div class="form-group">

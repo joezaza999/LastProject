@@ -15,10 +15,11 @@ class CreateApprenticeTable extends Migration
     {
         Schema::create('apprentice', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name',50);
             $table->string('text');
-            $table->string('image');
-            $table->string('file');
+            $table->string('location');
+            $table->string('image',100);
+            $table->string('file',100);
             $table->timestamps();
         });
     }

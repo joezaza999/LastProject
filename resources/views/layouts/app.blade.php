@@ -156,11 +156,7 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>{{ __('แบบฟอร์ม') }}</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('bgeneration') }}">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>{{ __('รุ่นนักศึกษา') }}</span></a>
-      </li>
+      
       <li class="nav-item">
         <a class="nav-link" href="{{ route('bstudent') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>

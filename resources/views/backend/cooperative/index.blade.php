@@ -23,6 +23,7 @@
                         <tr>
                             <th>ชื่อ</th>
                             <th>เนื้อหา</th>
+                            <th>สถานที่</th>
                             <th>รูปภาพ</th>
                             <th>ไฟล์</th>
                             <th>แก้ไข</th>
@@ -32,6 +33,7 @@
                         <tr>
                             <td>{{ $cooperative->name }}</td>
                             <td>{{ $cooperative->text }}</td>
+                            <td>{{ $cooperative->location }}</td>
                             <td>
                             <img src="{{ URL::to('/') }}/images/{{ $cooperative->image }}"
                             class="img-thumbnail" width="75" />

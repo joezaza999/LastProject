@@ -19,7 +19,7 @@ class CreateSubjectTable extends Migration
             $table->string('name');
             $table->string('credit');
             $table->string('text');
-            $table->timestamps();
+            
         });
     }
 

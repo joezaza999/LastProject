@@ -30,9 +30,9 @@
                         </tr>
                         @foreach ($students as $student)
                         <tr>
-                            <td>{{ $student->studentcode }}</td>
+                            <td>{{ $student->studentid }}</td>
                             <td>{{ $student->name }}</td>
-                            <td>{{ $student->generation->name }}</td>
+                            <td>{{ $student->studentyear->name }}</td>
                             <td>
                             <img src="{{ URL::to('/') }}/images/{{ $student->image }}"
                             class="img-thumbnail" width="75" />

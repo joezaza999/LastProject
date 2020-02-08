@@ -22,7 +22,7 @@ class CreateCourseTable extends Migration
             $table->string('format');
             $table->string('property' , 1000);
             $table->string('job' , 1000);
-            $table->timestamps();
+           
         });
     }
 

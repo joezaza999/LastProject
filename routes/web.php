@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Auth;
      return view('auth.login');
  });
 
-
 Route::get('/home','ShowhomeController@index')->name('home');
 Route::get('/form','ShowformController@index')->name('form');
 Route::get('/success','ShowsuccessController@index')->name('success');
@@ -39,6 +38,7 @@ Route::get('/award/show/{id}','ShowawardController@show');
 Auth::routes();
 
 Route::get('/bhome', 'HomeController@index')->name('bhome');
+Route::get('status/{id}','HomeController@status')->name('status');
 // Route::get('/position', 'PositionController@index')->name('position');
 // Route::get('/position/destroy/(id)', 'PositionController@destroy');
 Route::resource('/bposition','PositionController')->name('index','bposition');
@@ -55,7 +55,7 @@ Route::resource('/bapprentice','ApprenticeController')->name('index','bapprentic
 Route::resource('/bsuccess','SuccessController')->name('index','bsuccess');
 Route::resource('/bform','FormController')->name('index','bform');
 Route::resource('/bstudent','StudentController')->name('index','bstudent');
-Route::resource('/bgeneration','GenerationController')->name('index','bgeneration');
+Route::resource('/bstudentyear','StudentyearController')->name('index','bstudentyear');
 Route::resource('/bcategory','CategoryController')->name('index','bcategory');
 Route::resource('/bsubgroup','SubgroupController')->name('index','bsubgroup');
 Route::resource('/bsubject','SubjectController')->name('index','bsubject');

@@ -30,7 +30,7 @@
                         <div class="form-group">
                             <label class="col-md-4 text-left">รหัสนักศึกษา</label>
                             <div class="col-md-8">
-                                <input type="text" name="studentcode" class="form-control input-lg" placeholder="กรุณากรอกรหัสนักศึกษา"/>
+                                <input type="text" name="studentid" class="form-control input-lg" placeholder="กรุณากรอกรหัสนักศึกษา"/>
                             </div>
                         </div>
                         <br>
@@ -45,7 +45,7 @@
                             <label class="col-md-4 text-left">รุ่น</label>
                             <div class="col-md-8">
                             <select class="form-control" name="generation_id">
-                                @foreach ($generations as $generation)
+                                @foreach ($studentyears as $studentyear)
                                     <option value="{{ $generation->id }}">{{ $generation->name }}</option>
                                 @endforeach
                             </select>

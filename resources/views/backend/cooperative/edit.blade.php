@@ -32,6 +32,13 @@
                         </div>
                         <br>
                         <div class="form-group">
+                            <label class="col-md-4 text-left">สถานที่</label>
+                            <div class="col-md-8">
+                                <textarea name="location" rows="10" cols="80" value="" class="form-control input-lg">{{ $cooperatives->location }}</textarea>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
                             <label class="col-md-4 text-left">เลือกรูปภาพ</label>
                             <div class="col-md-8">
                                 <input type="file" name="image" />

@@ -18,7 +18,7 @@
                 <div class="card-header">เพิ่มข้อมูลรุ่น</div>
 
                 <div class="card-body">
-                    {!! Form::open(array('url'=>'bgeneration','files'=>true)) !!}
+                    {!! Form::open(array('url'=>'bstudentyear','files'=>true)) !!}
                         <div class="col-md-8">
                             <div class="form-group">
                             <?= Form::label('name','พ.ศ.'); ?>

@@ -50,6 +50,7 @@ class CooperativeController extends Controller
         $request->validate([
             'name' => 'required',
             'text' => 'required',
+            'location' => 'required',
             'image' => 'required|mimes:jpeg,jpg,png',
             'file' => 'required|mimes:doc,docx,pdf,xls'
         ]);
@@ -67,6 +68,7 @@ class CooperativeController extends Controller
         $form_data = array(
             'name' => $request->name,
             'text' => $request->text,
+            'location' => $request->location,
             'image' => $new_name,
             'file' => $fileName
         );
@@ -119,6 +121,7 @@ class CooperativeController extends Controller
             $request->validate([
                 'name' => 'required',
                 'text' => 'required',
+                'location' => 'required',
                 'image' => 'required|mimes:jpeg,jpg,png',
             ]);
 
@@ -130,6 +133,7 @@ class CooperativeController extends Controller
             $request->validate([
                 'name' => 'required',
                 'text' => 'required',
+                'location' => 'required',
                 'file' => 'required|mimes:doc,docx,pdf,xls'
             ]);
 
@@ -141,6 +145,7 @@ class CooperativeController extends Controller
             $request->validate([
                 'name' => 'required',
                 'text' => 'required',
+                'location' => 'required'
             ]);
         }
 
@@ -148,6 +153,7 @@ class CooperativeController extends Controller
             'name' => $request->name,
             'text' => $request->text,
             'image' => $image_name,
+            'location' => $request->location,
             'file' => $fileName
         );
 

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
-use App\Generation;
-use App\Http\Requests\GenerationRequest;
+use App\Studentyear;
+use App\Http\Requests\StudentRequest;
 use Intervention\Image\Facades\Image;
 use illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
@@ -22,7 +22,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::with('generation')->orderBy('generation_id','desc')->paginate(5);
+        $students = Student::with('studentyear')->orderBy('studentyear_id','desc')->paginate(5);
         return view('backend.student.index',[
             'students'=> $students
         ]);
@@ -35,9 +35,9 @@ class StudentController extends Controller
      */
     public function create()
     {
-        $generation = Generation::all(['id', 'name']);
+        $studentyear = Studentyear::all(['id', 'name']);
         return view('backend.student.create',[
-            'generations' => $generation
+            'studentyears' => $studentyear
         ]);
     }
 
@@ -50,9 +50,9 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'studentcode' => 'required',
+            'studentid' => 'required',
             'name' => 'required',
-            'generation_id' => 'required',
+            'studentyear_id' => 'required',
             'image' => 'required|image|max:2048',
         ]);
 
@@ -61,9 +61,9 @@ class StudentController extends Controller
         $new_name = rand() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images'), $new_name);
         $form_data = array(
-            'studentcode' => $request->studentcode,
+            'studentid' => $request->studentid,
             'name' => $request->name,
-            'generation_id' => $request->generation_id,
+            'studentyear_id' => $request->studentyear_id,
             'image' => $new_name,
         );
 
@@ -91,9 +91,9 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        $generations = Generation::all(['id', 'name']);
+        $studentyears = Studentyear::all(['id', 'name']);
         $student = Student::findOrFail($id);
-        return view('backend.student.edit', compact('student','generations'));
+        return view('backend.student.edit', compact('student','studentyears'));
     }
 
     /**
@@ -111,9 +111,9 @@ class StudentController extends Controller
         if($image != '')
         {
             $request->validate([
-                'studentcode' => 'required',
+                'studentid' => 'required',
                 'name' => 'required',
-                'generation_id' => 'required',
+                'studentyear_id' => 'required',
                 'image' => 'required|mimes:jpeg,jpg,png'
             ]);
 
@@ -123,16 +123,16 @@ class StudentController extends Controller
         else
         {
             $request->validate([
-                'studentcode' => 'required',
+                'studentid' => 'required',
                 'name' => 'required',
-                'generation_id' => 'required'
+                'studentyear_id' => 'required'
             ]);
         }
 
         $form_data = array(
-            'studentcode' => $request->studentcode,
+            'studentid' => $request->studentid,
             'name' => $request->name,
-            'generation_id' => $request->generation_id,
+            'studentyear_id' => $request->studentyear_id,
             'image' => $image_name
         );
 
