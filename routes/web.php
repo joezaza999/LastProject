@@ -46,6 +46,7 @@ Route::resource('/bmembers','MemberController')->name('index','bmembers');
 Route::resource('/bcourse','CourseController')->name('index','bcourse');
 Route::resource('/babout','AboutController')->name('index','babout');
 Route::resource('/bactivities','ActivitiesController')->name('index','bactivities');
+Route::get('/bactivities/destroyimage/{id}','ActivitiesController@destroyImage');
 Route::resource('/bcooperative','CooperativeController')->name('index','bcooperative');
 Route::resource('/baward','AwardController')->name('index','baward');
 Route::resource('/bnewsupdate','NewsupdateController')->name('index','bnewsupdate');

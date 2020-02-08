@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Activities;
+use App\ActivitieImage;
 
 class ShowactivitiesController extends Controller
 {
@@ -51,7 +52,8 @@ class ShowactivitiesController extends Controller
     public function show($id)
     {
         $activities = Activities::findOrFail($id);
-        return view('pages.readactivitie', compact('activities'));
+        $activitieImage = ActivitieImage::select('activitie_id','image_path')->where('activitie_id', '=', $id)->get();
+        return view('pages.readactivitie', compact('activities','activitieImage'));
     }
 
     /**

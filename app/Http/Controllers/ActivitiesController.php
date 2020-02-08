@@ -109,7 +109,8 @@ class ActivitiesController extends Controller
     public function edit($id)
     {
         $activities = Activities::findOrFail($id);
-        return view('backend.activities.edit', compact('activities'));
+        $activitieImage = ActivitieImage::select('id','activitie_id','image_path')->where('activitie_id', '=', $id)->get();
+        return view('backend.activities.edit', compact('activities','activitieImage'));
     }
 
     /**
@@ -121,13 +122,12 @@ class ActivitiesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $activitiess = Activities::find($id);
-        // $activitiess->update($request->all());
-
-        // return redirect()->action('ActivitiesController@index');
-
-        $image_name = $request->hidden_image;
         $image = $request->file('image');
+        $images = $request->file('images');
+
+        $activitiess = Activities::find($id);
+        $activitiess->title = $request->title;
+        $activitiess->content = $request->content;
 
         if($image != '')
         {
@@ -136,8 +136,9 @@ class ActivitiesController extends Controller
                 'content' => 'required',
                 'image' => 'required|image|max:2048'
             ]);
-            $image_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $image_name);
+            $filename = rand() . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path() . '/images/', $filename);
+            $activitiess->image = $filename;
         }
         else
         {
@@ -147,13 +148,18 @@ class ActivitiesController extends Controller
             ]);
         }
 
-        $form_data = array(
-            'title' => $request->title,
-            'content' => $request->content,
-            'image' => $image_name
-        );
+        if($images){
+            foreach ($images as $image) {
+                $activitieImage = new ActivitieImage;
+                $name = rand() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path().'/images/activitie/' . $activitiess->id , $name);
+                $activitieImage->activitie_id = $activitiess->id;
+                $activitieImage->image_path = $name;
+                $activitieImage->save();
+            }
+        }
 
-        Activities::whereId($id)->update($form_data);
+        $activitiess->save();
         return redirect('bactivities')->with('success', 'แก้ไขข้อมูลกิจกรรมสำเร็จ');
     }
 
@@ -166,11 +172,29 @@ class ActivitiesController extends Controller
     public function destroy($id)
     {
         $activitiess = Activities::find($id);
+        // $activitieImage = ActivitieImage::select('activitie_id','image_path')->where('activitie_id', '=', $id)->get();
+        // $activitieImage = ActivitieImage::all();
         if ($activitiess->image != 'nopic.png') {
             File::delete(public_path() . '\\images\\' . $activitiess->image);
-            File::delete(public_path() . '\\images\\resize\\' . $activitiess->image);
+            $activitiess->delete();
         }
-        $activitiess->delete();
+
+        // if ($activitieImage->activitie_id = $activitiess->id) {
+        //     $images_path = public_path() . '\\images\\activitie\\' . $activitieImage->activitie_id . '\\' . $activitieImage->image_path;
+        //     foreach ($images_path as $images) {
+        //         File::delete($images);
+        //         $activitieImage->delete();
+        //     }
+        // }
+
         return redirect('bactivities')->with('success', 'ลบข้อมูลกิจกรรมสำเร็จ');
+    }
+
+
+    public function destroyImage($id) {
+        $activitieImage = ActivitieImage::find($id);
+        File::delete(public_path() . '\\images\\activitie\\' . $activitieImage->activitie_id . '\\' . $activitieImage->image_path);
+        $activitieImage->delete();
+        return redirect('bactivities')->with('success', 'ลบรูปภาพกิจกรรมสำเร็จ');
     }
 }

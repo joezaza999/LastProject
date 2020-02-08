@@ -7,7 +7,7 @@
             <div aligh="right">
             <br>
                 <a href="{{ route('bactivities') }}" class="btn btn-default">กลับ</a>
-            </div> 
+            </div>
 
             <div class="card">
                 <div class="card-header">แก้ไขข้อมูลกิจกรรม</div>
@@ -40,10 +40,20 @@
                             </div>
                         </div>
                         <br>
-                        <div class="form-group text-left">
-                            <div class="col-md-10">
-                                <input type="submit" name="submit" class="btn btn-primary input-lg" value="แก้ไข" />
+                        <div class="form-group">
+                            <label class="col-md-4 text-right">เลือกรูปภาพกิจกรรม</label>
+                            <div class="col-md-8">
+                                <input type="file" name="images[]" multiple="">
+                                <br><br>
+                                @foreach ($activitieImage as $image)
+                                <img src="{{ URL::to('/') }}/images/activitie/{{ $image->activitie_id }}/{{ $image->image_path }}" width="150px" height="100px" />
+                                <a href="{{ url('/bactivities/destroyimage/'.$image->id)  }}"><i class="fa fa-close"></i></a>
+                                @endforeach
                             </div>
+                        </div>
+                        <br>
+                        <div class="form-group text-center">
+                            <input type="submit" name="submit" class="btn btn-primary input-lg" value="แก้ไข" />
                         </div>
                     </form>
                 </div>
