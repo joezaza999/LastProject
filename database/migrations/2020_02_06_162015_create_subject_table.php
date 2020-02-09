@@ -18,8 +18,10 @@ class CreateSubjectTable extends Migration
             $table->string('subcode');
             $table->string('name');
             $table->string('credit');
+            $table->integer('subgroup_id')->unsigned();
+            $table->foreign('subgroup_id')->references('id')->on('subgroup');
             $table->string('text');
-            
+            $table->timestamps();
         });
     }
 

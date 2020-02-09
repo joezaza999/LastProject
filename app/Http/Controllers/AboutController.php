@@ -87,7 +87,6 @@ class AboutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
             $request->validate([
                 'text' => 'required'
             ]);

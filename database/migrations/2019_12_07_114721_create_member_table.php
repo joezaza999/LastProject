@@ -21,6 +21,7 @@ class CreateMemberTable extends Migration
             $table->string('image',100);
             $table->string('tel',10);
             $table->string('email',50);
+            $table->timestamps();
         });
     }
 

@@ -25,7 +25,7 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <label class="col-md-4 text-left">ผลงาน</label>
+                            <label class="col-md-4 text-left">เนื้อหา</label>
                             <div class="col-md-8">
                                 <textarea name="text" rows="10" cols="80" value="" class="form-control input-lg">{{ $cooperatives->text }}</textarea>
                             </div>
@@ -66,4 +66,8 @@
         </div>
     </div>
 </div>
+<script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'text' );
+</script>
 @endsection

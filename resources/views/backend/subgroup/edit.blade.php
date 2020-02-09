@@ -30,6 +30,17 @@
                             </div>
                         </div>
                         <br>
+                        <div class="form-group">
+                            <label class="col-md-4 text-left">หมวดหมู่</label>
+                            <div class="col-md-8">
+                            <select class="form-control" name="category_id">
+                                @foreach ($categorys as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                            </div>
+                        </div>
+                        <br>
                         <div class="form-group text-left">
                             <div class="col-md-10">
                                 <input type="submit" name="submit" class="btn btn-primary input-lg" value="แก้ไข" />

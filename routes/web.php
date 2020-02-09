@@ -23,7 +23,7 @@ Route::get('/success','ShowsuccessController@index')->name('success');
 Route::get('/success/show/{id}','ShowsuccessController@show');
 Route::get('/student','ShowstudentController@index')->name('student');
 Route::get('/apprentice','ShowapprenticeController@index')->name('apprentice');
-Route::get('/course','ShowcourseController@index')->name('course');
+Route::get('/category','ShowcategoryController@index')->name('category');
 Route::get('/tact','PagesController@tact')->name('tact');
 Route::get('/activities','ShowactivitiesController@index')->name('activities');
 Route::get('/activities/show/{id}','ShowactivitiesController@show');
@@ -33,6 +33,7 @@ Route::get('/newsupdate/show/{id}','ShownewsupdateController@show');
 Route::get('/about','ShowaboutController@index')->name('about');
 Route::get('/award','ShowawardController@index')->name('award');
 Route::get('/award/show/{id}','ShowawardController@show');
+Route::get('/coursegenaral','ShowcoursegenaralController@index')->name('coursegenaral');
 
 
 Auth::routes();
@@ -60,6 +61,8 @@ Route::resource('/bstudentyear','StudentyearController')->name('index','bstudent
 Route::resource('/bcategory','CategoryController')->name('index','bcategory');
 Route::resource('/bsubgroup','SubgroupController')->name('index','bsubgroup');
 Route::resource('/bsubject','SubjectController')->name('index','bsubject');
+Route::resource('/bcoursegenaral','CoursegenaralController')->name('index','bcoursegenaral');
+
 
 
 

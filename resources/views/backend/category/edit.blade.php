@@ -12,21 +12,21 @@
                 <div class="card-header">แก้ไขข้อมูลหมวดวิชา</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('bcategory.update' , $category->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('bcategory.update' , $categorys->id) }}" enctype="multipart/form-data">
 
                         @csrf
                         @method('PATCH')
                         <div class="form-group">
                             <label class="col-md-4 text-left">ชื่อหมวด</label>
                             <div class="col-md-8">
-                                <textarea name="name" rows="10" cols="80" value="" class="form-control input-lg">{{ $category->name }}</textarea>
+                                <textarea name="name" rows="10" cols="80" value="" class="form-control input-lg">{{ $categorys->name }}</textarea>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
                             <label class="col-md-4 text-left">จำนวนหน่วยกิต</label>
                             <div class="col-md-8">
-                                <input type="text" name="credit" value="{{ $category->credit }}" class="form-control input-lg"/>
+                                <input type="text" name="credit" value="{{ $categorys->credit }}" class="form-control input-lg"/>
                             </div>
                         </div>
                         <br>

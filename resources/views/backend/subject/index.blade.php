@@ -24,6 +24,7 @@
                             <th>รหัสวิชา</th>
                             <th>ชื่อวิชา</th>
                             <th>จำนวนหน่วยกิต</th>
+                            <th>กลุ่มวิชา</th>
                             <th>รายละเอียด</th>
                             <th>แก้ไข</th>
                             <th>ลบ</th>
@@ -33,6 +34,7 @@
                             <td>{{ $subject->subcode }}</td>
                             <td>{{ $subject->name }}</td>
                             <td>{{ $subject->credit }}</td>
+                            <td>{{ $subject->subgroup->name }}</td>
                             <td>{{ $subject->text }}</td>
                             <td>
                                 <a href="{{ route('bsubject.edit' , $subject->id ) }}" class="btn btn-success">แก้ไข</a>

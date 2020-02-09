@@ -42,19 +42,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'credit' => 'required'
-        ]);
-    
-        $form_data = array(
-            'name' => $request->name,
-            'credit' => $request->credit
-        );
+        $categorys = new Category();
+        $categorys->name = $request->name;
+        $categorys->credit = $request->credit;
 
-        Category::create($form_data);
+        $categorys->save();
 
-        return redirect('bcategory')->with('success', 'เพิ่มข้อมูลหมวดวิชาสำเร็จ');
+        return redirect()->action('CategoryController@index');
     }
 
     /**
@@ -76,8 +70,10 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
-        return view('backend.category.edit', compact('category'));
+        $categorys = Category::findOrFail($id);
+        return view('backend.category.edit',[
+            'categorys' => $categorys
+        ]);
     }
 
     /**
@@ -89,18 +85,10 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'credit' => 'required'
-        ]);
+        $categorys = Category::find($id);
+        $categorys->update($request->all());
 
-        $form_data = array(
-            'name' => $request->name,
-            'credit' => $request->credit,
-        );
-
-    Category::whereId($id)->update($form_data);
-    return redirect('bcategory')->with('success', 'แก้ไขข้อมูลหมวดวิชาสำเร็จ');
+        return redirect()->action('CategoryController@index');
     }
 
     /**
@@ -112,7 +100,6 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $categorys = Category::find($id);
-
         $categorys->delete();
         return redirect('bcategory')->with('success', 'ลบข้อมูลหมวดวิชาสำเร็จ');
     }

@@ -23,6 +23,7 @@
                         <tr>
                             <th>ชื่อกลุ่มวิชา</th>
                             <th>จำนวนหน่วยกิต</th>
+                            <th>หมวดวิชา</th>
                             <th>แก้ไข</th>
                             <th>ลบ</th>
                         </tr>
@@ -30,6 +31,7 @@
                         <tr>
                             <td>{{ $subgroup->name }}</td>
                             <td>{{ $subgroup->credit }}</td>
+                            <td>{{ $subgroup->category->name }}</td>
                             <td>
                                 <a href="{{ route('bsubgroup.edit' , $subgroup->id ) }}" class="btn btn-success">แก้ไข</a>
                             </td>

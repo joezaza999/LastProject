@@ -20,6 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
+
     <link rel="stylesheet" href="{{asset('css/layouts.back.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -156,7 +157,11 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>{{ __('แบบฟอร์ม') }}</span></a>
       </li>
-      
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('bstudentyear') }}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>{{ __('รุ่นนักศึกษา') }}</span></a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="{{ route('bstudent') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -176,6 +181,11 @@
         <a class="nav-link" href="{{ route('bsubject') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>{{ __('วิชา') }}</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('bcoursegenaral') }}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>{{ __('หลักสูตรทั่วไป') }}</span></a>
       </li>
       @endguest
     </ul>

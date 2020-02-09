@@ -17,6 +17,7 @@ class CreateFormTable extends Migration
             $table->increments('id');
             $table->string('name',100);
             $table->string('file',100);
+            $table->timestamps();
         });
     }
 

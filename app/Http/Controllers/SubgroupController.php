@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Subgroup;
+use App\Category;
 use App\Http\Requests\SubgroupRequest;
+use illuminate\Support\Str;
 
 class SubgroupController extends Controller
 {
@@ -18,7 +20,7 @@ class SubgroupController extends Controller
      */
     public function index()
     {
-        $subgroups = Subgroup::paginate(5);
+        $subgroups = Subgroup::with('category')->orderBy('category_id','desc')->paginate(5);
         return view('backend.subgroup.index',[
             'subgroups'=> $subgroups
         ]);
@@ -31,7 +33,10 @@ class SubgroupController extends Controller
      */
     public function create()
     {
-        return view('backend.subgroup.create');
+        $category = Category::all(['id', 'name']);
+        return view('backend.subgroup.create',[
+            'categorys' => $category
+        ]);
     }
 
     /**
@@ -44,12 +49,14 @@ class SubgroupController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'credit' => 'required'
+            'credit' => 'required',
+            'category_id' => 'required'
         ]);
     
         $form_data = array(
             'name' => $request->name,
-            'credit' => $request->credit
+            'credit' => $request->credit,
+            'category_id' => $request->category_id
         );
 
         Subgroup::create($form_data);
@@ -76,8 +83,9 @@ class SubgroupController extends Controller
      */
     public function edit($id)
     {
+        $categorys = Category::all(['id', 'name']);
         $subgroup = Subgroup::findOrFail($id);
-        return view('backend.subgroup.edit', compact('subgroup'));
+        return view('backend.subgroup.edit', compact('categorys','subgroup'));
     }
 
     /**
@@ -91,12 +99,14 @@ class SubgroupController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'credit' => 'required'
+            'credit' => 'required',
+            'category_id' => 'required'
         ]);
 
         $form_data = array(
             'name' => $request->name,
             'credit' => $request->credit,
+            'category_id' => $request->category_id
         );
 
     Subgroup::whereId($id)->update($form_data);

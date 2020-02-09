@@ -19,6 +19,7 @@ class CreateStudentTable extends Migration
             $table->integer('studentyear_id')->unsigned();
             $table->foreign('studentyear_id')->references('id')->on('studentyear');
             $table->string('image',100);
+            $table->timestamps();
         });
     }
 

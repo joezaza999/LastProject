@@ -39,10 +39,10 @@
 						  <li class="dropdown ">
 							<a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">หลักสูตร <b class="caret fa fa-caret-down"></b></a>
 							<ul class="dropdown-content ">
-							  <li class="{{ Request::path() == 'course' ? 'active' : '' }}">
-								<a class="nav-link" href="{{ route('course') }}">เทคโนโลยีสารสนเทศทางธุรกิจ-พัฒนาซอฟท์แวร์</a></li>
-							  <li class="{{ Request::path() == 'course' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('course') }}">การจัดการเทคโนโลยีสารสนเทศ</a></li>
+							  <li class="{{ Request::path() == 'category' ? 'active' : '' }}">
+								<a class="nav-link" href="{{ route('category') }}">เทคโนโลยีสารสนเทศทางธุรกิจ-พัฒนาซอฟท์แวร์</a></li>
+							  <li class="{{ Request::path() == 'category' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('category') }}">การจัดการเทคโนโลยีสารสนเทศ</a></li>
 							</ul>
             </li>
             <li class="{{ Request::path() == 'about' ? 'active' : '' }}">

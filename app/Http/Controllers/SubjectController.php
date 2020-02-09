@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Subject;
+use App\Subgroup;
 use App\Http\Requests\SubjectRequest;
+use illuminate\Support\Str;
 
 class SubjectController extends Controller
 {
@@ -18,7 +20,7 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        $subjects = Subject::paginate(5);
+        $subjects = Subject::with('subgroup')->orderBy('subgroup_id','desc')->paginate(5);
         return view('backend.subject.index',[
             'subjects'=> $subjects
         ]);
@@ -31,8 +33,10 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        return view('backend.subject.create');
-
+        $subgroup = Subgroup::all(['id', 'name']);
+        return view('backend.subject.create',[
+            'subgroups' => $subgroup
+        ]);
     }
 
     /**
@@ -47,6 +51,7 @@ class SubjectController extends Controller
             'subcode' => 'required',
             'name' => 'required',
             'credit' => 'required',
+            'subgroup_id' => 'required',
             'text' => 'required'
         ]);
     
@@ -54,6 +59,7 @@ class SubjectController extends Controller
             'subcode' => $request->subcode,
             'name' => $request->name,
             'credit' => $request->credit,
+            'subgroup_id' => $request->subgroup_id,
             'text' => $request->text
         );
 
@@ -81,8 +87,9 @@ class SubjectController extends Controller
      */
     public function edit($id)
     {
+        $subgroups = Subgroup::all(['id', 'name']);
         $subject = Subject::findOrFail($id);
-        return view('backend.subject.edit', compact('subject'));
+        return view('backend.subject.edit', compact('subgroups','subject'));
     }
 
     /**
@@ -98,6 +105,7 @@ class SubjectController extends Controller
             'subcode' => 'required',
             'name' => 'required',
             'credit' => 'required',
+            'subgroup_id' => 'required',
             'text' => 'required'
         ]);
 
@@ -105,6 +113,7 @@ class SubjectController extends Controller
             'subcode' => $request->subcode,
             'name' => $request->name,
             'credit' => $request->credit,
+            'subgroup_id' => $request->subgroup_id,
             'text' => $request->text
         );
 

@@ -44,9 +44,9 @@
                         <div class="form-group">
                             <label class="col-md-4 text-left">รุ่น</label>
                             <div class="col-md-8">
-                            <select class="form-control" name="generation_id">
+                            <select class="form-control" name="studentyear_id">
                                 @foreach ($studentyears as $studentyear)
-                                    <option value="{{ $generation->id }}">{{ $generation->name }}</option>
+                                    <option value="{{ $studentyear->id }}">{{ $studentyear->name }}</option>
                                 @endforeach
                             </select>
                             </div>

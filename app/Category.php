@@ -8,4 +8,8 @@ class Category extends Model
 {
     protected $table = 'category';
     protected $fillable = ['name','credit'];
+
+    public function subgroup(){
+        return $this->hasMany(Subgroup::class);
+    }
 }

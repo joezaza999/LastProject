@@ -94,7 +94,7 @@
       <h3><c class="icon-book"></c> เกี่ยวกับเรา</h3><br>
       @foreach ($abouts as $about)
     <div class="indent2">
-        <p>{{ $about->text }}</p>  
+        <p>{!! $about->text !!}</p>  
     </div>
     @endforeach
     </div>

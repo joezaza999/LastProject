@@ -31,6 +31,7 @@
                             <label class="col-md-4 text-left">เนื้อหา</label>
                             <div class="col-md-8">
                                 <textarea rows="10" cols="80" name="text" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"></textarea>
+                                
                             </div>
                         </div>
                         <br>
@@ -46,4 +47,8 @@
         </div>
     </div>
 </div>
+<script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'text' );
+</script>
 @endsection
