@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Auth;
  Route::get('/', function () {
      return view('auth.login');
  });
+ Route::get('dataa', function () {
+    return view('dataa');
+});
 
 Route::get('/home','ShowhomeController@index')->name('home');
 Route::get('/form','ShowformController@index')->name('form');

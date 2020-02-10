@@ -7,31 +7,38 @@
         <p>{{ $message }}</p>
     </div>
     @endif
-    <div class="row justify-content-center">
-        <div class="col-md-10 col-md-offset-1">
-            <br><br>
-
-            <div aligh="right">
-                <a href="{{ route('bmembers.create') }}" class="btn btn-success btn-sm">เพิ่มข้อมูลบุคลากร</a>
-            </div>
-
-            <hr>
+    <br>
+    <div aligh="right">
+        <a href="{{ route('bmembers.create') }}" class="btn btn-success btn-sm">เพิ่มข้อมูลบุคลากร</a>
+    </div>
+    <br>
+      <!-- Main content -->
+      <section class="content">
+        <div class="row">
+          <div class="col-12">
             <div class="card">
-
-                <div class="card-body">
-                    <table class="table table-striped">
-                        <tr  >
-                            <th>ชื่อบุคลากร</th>
+              <div class="card-header">
+                <h3 class="card-title">DataTable with default features</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                     <th>ชื่อบุคลากร</th>
                             <th>ตำแหน่ง</th>
                             <th>รูปภาพ</th>
                             <th>เบอร์โทรศัพท์</th>
                             <th>อีเมลล์</th>
                             <th>แก้ไข</th>
                             <th>ลบ</th>
-                        </tr>
-                        @foreach ($members as $member)
-                        <tr>
-                            <td>{{ $member->name }}</td>
+               
+                  </tr>
+                  </thead>
+                  @foreach ($members as $member)
+                  <tbody>
+                  <tr>
+                    <td>{{ $member->name }}</td>
                             <td>{{ $member->position->name }}</td>
                             <td>
                             <img src="{{ URL::to('/') }}/images/{{ $member->image }}"
@@ -49,15 +56,19 @@
                                     <button type="submit" class="btn btn-danger">ลบ</button>
                                 </form>
                             </td>
-                        </tr>
-                        @endforeach
-                    </table>
-                    <br>
-                    {!! $members->render() !!}
-                </div>
+                  </tr>
+                  </tbody>
+                  @endforeach
+                </table>
+              </div>
+              <!-- /.card-body -->
             </div>
-            <br><br><br><br>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
         </div>
-    </div>
+        <!-- /.row -->
+      </section>
+      <!-- /.content -->
 </div>
 @endsection

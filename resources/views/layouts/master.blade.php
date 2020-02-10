@@ -39,8 +39,8 @@
 						  <li class="dropdown ">
 							<a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">หลักสูตร <b class="caret fa fa-caret-down"></b></a>
 							<ul class="dropdown-content ">
-              <li class="{{ Request::path() == 'category' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('category') }}">ข้อมูลทั่วไป</a></li>
+              <li class="{{ Request::path() == 'coursegenaral' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('coursegenaral') }}">ข้อมูลทั่วไป</a></li>
                 <li class="{{ Request::path() == 'category' ? 'active' : '' }}">
 								<a class="nav-link" href="{{ route('category') }}">ข้อมูลหลักสูตร</a></li>
 							  <li class="{{ Request::path() == 'category' ? 'active' : '' }}">
