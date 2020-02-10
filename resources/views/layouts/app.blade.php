@@ -187,6 +187,11 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>{{ __('หลักสูตรทั่วไป') }}</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('bheader') }}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>{{ __('หัวเว็บ') }}</span></a>
+      </li>
       @endguest
     </ul>
 
