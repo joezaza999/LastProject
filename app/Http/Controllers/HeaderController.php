@@ -6,14 +6,8 @@ use Illuminate\Http\Request;
 use App\Header;
 use Intervention\Image\Facades\Image;
 use illuminate\Support\Str;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\File;
-=======
-<<<<<<< HEAD
-use Illuminate\Support\Facades\File;
-=======
->>>>>>> frombackend
->>>>>>> frombackend
+
 
 
 
