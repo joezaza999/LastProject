@@ -62,6 +62,8 @@ Route::resource('/bcategory','CategoryController')->name('index','bcategory');
 Route::resource('/bsubgroup','SubgroupController')->name('index','bsubgroup');
 Route::resource('/bsubject','SubjectController')->name('index','bsubject');
 Route::resource('/bcoursegenaral','CoursegenaralController')->name('index','bcoursegenaral');
+Route::resource('/bheader','HeaderController')->name('index','bheader');
+
 
 
 
