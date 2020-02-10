@@ -30,7 +30,7 @@
                         </tr>
                         @foreach ($students as $student)
                         <tr>
-                            <td>{{ $student->studentid }}</td>
+                            <td>{{ $student->id }}</td>
                             <td>{{ $student->name }}</td>
                             <td>{{ $student->studentyear->name }}</td>
                             <td>

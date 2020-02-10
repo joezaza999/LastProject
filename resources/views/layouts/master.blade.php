@@ -39,10 +39,14 @@
 						  <li class="dropdown ">
 							<a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">หลักสูตร <b class="caret fa fa-caret-down"></b></a>
 							<ul class="dropdown-content ">
+              <li class="{{ Request::path() == 'category' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('category') }}">ข้อมูลทั่วไป</a></li>
+                <li class="{{ Request::path() == 'category' ? 'active' : '' }}">
+								<a class="nav-link" href="{{ route('category') }}">ข้อมูลหลักสูตร</a></li>
 							  <li class="{{ Request::path() == 'category' ? 'active' : '' }}">
-								<a class="nav-link" href="{{ route('category') }}">เทคโนโลยีสารสนเทศทางธุรกิจ-พัฒนาซอฟท์แวร์</a></li>
+								<a class="nav-link" href="{{ route('category') }}">กลุ่มวิชาการพัฒนาซอฟต์แวร์</a></li>
 							  <li class="{{ Request::path() == 'category' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('category') }}">การจัดการเทคโนโลยีสารสนเทศ</a></li>
+                <a class="nav-link" href="{{ route('category') }}">กลุ่มวิชาการจัดการเทคโนโลยีสารสนเทศ</a></li>
 							</ul>
             </li>
             <li class="{{ Request::path() == 'about' ? 'active' : '' }}">
@@ -60,6 +64,8 @@
                 <a class="nav-link" href="{{ route('cooperative') }}">ผลงานสหกิจศึกษา</a></li>
                 <li class="{{ Request::path() == 'apprentice' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('apprentice') }}">ผลงานฝึกงาน</a></li>
+                <li class="{{ Request::path() == 'apprentice' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('apprentice') }}">สถานที่ศึกษานอกพื้นที่</a></li>
                 <li class="{{ Request::path() == 'student' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('student') }}">รายชื่อนักศึกษา</a></li>
 							</ul>

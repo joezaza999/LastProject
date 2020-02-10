@@ -17,7 +17,7 @@ class ShowstudentController extends Controller
     {
         $student = Student::paginate(9);
         return view('pages.student',[
-            'student' => $student
+            'students' => $student
         ]);
     }
 

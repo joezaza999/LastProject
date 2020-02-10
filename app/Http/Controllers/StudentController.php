@@ -50,7 +50,7 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'studentid' => 'required',
+            'id' => 'required',
             'name' => 'required',
             'studentyear_id' => 'required',
             'image' => 'required|image|max:2048',
@@ -61,7 +61,7 @@ class StudentController extends Controller
         $new_name = rand() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images'), $new_name);
         $form_data = array(
-            'studentid' => $request->studentid,
+            'id' => $request->id,
             'name' => $request->name,
             'studentyear_id' => $request->studentyear_id,
             'image' => $new_name,
@@ -111,7 +111,7 @@ class StudentController extends Controller
         if($image != '')
         {
             $request->validate([
-                'studentid' => 'required',
+                'id' => 'required',
                 'name' => 'required',
                 'studentyear_id' => 'required',
                 'image' => 'required|mimes:jpeg,jpg,png'
@@ -123,14 +123,14 @@ class StudentController extends Controller
         else
         {
             $request->validate([
-                'studentid' => 'required',
+                'id' => 'required',
                 'name' => 'required',
                 'studentyear_id' => 'required'
             ]);
         }
 
         $form_data = array(
-            'studentid' => $request->studentid,
+            'id' => $request->id,
             'name' => $request->name,
             'studentyear_id' => $request->studentyear_id,
             'image' => $image_name

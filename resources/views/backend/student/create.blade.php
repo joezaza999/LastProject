@@ -30,7 +30,7 @@
                         <div class="form-group">
                             <label class="col-md-4 text-left">รหัสนักศึกษา</label>
                             <div class="col-md-8">
-                                <input type="text" name="studentid" class="form-control input-lg" placeholder="กรุณากรอกรหัสนักศึกษา"/>
+                                <input type="text" name="id" class="form-control input-lg" placeholder="กรุณากรอกรหัสนักศึกษา"/>
                             </div>
                         </div>
                         <br>

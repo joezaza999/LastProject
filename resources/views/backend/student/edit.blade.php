@@ -20,7 +20,7 @@
                         <div class="form-group">
                             <label class="col-md-4 text-left">รหัสนักศึกษา</label>
                             <div class="col-md-8">
-                                <input type="text" name="studentid" value="{{ $student->studentcode }}" class="form-control input-lg"/>
+                                <input type="text" name="id" value="{{ $student->studentcode }}" class="form-control input-lg"/>
                             </div>
                         </div>
                         <br>
