@@ -68,6 +68,9 @@ Route::resource('/bsubgroup','SubgroupController')->name('index','bsubgroup');
 Route::resource('/bsubject','SubjectController')->name('index','bsubject');
 Route::resource('/bcoursegenaral','CoursegenaralController')->name('index','bcoursegenaral');
 Route::resource('/bheader','HeaderController')->name('index','bheader');
+Route::resource('/bbitcourse','BitcourseController')->name('index','bbitcourse');
+Route::resource('/bmitcourse','MitcourseController')->name('index','bmitcourse');
+
 
 
 

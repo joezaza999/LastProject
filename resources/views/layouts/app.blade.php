@@ -227,6 +227,18 @@
                   <p>รายชื่อนักศึกษา</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('bbitcourse') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>หลักสูตรสารสนเทศ</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('bmitcourse') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>หลักสูตรการจัดการสารสนเทศ</p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
