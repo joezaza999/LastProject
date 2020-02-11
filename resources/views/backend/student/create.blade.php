@@ -30,7 +30,7 @@
                         <div class="form-group">
                             <label class="col-md-4 text-left">รหัสนักศึกษา</label>
                             <div class="col-md-8">
-                                <input type="text" name="id" class="form-control input-lg" placeholder="กรุณากรอกรหัสนักศึกษา"/>
+                                <input type="number" name="id" class="form-control input-lg" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==13) return false;" placeholder="กรุณากรอกรหัสนักศึกษา"/>
                             </div>
                         </div>
                         <br>

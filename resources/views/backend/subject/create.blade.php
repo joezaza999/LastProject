@@ -49,6 +49,17 @@
                         </div>
                         <br>
                         <div class="form-group">
+                            <label class="col-md-4 text-left">กล่มวิชา</label>
+                            <div class="col-md-8">
+                            <select class="form-control" name="subgroup_id">
+                                @foreach ($subgroups as $subgroup)
+                                    <option value="{{ $subgroup->id }}">{{ $subgroup->name }}</option>
+                                @endforeach
+                            </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
                             <label class="col-md-4 text-left">รายละเอียด</label>
                             <div class="col-md-8">
                                 <textarea rows="10" cols="80" name="text" class="form-control input-lg" placeholder="กรุณากรอกข้อมูล"></textarea>
@@ -67,4 +78,8 @@
         </div>
     </div>
 </div>
+<script src="{{asset('//cdn.ckeditor.com/4.13.1/full/ckeditor.js')}}"></script>
+<script>
+    CKEDITOR.replace( 'text' );
+</script>
 @endsection

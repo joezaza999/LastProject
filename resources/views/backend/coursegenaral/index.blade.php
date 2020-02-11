@@ -18,7 +18,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <h3 class="card-title">หลักสูตรทั่วไป</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -31,8 +31,8 @@
                
                   </tr>
                   </thead>
-                  @foreach ($coursegenarals as $coursegenaral)
                   <tbody>
+                  @foreach ($coursegenarals as $coursegenaral)
                   <tr>
                     <td>{!! $coursegenaral->text !!}</td>
                             <td>
@@ -46,8 +46,8 @@
                                 </form>
                             </td>
                   </tr>
-                  </tbody>
                   @endforeach
+                  </tbody>
                 </table>
               </div>
               <!-- /.card-body -->

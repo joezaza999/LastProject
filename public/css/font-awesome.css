@@ -21,7 +21,7 @@
 
     */
 @font-face {
-  font-family: 'FontAwesome';
+  font-family: 'Kanit', sans-serif;
   src: url('../font/fontawesome-webfont.eot');
   src: url('../font/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
     url('../font/fontawesome-webfont.woff') format('woff'),

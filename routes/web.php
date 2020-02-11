@@ -27,6 +27,8 @@ Route::get('/success/show/{id}','ShowsuccessController@show');
 Route::get('/student','ShowstudentController@index')->name('student');
 Route::get('/apprentice','ShowapprenticeController@index')->name('apprentice');
 Route::get('/category','ShowcategoryController@index')->name('category');
+Route::get('/category/show/{id}','ShowcategoryController@show');
+Route::get('/subject/show/{id}','ShowcategoryController@showdetail');
 Route::get('/tact','PagesController@tact')->name('tact');
 Route::get('/activities','ShowactivitiesController@index')->name('activities');
 Route::get('/activities/show/{id}','ShowactivitiesController@show');

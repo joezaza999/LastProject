@@ -35,7 +35,7 @@
                             <td>{{ $subject->name }}</td>
                             <td>{{ $subject->credit }}</td>
                             <td>{{ $subject->subgroup->name }}</td>
-                            <td>{{ $subject->text }}</td>
+                            <td>{!! $subject->text !!}</td>
                             <td>
                                 <a href="{{ route('bsubject.edit' , $subject->id ) }}" class="btn btn-success">แก้ไข</a>
                             </td>

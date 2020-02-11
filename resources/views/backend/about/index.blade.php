@@ -27,7 +27,7 @@
                         </tr>
                         @foreach ($abouts as $about)
                         <tr>
-                            <td>{{ $about->text }}</td>
+                            <td>{!! $about->text !!}</td>
                             <td>
                                 <a href="{{ route('babout.edit' , $about->id ) }}" class="btn btn-success">แก้ไข</a>
                             </td>

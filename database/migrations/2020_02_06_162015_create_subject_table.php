@@ -20,7 +20,7 @@ class CreateSubjectTable extends Migration
             $table->string('credit');
             $table->integer('subgroup_id')->unsigned();
             $table->foreign('subgroup_id')->references('id')->on('subgroup');
-            $table->string('text');
+            $table->text('text');
             $table->timestamps();
         });
     }

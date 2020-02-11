@@ -26,7 +26,8 @@
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.css')}}">
   <!-- Google Font: Source Sans Pro -->
-  <link href="{{asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet')}}">
+  <link href="{{asset('https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet')}}">
+  
    <!-- DataTables -->
    <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.css')}}">
 
@@ -76,35 +77,42 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
+            
             <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fa fa-home"></i>
               <p>
                 หน้าหลัก
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="{{ route('bheader') }}" class="nav-link ">
+                  <i class="fa fa-minus nav-icon"></i>
+                  <p>ส่วนบนของเว็บ</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="{{ route('bslideshow') }}" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>สไลด์โชว์</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('bnewsupdate') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>ประชาสัมพันธ์</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('bactivities') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>กิจกรรม</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('babout') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>เกี่ยวกับเรา</p>
                 </a>
               </li>
@@ -112,7 +120,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fa fa-book"></i>
               <p>
                 หลักสูตร
                 <i class="fas fa-angle-left right"></i>
@@ -121,25 +129,25 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{ route('bcategory') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>หมวดวิชา</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('bsubgroup') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>กลุ่มวิชา</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('bsubject') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>วิชา</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('bcoursegenaral') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>หลักสูตรทั่วไป</p>
                 </a>
               </li>
@@ -147,7 +155,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+              <i class="nav-icon fa fa-users"></i>
               <p>
                 คณาจารย์
                 <i class="right fas fa-angle-left"></i>
@@ -156,13 +164,13 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{ route('bposition') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>ตำแหน่งอาจารย์</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('bmembers') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>อาจารย์</p>
                 </a>
               </li>
@@ -170,7 +178,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fa fa-user"></i>
               <p>
                 นักศึกษา
                 <i class="fas fa-angle-left right"></i>
@@ -225,10 +233,10 @@
             <a href="{{ route('logout') }}"  class="nav-link" onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
               
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
                 ออกจากระบบ
-                <i class="fas fa-angle-left right"></i>
+                <i class=""></i>
               </p>
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
