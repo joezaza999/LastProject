@@ -30,7 +30,7 @@
                         @foreach ($activitiess as $activities)
                         <tr>
                             <td>{{ $activities->title }}</td>
-                            <td>{{ $activities->content }}</td>
+                            <td>{!! $activities->content !!}</td>
                             <td>
                             <img src="{{ URL::to('/') }}/images/{{ $activities->image }}"
                             class="img-thumbnail" width="75" />

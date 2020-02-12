@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>สาขาวิชาเทคโนโลยีสารสนเทศทางธุรกิจ</title>
         <link rel="stylesheet" href="{{asset('css/layouts.css')}}">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
@@ -54,20 +54,28 @@
 						<li class="dropdown">
 							<a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">นักศึกษา <b class="caret fa fa-caret-down"></b></a>
 							<ul class="dropdown-content ">
+
               <li class="{{ Request::path() == 'form' ? 'active' : '' }}">
-								<a class="nav-link" href="{{ route('form') }}">แบบฟอร์ม</a></li>
+                <a class="nav-link" href="{{ route('form') }}">แบบฟอร์ม</a></li>
 							  <li class="{{ Request::path() == 'award' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('award') }}">รางวัล</a></li>
+            
                 <li class="{{ Request::path() == 'success' ? 'active' : '' }}">
-								<a class="nav-link" href="{{ route('success') }}">ความสำเร็จของศิษย์เก่า</a></li>
+                <a class="nav-link" href="{{ route('success') }}">ความสำเร็จของศิษย์เก่า</a></li>
+                @guest
+                @if (Route::has('cooperative'))
+                @endif
+                @else
                 <li class="{{ Request::path() == 'cooperative' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('cooperative') }}">ผลงานสหกิจศึกษา</a></li>
+               
                 <li class="{{ Request::path() == 'apprentice' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('apprentice') }}">ผลงานฝึกงาน</a></li>
                 <li class="{{ Request::path() == 'apprentice' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('apprentice') }}">สถานที่ศึกษานอกพื้นที่</a></li>
                 <li class="{{ Request::path() == 'student' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('student') }}">รายชื่อนักศึกษา</a></li>
+                @endguest
 							</ul>
             </li>
             <li class="{{ Request::path() == 'tact' ? 'active' : '' }}">
@@ -76,7 +84,7 @@
 				</div>
 				<div class="top-social">
 					<ul id="top-social-menu">
-						<li><a href="#">เข้าสู่ระบบ</a></li>
+						<li><a href="login">เข้าสู่ระบบ</a></li>
 					</ul>
 				</div>
 			</div>

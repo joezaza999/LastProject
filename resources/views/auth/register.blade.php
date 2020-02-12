@@ -21,12 +21,12 @@
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <a href="../../index2.html"><b>RMUTR</b>BIT</a>
   </div>
 
   <div class="card">
     <div class="card-body register-card-body">
-      <p class="login-box-msg">Register a new membership</p>
+      <p class="login-box-msg">ลงทะเบียน</p>
 
       <form method="POST" action="{{ route('register') }}">
         @csrf
@@ -84,8 +84,8 @@
             </div>
           </div>
           <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
+          <div class="col-4-2">
+            <button type="submit" class="btn btn-primary btn-block">ลงทะเบียน</button>
           </div>
           <!-- /.col -->
         </div>

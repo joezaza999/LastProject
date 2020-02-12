@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Auth;
  Route::get('/', function () {
      return view('auth.login');
  });
- Route::get('dataa', function () {
-    return view('dataa');
-});
 
 Route::get('/home','ShowhomeController@index')->name('home');
 Route::get('/form','ShowformController@index')->name('form');
@@ -42,7 +39,6 @@ Route::get('/coursegenaral','ShowcoursegenaralController@index')->name('coursege
 
 
 Auth::routes();
-
 Route::get('/bhome', 'HomeController@index')->name('bhome');
 Route::get('status/{id}','HomeController@status')->name('status');
 // Route::get('/position', 'PositionController@index')->name('position');

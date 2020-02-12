@@ -67,4 +67,9 @@
         <br><br><br>
     </div>
 </div>
+<script src="{{asset('//cdn.ckeditor.com/4.13.1/full/ckeditor.js')}}"></script>
+<script>
+ CKEDITOR.replace( 'text' );
+ CKEDITOR.replace( 'location' );
+</script>
 @endsection

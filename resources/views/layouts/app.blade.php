@@ -151,6 +151,18 @@
                   <p>หลักสูตรทั่วไป</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('bbitcourse') }}" class="nav-link">
+                  <i class="fa fa-minus nav-icon"></i>
+                  <p>หลักสูตรสารสนเทศ</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('bmitcourse') }}" class="nav-link">
+                  <i class="fa fa-minus nav-icon"></i>
+                  <p>หลักสูตรการจัดการสารสนเทศ</p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
@@ -187,56 +199,44 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{ route('bform') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>แบบฟอร์ม</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('baward') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>รางวัล</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('bsuccess') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>ความสำเร็จของศิษย์เก่า</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('bcooperative') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>ผลงานสหกิจศึกษา</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('bapprentice') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>ผลงานฝึกงาน</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('bstudentyear') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>ปีที่เข้าศึกษา</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('bstudent') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-minus nav-icon"></i>
                   <p>รายชื่อนักศึกษา</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('bbitcourse') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>หลักสูตรสารสนเทศ</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('bmitcourse') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>หลักสูตรการจัดการสารสนเทศ</p>
                 </a>
               </li>
             </ul>

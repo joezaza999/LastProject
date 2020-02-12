@@ -4,11 +4,11 @@
 <div class="body">
 <br><br><br><br><br>
 <div class="content">
-      <h2>แบบฟอร์ม</h2>
       <div class="row">
     <div class="leftcolumn1">
+      <h3><c class="fa fa-cloud-download"></c> แบบฟอร์มงานทะเบียน</h3><br>
     @foreach($forms as $form)
-                <a href="files/{{ $form->file }}" download="{{ $form->file }}">
+    <c class="fa fa-print"></c>  <a href="files/{{ $form->file }}" download="{{ $form->file }}">
                 {{ $form->name }} </a><br>
     @endforeach
     <div>

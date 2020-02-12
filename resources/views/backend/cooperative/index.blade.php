@@ -32,8 +32,8 @@
                         @foreach ($cooperatives as $cooperative)
                         <tr>
                             <td>{{ $cooperative->name }}</td>
-                            <td>{{ $cooperative->text }}</td>
-                            <td>{{ $cooperative->location }}</td>
+                            <td>{!! $cooperative->text !!}</td>
+                            <td>{!! $cooperative->location !!}</td>
                             <td>
                             <img src="{{ URL::to('/') }}/images/{{ $cooperative->image }}"
                             class="img-thumbnail" width="75" />

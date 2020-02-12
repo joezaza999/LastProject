@@ -14,4 +14,9 @@ class ShowcooperativeController extends Controller
             'cooperatives' => $cooperative
         ]);
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }

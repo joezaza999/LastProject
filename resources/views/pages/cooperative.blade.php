@@ -21,8 +21,8 @@
                 </ul>
                 <p class="card__title">{{ $cooperative->name }}</p>
                 <p class="card__title1">{{ $cooperative->text }}</p><br>
-                <a href="files/{{ $cooperative->file }}" download="{{ $cooperative->file }}">
-                    <button type="button" class="btn btn-primary">ดาวน์โหลดไฟล์</button>
+                <c class="fa fa-print"></c>  <a href="files/{{ $cooperative->file }}" download="{{ $cooperative->file }}">
+                  {{ $cooperative->file }} </a>
               </div>
             </div>
           </div>

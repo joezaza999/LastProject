@@ -5,13 +5,10 @@
   <br><br><br>
   <div class="fakeimg" style="height:100%;"></div>
   <div id="carouselExampleControls" id="myCarousel" class="carousel slide" data-ride="carousel">
-
     <div class="carousel-inner">
-
         @foreach ($slideshows as $slideshow)
-
       <div class="carousel-item @if($loop->first)active @endif">
-      <img class="d-block mx-auto img-fluid" src="{{asset("images/$slideshow->image")}}" width="1180px"   alt="">
+      <img class="d-block mx-auto img-fluid" src="{{asset("images/$slideshow->image")}}" width="1110px"   alt="">
       </div>
       @endforeach
     </div>
@@ -24,33 +21,56 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  
 
-      <div class="content">
-
+  <div class="content">
+     <h3><i style="font-size:24px" class="fa">&#xf1ea;</i> กิจกรรม</h3>
+    <div class="row">
+      @foreach ($activities as $activitie)
+      <div class="col-md-4">
+        <div class="card-wrapper">
+          <div class="thumbnail-container">
+            <a href="#">
+              <img src="{{ asset('images/'.$activitie->image) }}" width="100%">
+            </a>
+          </div>
+          <div class="card-desc-wrapper">
+            <div class="card-desc-container">
+              <div class="card-desc-cont">
+                  <div class="card-desc-header">Have your say on the plan for Johnstone park</div>
+                  <div class="card-desc-desc">Comment on the concept and raingarden plan that will guide future improvements within and surrounding the park. </div>
+              </div>
+                  <div class="card-desc-link">Read more >></div>
+                  <div class="card-desc-tag">ประชาสัมพันธ์</div>
+            </div>
+            </div>
+        </div>
+      </div>
+      @endforeach
+  </div> 
   <div class="row">
     <div class="leftcolumn">
       <h3><i style="font-size:24px" class="fa">&#xf1ea;</i> กิจกรรม</h3>
-
       @foreach ($activities as $activitie)
       <div class="wrapper1">
         <div class="grid">
-          <div class="card">
-            <div class="card__image1">
+          <div class="card-wrapper">
+            <div class="thumbnail-container">
               <img src="{{ asset('images/'.$activitie->image) }}" class="card-img-top">
-              <div class="card__overlay">
-                <div class="card__overlay-content">
-                  <h6 class="card__title">{{ $activitie->title }}</h6>
-                  <p class="card__title1">{{ $activitie->content }}</p><br>
-                  <a href="{{ url('/activities/show/'.$activitie->id)  }}">ดูรายละเอียด</a>
+              <div class="card-desc-wrapper">
+                <div class="card-desc-container">
+                  <div class="card-desc-cont">
+                      <div class="card-desc-header">Have your say on the plan for Johnstone park</div>
+                      <div class="card-desc-desc">Comment on the concept and raingarden plan that will guide future improvements within and surrounding the park. </div>
+                  </div>
+                      <div class="card-desc-link">Read more >></div>
+                      <div class="card-desc-tag1">ประชาสัมพันธ์</div>
                 </div>
-              </div>
+                </div>
             </div>
           </div>
         </div>
       </div>
       @endforeach
-
       <div class="textright"><a href="{{ route('activities') }}">ดูทั้งหมด</a></div>
     </div>
     <div class="rightcolumn">
@@ -59,7 +79,7 @@
         
       @foreach ($newsupdate as $newsupdate)
         <ul class="timeline">
-          <li class="event" data-date="27 Jan">
+          <li class="event" data-date="{{ $newsupdate->date }}">
             <h3><a href="{{ url('/newsupdate/show/'.$newsupdate->id)  }}">{{ $newsupdate->title }}</a></h3>
             <p>{{ $newsupdate->content }}</p>
           </li>
@@ -67,11 +87,11 @@
         @endforeach
         <div><a href="newsupdate">ดูทั้งหมด</a></div>
       </div><br><br>
-      <div class="w3-card w3-margin">
+      <div class=" w3-margin">
     <div class="w3-container w3-padding w3">
       <h5>หน่วยงานภายใน</h5>
     </div>
-    <ul class="w3-ul w3-hoverable w3-white">
+    <ul class="w3-ul w3-hoverable">
       <li class="w3-padding-5">
         <a href="https://bua.rmutr.ac.th/">คณะบริหารธุรกิจ</a>
       </li>
@@ -98,16 +118,6 @@
     </div>
     @endforeach
     </div>
-    <div class="rightcolumn">
-     <!-- Posts -->
-  <div class="w3 w3-margin">
-    <div class="w3-container w3-padding w3">
-      <h5>video</h5>
-    </div>
-    <iframe width="100%"  src="https://www.youtube.com/embed/RKqq6kX0H5Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-    </div>
-
   </div>
   <br>
 <script>

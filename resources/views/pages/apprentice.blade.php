@@ -20,9 +20,9 @@
                   <li><a href="#0"><i class="fa fa-clock-o"></i>{{ $apprentice->updated_at }}</a></li>
                 </ul>
                 <p class="card__title">{{ $apprentice->name }}</p>
-                <p class="card__title1">{{ $apprentice->text }}</p><br>
-                <a href="files/{{ $apprentice->file }}" download="{{ $apprentice->file }}">
-                    <button type="button" class="btn btn-primary">ดาวน์โหลดไฟล์</button>
+                <p class="card__title1">{!! $apprentice->text !!}</p><br>
+                <c class="fa fa-print"></c><a href="files/{{ $apprentice->file }}" download="{{ $apprentice->file }}">
+                  {{ $apprentice->file }} </a>
               </div>
             </div>
           </div>

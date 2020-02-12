@@ -32,8 +32,8 @@
                         @foreach ($apprentices as $apprentice)
                         <tr>
                             <td>{{ $apprentice->name }}</td>
-                            <td>{{ $apprentice->text }}</td>
-                            <td>{{ $apprentice->location }}</td>
+                            <td>{!! $apprentice->text !!}</td>
+                            <td>{!! $apprentice->location !!}</td>
                             <td>
                             <img src="{{ URL::to('/') }}/images/{{ $apprentice->image }}"
                             class="img-thumbnail" width="75" />
