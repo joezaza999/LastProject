@@ -44,7 +44,6 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
    
-  
     </ul>
   </nav>
   @guest
@@ -77,7 +76,15 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            
+            <a href="{{ route('admin.users.index') }}" class="nav-link">
+              <i class="nav-icon fa fa-book"></i>
+              <p>
+                จัดการข้อมูลผู้ใช้งาน
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-home"></i>
               <p>

@@ -39,10 +39,12 @@ Route::get('/coursegenaral','ShowcoursegenaralController@index')->name('coursege
 
 
 Auth::routes();
+
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+    Route::resource('/users','UsersController',['except' => ['show','create','store']]);
+});
+
 Route::get('/bhome', 'HomeController@index')->name('bhome');
-Route::get('status/{id}','HomeController@status')->name('status');
-// Route::get('/position', 'PositionController@index')->name('position');
-// Route::get('/position/destroy/(id)', 'PositionController@destroy');
 Route::resource('/bposition','PositionController')->name('index','bposition');
 Route::resource('/bmembers','MemberController')->name('index','bmembers');
 Route::resource('/bcourse','CourseController')->name('index','bcourse');

@@ -26,24 +26,7 @@ class HomeController extends Controller
      */
     public function index() 
     {
-        $users = DB::table('users')->get();
-        return view('backend.bhome', [
-            'users' => $users
-        ]);
+        return view('backend.bhome');
     }
-
-    public function status(Request $request, $id)
-    {
-        $data = User::find($id);
-
-        if($data->status == 0){
-            $data->status = 1;
-        }else{
-            $data->status = 0;
-        }
-
-        $data->save();
-
-        return Redirect::to('bhome')->with('message' , $data->name .'Status has been chang successfull.');
-    }
+    
 }
