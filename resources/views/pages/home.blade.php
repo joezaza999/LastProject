@@ -23,23 +23,23 @@
   </div>
 
   <div class="content">
-     <h3><i style="font-size:24px" class="fa">&#xf1ea;</i> กิจกรรม</h3>
     <div class="row">
-      @foreach ($activities as $activitie)
+    <div><img class="img-fluid" src="{{ url('/img/ne.jpg') }}"></div><br>
+      @foreach ($newsupdatess as $newsupdate)
       <div class="col-md-4">
         <div class="card-wrapper">
           <div class="thumbnail-container">
             <a href="#">
-              <img src="{{ asset('images/'.$activitie->image) }}" width="100%">
+              <img src="{{ asset('images/'.$newsupdate->image) }}" width="100%">
             </a>
           </div>
           <div class="card-desc-wrapper">
             <div class="card-desc-container">
               <div class="card-desc-cont">
                   <div class="card-desc-header">Have your say on the plan for Johnstone park</div>
-                  <div class="card-desc-desc">Comment on the concept and raingarden plan that will guide future improvements within and surrounding the park. </div>
+                  <div class="card-desc-desc app"><p>Comment on the concept and raingarden plan that will guide future improvements within and surrounding the park.</p></div>
               </div>
-                  <div class="card-desc-link">Read more >></div>
+              <div class="card-desc-link"><a href="{{ url('/newsupdate/show/'.$newsupdate->id)  }}">Read more</a></div>
                   <div class="card-desc-tag">ประชาสัมพันธ์</div>
             </div>
             </div>
@@ -60,10 +60,10 @@
                 <div class="card-desc-container">
                   <div class="card-desc-cont">
                       <div class="card-desc-header">Have your say on the plan for Johnstone park</div>
-                      <div class="card-desc-desc">Comment on the concept and raingarden plan that will guide future improvements within and surrounding the park. </div>
+                      <div class="card-desc-desc appp"><p>Comment on the concept and raingarden plan that will guide future improvements within and surrounding the park. </p></div>
                   </div>
-                      <div class="card-desc-link">Read more >></div>
-                      <div class="card-desc-tag1">ประชาสัมพันธ์</div>
+                  <div class="card-desc-link"><a href="{{ url('/activities/show/'.$activitie->id)  }}">Read more</a></div>
+                      <div class="card-desc-tag1">กิจกรรม</div>
                 </div>
                 </div>
             </div>
@@ -72,12 +72,11 @@
       </div>
       @endforeach
       <div class="textright"><a href="{{ route('activities') }}">ดูทั้งหมด</a></div>
-    </div>
+</div>
     <div class="rightcolumn">
       <h3><c class="icon-calendar"></c> ปฎิทิน/ประชาสัมพันธ์</h3>
-      <div id="content">
-        
-      @foreach ($newsupdate as $newsupdate)
+      <div id="content">     
+      @foreach ($newsupdates as $newsupdate)
         <ul class="timeline">
           <li class="event" data-date="{{ $newsupdate->date }}">
             <h3><a href="{{ url('/newsupdate/show/'.$newsupdate->id)  }}">{{ $newsupdate->title }}</a></h3>
@@ -87,7 +86,18 @@
         @endforeach
         <div><a href="newsupdate">ดูทั้งหมด</a></div>
       </div><br><br>
-      <div class=" w3-margin">
+    </div>
+    <div class="leftcolumn">
+      <br>
+      <h3><c class="icon-book"></c> เกี่ยวกับเรา</h3><br>
+      @foreach ($abouts as $about)
+    <div class="indent2">
+        <p>{!! $about->text !!}</p>  
+    </div>
+    @endforeach
+    </div>
+    <div class="rightcolumn">
+    <div class=" w3-margin">
     <div class="w3-container w3-padding w3">
       <h5>หน่วยงานภายใน</h5>
     </div>
@@ -108,15 +118,6 @@
       </li>
     </ul>
   </div>
-    </div>
-    <div class="leftcolumn">
-      <br>
-      <h3><c class="icon-book"></c> เกี่ยวกับเรา</h3><br>
-      @foreach ($abouts as $about)
-    <div class="indent2">
-        <p>{!! $about->text !!}</p>  
-    </div>
-    @endforeach
     </div>
   </div>
   <br>

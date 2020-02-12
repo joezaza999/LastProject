@@ -17,14 +17,16 @@ class ShowhomeController extends Controller
         $activities = Activities::orderBy('updated_at','desc')->limit(6)->get();
         $about = About::all();
         $header = Header::all();
-        $newsupdate = Newsupdate::orderBy('updated_at','desc')->limit(6)->get();
+        $newsupdates = Newsupdate::orderBy('updated_at','desc')->limit(6)->get();
+        $newsupdate = Newsupdate::orderBy('updated_at','desc')->limit(3)->get();
 
         return view('pages.home',[
             'slideshows' => $slideshow,
             'activities' => $activities,
             'abouts' => $about,
             'headers' => $header,
-            'newsupdate' => $newsupdate
+            'newsupdates' => $newsupdates,
+            'newsupdatess' => $newsupdate
 
         ]);
     }
