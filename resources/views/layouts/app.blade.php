@@ -152,7 +152,7 @@
                   <p>วิชา</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="{{ Request::path() == 'coursegenaral' ? 'active' : '' }} nav-item">
                 <a href="{{ route('bcoursegenaral') }}" class="nav-link">
                   <i class="fa fa-minus nav-icon"></i>
                   <p>หลักสูตรทั่วไป</p>

@@ -21,10 +21,10 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-
+  
   <div class="content">
+    <h2><i style="font-size:24px" class="fa">&#xf1ea;</i> BIT Newsupdate</h2>
     <div class="row">
-    <div><img class="img-fluid" src="{{ url('/img/ne.jpg') }}"></div><br>
       @foreach ($newsupdatess as $newsupdate)
       <div class="col-md-4">
         <div class="card-wrapper">
@@ -49,7 +49,7 @@
   </div> 
   <div class="row">
     <div class="leftcolumn">
-      <h3><i style="font-size:24px" class="fa">&#xf1ea;</i> กิจกรรม</h3>
+      <h2><i style="font-size:24px" class="fa">&#xf1ea;</i> BIT activities</h2>
       @foreach ($activities as $activitie)
       <div class="wrapper1">
         <div class="grid">
@@ -74,7 +74,7 @@
       <div class="textright"><a href="{{ route('activities') }}">ดูทั้งหมด</a></div>
 </div>
     <div class="rightcolumn">
-      <h3><c class="icon-calendar"></c> ปฎิทิน/ประชาสัมพันธ์</h3>
+      <h2><c class="icon-calendar"></c> BIT/Calendar</h2>
       <div id="content">     
       @foreach ($newsupdates as $newsupdate)
         <ul class="timeline">
@@ -89,7 +89,7 @@
     </div>
     <div class="leftcolumn">
       <br>
-      <h3><c class="icon-book"></c> เกี่ยวกับเรา</h3><br>
+      <h3><c class="icon-book"></c> BIT About</h3><br>
       @foreach ($abouts as $about)
     <div class="indent2">
         <p>{!! $about->text !!}</p>  
@@ -119,6 +119,10 @@
     </ul>
   </div>
     </div>
+  </div>
+  <div class="content">
+
+    
   </div>
   <br>
 <script>

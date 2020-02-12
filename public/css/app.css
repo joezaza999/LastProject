@@ -143,11 +143,12 @@
   padding: 0;
 }
 h1 {
+  font-size: 2em;
   text-align: center;
+    letter-spacing: 1px;
   display: block;
 }
 h2 {
-  text-align: center;
   display: block;
   color: #eeeeee;
 }
@@ -320,7 +321,7 @@ a:hover {
 }
 .topnav {
   overflow: hidden;
-  background-color: #000000;
+  background-color: #00a8de;
 
   
 }
@@ -416,23 +417,24 @@ h1 {
   top: 0;
 }
 .timeline .event:before {
-  left: -170.5px;
+  left: -160.5px;
   color: #717171;
   content: attr(data-date);
   text-align: right;
   font-weight: 400;
   font-size: 0.9em;
   min-width: 120px;
+  top: -13px;
 }
 .timeline .event:after {
   box-shadow: 0 0 0 4px #169eda;
-  left: -40.85px;
+  left: -15.85px;
   background: #91c740;
   border-radius: 50%;
   height: 11px;
   width: 11px;
   content: "";
-  top: 5px;
+  top: -10px;
 }
 @media (max-width: 800px) {
 
@@ -466,7 +468,7 @@ h1 {
 }
 .w3 {
   color: #ffffff;
-  background-color: #eb5929;
+  background-color: #eeab73;
 }
 /*Projects*/
 
@@ -878,7 +880,6 @@ span {
 }
 
 .card-desc-wrapper {
-  position: absolute;
   bottom: 0;
 
   background: #fff;
@@ -968,4 +969,31 @@ span {
     position: absolute;
     right: 0;
     top: 0;
+}
+
+.accrodion{margin-bottom: 10px;}
+.header{ 
+    background: #3498DB;
+    transition: .4s;
+    position: relative;
+}
+.header:hover{background: #2980B9;}
+.header.active{background: #4c6e90;}
+.header:after{
+    content: "\f067";
+    font: normal normal normal 14px/1 FontAwesome;
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 17px;
+    color: #fff;
+}
+.header.active:after{
+    content: "\f068";}
+.header a{
+    display: block;
+    color: #fff;
+    padding: 15px;
+    text-decoration: none;
 }

@@ -1,37 +1,39 @@
 @extends('layouts.master')
 
-@section('content')
-<div class="body">
-<br><br><br><br><br>
-<div class="content">
-      <h2>ฝึกงาน</h2>
+    @section('content')
+    <div class="body">
+      <br><br><br><br><br>
+      <div class="content">
+        <h2>ฝึกงาน</h2>
       <div class="row">
-    <div class="leftcolumn1">
-    @foreach($apprentices as $apprentice)
-    <div class="wrapper">
-      <div class="grid">
-        <div class="card">
-          <div class="card__image">
-            <img src="{{ asset('images/'.$apprentice->image) }}" class="card-img-top">
-            <div class="card__overlay">
-              <div class="card__overlay-content">
-                <ul class="card__meta">
-                  <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                  <li><a href="#0"><i class="fa fa-clock-o"></i>{{ $apprentice->updated_at }}</a></li>
-                </ul>
-                <p class="card__title">{{ $apprentice->name }}</p>
-                <p class="card__title1">{!! $apprentice->text !!}</p><br>
-                <c class="fa fa-print"></c><a href="files/{{ $apprentice->file }}" download="{{ $apprentice->file }}">
-                  {{ $apprentice->file }} </a>
-              </div>
-            </div>
+      @foreach($apprentices as $apprentice)
+      <div class="col-md-4">
+        <div class="card-wrapper">
+          <div class="thumbnail-container">
+            <a href="#">
+              <img src="{{ asset('images/'.$apprentice->image) }}" class="card-img-top">
+            </a>
           </div>
+          <div class="card-desc-wrapper">
+            <div class="card-desc-container">
+              <div class="card-desc-cont">
+                  <div class="card-desc-header">{{ $apprentice->name }}</div>
+                  <div class="card-desc-desc"><p>{!! $apprentice->text !!}</p></div>
+                  <c class="fa fa-print"></c>  <a href="files/{{ $apprentice->file }}" download="{{ $apprentice->file }}">
+                    {{ $apprentice->file }} </a>
+              </div>
+                  <div class="card-desc-tag">ฝึกงาน</div>
+            </div>
+            </div>
         </div>
       </div>
-    </div>
-    @endforeach
-
+      @endforeach
+ 
+  
 {!! $apprentices->render() !!}
+</div>
+</div>
+      </div>
 <script>
   (function() {
   var $grid = $('.grid').imagesLoaded(function() {
@@ -41,8 +43,7 @@
   });
 })();
 </script>
-</div>
-</div>
-      </div>
-</div>
 @endsection
+
+
+

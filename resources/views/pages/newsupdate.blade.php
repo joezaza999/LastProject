@@ -1,40 +1,39 @@
 @extends('layouts.master')
 
-@section('content')
-<div class="body">
-<br><br>
-<div class="topnav" id="myTopnav">
-  <a href="" class="">ประชาสัมพันธ์</a>
-</div>
-
-
+    @section('content')
+    <div class="body"><br><br><br><br><br>
 <div class="content">
-<div class="row">
-    <div class="leftcolumn1">
-    @foreach($newsupdates as $newsupdate)
-    <div class="wrapper">
-      <div class="grid">
-        <div class="card">
-          <div class="card__image">
-            <img src="{{ asset('images/'.$newsupdate->image) }}" class="card-img-top" style="width:355px";>
-            <div class="card__overlay">
-              <div class="card__overlay-content">
-                <ul class="card__meta">
-                  <li><a href="#0"><i class="fa fa-tag"></i> Posted</a></li>
-                  <li><a href="#0"><i class="fa fa-clock-o"></i>{{ $newsupdate->updated_at }}</a></li>
-                </ul>
-    
-                <h6 class="card__title">{{ $newsupdate->title }}</h6>
-                  <p class="card__title1">{{ $newsupdate->content }}</p><br>
-                <a href="{{ url('/newsupdate/show/'.$newsupdate->id)  }}">ดูรายละเอียด</a>
-              </div>
-            </div>
+  <div><img class="img-fluid" src="{{ url('/img/end.jpg') }}"></div>
+</div>
+      <div class="content">
+      <div class="row">
+      @foreach($newsupdates as $newsupdate)
+      <div class="col-md-4">
+        <div class="card-wrapper">
+          <div class="thumbnail-container">
+            <a href="#">
+              <img src="{{ asset('images/'.$newsupdate->image) }}" class="card-img-top">
+            </a>
           </div>
+          <div class="card-desc-wrapper">
+            <div class="card-desc-container">
+              <div class="card-desc-cont">
+                  <div class="card-desc-header">{{ $newsupdate->title }}</div>
+                  <div class="card-desc-desc"><p>{!! $newsupdate->content !!}</p></div>
+              </div>
+              <div class="card-desc-link"><a href="{{ url('/newsupdates/show/'.$newsupdate->id)  }}">ดูเพิ่มเติม</a></div>
+                  <div class="card-desc-tag">ประชาสัมพันธ์</div>
+            </div>
+            </div>
         </div>
       </div>
-    </div>
-    @endforeach  
+      @endforeach
+ 
+  
 {!! $newsupdates->render() !!}
+</div>
+</div>
+      </div>
 <script>
   (function() {
   var $grid = $('.grid').imagesLoaded(function() {
@@ -44,9 +43,4 @@
   });
 })();
 </script>
-</div>
-</div>
-</div>
-</div>
-
 @endsection

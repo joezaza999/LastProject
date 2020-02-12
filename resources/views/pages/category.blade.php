@@ -20,7 +20,7 @@
         @endforeach
 
 @endforeach
-<hr>
+
 
     </div>
 </div>

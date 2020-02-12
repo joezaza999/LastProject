@@ -10,7 +10,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">รายชื่อนักศึกษา</h4>
+                <h4 class="">รายชื่อนักศึกษา</h4>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

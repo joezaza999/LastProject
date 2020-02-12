@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Auth;
 */
 
  Route::get('/', function () {
-     return view('auth.login');
+     return view('auth.login'); 
  });
-
+ Route::get('fixed-sidebar', function () {
+    return view('fixed-sidebar'); 
+});
 Route::get('/home','ShowhomeController@index')->name('home');
 Route::get('/form','ShowformController@index')->name('form');
 Route::get('/success','ShowsuccessController@index')->name('success');
