@@ -8,9 +8,9 @@
     <div class="leftcolumn1">
       <h3><c class="fa fa-cloud-download"></c> แบบฟอร์มงานทะเบียน</h3><br>
     @foreach($forms as $form)
-    <c class="fa fa-print"></c>  <a href="{{ asset('files/'.$form->file)}}" download="{{ $form->file }}">
+ <a href="{{ asset('files/'.$form->file)}}" download="{{ $form->file }}">
   
-                {{ $form->name }} </a><br>
+                <h5>  <c class="fa fa-print"></c> {{ $form->name }}</h5> </a><br>
     @endforeach
     <div>
       <img class="img-fluid" src="<?php echo asset('assets/img/w.png'); ?>" width="500px" height="" alt=""/>

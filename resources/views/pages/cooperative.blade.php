@@ -18,9 +18,10 @@
             <div class="card-desc-container">
               <div class="card-desc-cont">
                   <div class="card-desc-header">{{ $cooperative->name }}</div>
-                  <div class="card-desc-desc"><p>{!! $cooperative->text !!}</p></div>
+                  
                   <c class="fa fa-print"></c>  <a href="files/{{ $cooperative->file }}" download="{{ $cooperative->file }}">
                     {{ $cooperative->file }} </a>
+                    <div class="card-desc-desc"><p>{!! $cooperative->text !!}</p></div><br>
               </div>
                   <div class="card-desc-tag">สหกิจศึกษา</div>
             </div>

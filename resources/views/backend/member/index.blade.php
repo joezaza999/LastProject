@@ -22,7 +22,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                      <th>ชื่อบุคลากร</th>
@@ -53,7 +53,8 @@
                                 <form action="{{ route('bmembers.destroy', $member->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">ลบ</button>
+                                    <a onclick="return confirm('คุณต้องการที่จะลบใช่หรือไม่?');">
+                                    <button type="submit" class="btn btn-danger">ลบ</button></a>
                                 </form>
                             </td>
                   </tr>
@@ -70,5 +71,6 @@
         <!-- /.row -->
       </section>
       <!-- /.content -->
+      {!! $members->render() !!}
 </div>
 @endsection

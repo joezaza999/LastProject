@@ -10,7 +10,6 @@ class ShowheaderController extends Controller
     public function index()
     {
         $headers = Header::all();      
-        
         return view('layouts.master',[
             'headers' => $headers
            

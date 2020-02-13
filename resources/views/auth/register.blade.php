@@ -26,7 +26,7 @@
 
   <div class="card">
     <div class="card-body register-card-body">
-      <p class="login-box-msg">ลงทะเบียน</p>
+      <p class="login-box-msg">เพิ่มผู้ใช้งาน</p>
 
       <form method="POST" action="{{ route('register') }}">
         @csrf
@@ -85,7 +85,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4-2">
-            <button type="submit" class="btn btn-primary btn-block">ลงทะเบียน</button>
+            <button type="submit" class="btn btn-primary btn-block">ยืนยัน</button>
           </div>
           <!-- /.col -->
         </div>

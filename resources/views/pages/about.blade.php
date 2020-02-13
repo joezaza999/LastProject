@@ -5,13 +5,13 @@
 <br><br><br><br><br>
 <div class="content">
     <div class="">
-        <h2>คณาจารย์สาขาวิชาเทคโนโลยีสารสนเทศทางธุรกิจ</h2>
+        <h3>คณาจารย์สาขาวิชาเทคโนโลยีสารสนเทศทางธุรกิจ</h3>
     </div>
     <hr>
     <div class="projectsContainer">
         @foreach ($members as $member)   
     <div class="projectsChild">
-        <img class="" src="{{ asset('images/'.$member->image) }}" style="width:150px">
+        <img class="" src="{{ asset('images/'.$member->image) }}" style="width:140px">
             <div class="projectsGrandchild">
                 
                 <p>{{ $member->name }}</p>

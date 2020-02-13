@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Header;
+use App\Http\Requests\HeaderRequest;
 use Intervention\Image\Facades\Image;
 use illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
@@ -36,7 +37,10 @@ class HeaderController extends Controller
      */
     public function create()
     {
-        return view('backend.header.create');
+        $header = Header::all();
+        return view('backend.header.create',[
+            'headers' => $header        
+            ]);
     }
 
     /**
@@ -47,16 +51,22 @@ class HeaderController extends Controller
      */
     public function store(Request $request)
     {
-        $header = new Header();
-        if ($request->hasFile('image')) {
-            $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
-            $request->file('image')->move(public_path() . '/images/', $filename);
-            Image::make(public_path() . '/images/' . $filename)->resize(50,50)->save(public_path() . '/images/resize/' . $filename);
-            $header->image = $filename;
-        }
+        $request->validate([
+            'image' => 'required|image|max:2048'
+        ]);
 
-        $header->save();
-        return redirect()->action('HeaderController@index');
+        $image = $request->file('image');
+
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $new_name);
+
+
+        $form_data = array(
+            'image' => $new_name
+        );
+
+        Header::create($form_data);
+        return redirect('bheader')->with('success', 'เพิ่มข้อมูลส่วนบนของเว็บสำเร็จ');
     }
 
     /**
@@ -78,7 +88,8 @@ class HeaderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $header = Header::findOrFail($id);
+        return view('backend.header.edit', compact('header'));
     }
 
     /**
@@ -90,7 +101,21 @@ class HeaderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $image_name = $request->hidden_image;
+        $image = $request->file('image');
+           
+        $request->validate([
+                'image' => 'required|image|max:2048'
+            ]);
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $image_name);
+           
+            $form_data = array(
+                'image' => $image_name
+            );
+
+        Header::whereId($id)->update($form_data);
+        return redirect('bheader')->with('success', 'แก้ไขข้อมูลส่วนบนของเว็บสำเร็จ');
     }
 
     /**

@@ -2,10 +2,9 @@
 
     @section('content')
     <div class="body"><br><br><br><br><br>
-<div class="content">
-  <div><img class="img-fluid" src="{{ url('/img/end.jpg') }}"></div>
-</div>
+
       <div class="content">
+      <h2>ข่าวสาร/ประชาสัมพันธ์</h2>
       <div class="row">
       @foreach($newsupdates as $newsupdate)
       <div class="col-md-4">

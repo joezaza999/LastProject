@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Role;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
+
+
 
 class UsersController extends Controller
 {
@@ -21,9 +25,14 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('backend.users.index',[
+        return view('backend.users.index')->with([
             'users' => $users
         ]);
+    }
+
+    public function create()
+    {
+        
     }
 
     /**
@@ -32,10 +41,18 @@ class UsersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($user)
     {
-        //
+
+       
+        $roles = Role::all();
+
+        return view('backend.users.edit')->with([
+            'user' => $user,
+            'roles' => $roles
+        ]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -46,7 +63,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        
+        dd($request);
     }
 
     /**
@@ -57,6 +74,6 @@ class UsersController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        
     }
 }

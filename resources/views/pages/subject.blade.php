@@ -8,7 +8,7 @@
 @foreach ($subjects as $subject)
 <div class="accrodion">
     <div class="header">
-     <a href="#">   {{ $subject->subcode }}
+     <a>{{ $subject->subcode }}
         &nbsp; {{ $subject->name }} &nbsp; {{ $subject->credit }}<br></a>    
     </div>    
        <div class="body">

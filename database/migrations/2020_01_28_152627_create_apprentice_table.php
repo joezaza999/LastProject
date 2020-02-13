@@ -17,9 +17,9 @@ class CreateApprenticeTable extends Migration
             $table->increments('id');
             $table->string('name',50);
             $table->text('text');
-            $table->string('location');
-            $table->string('image',100);
-            $table->string('file',100);
+            $table->text('location');
+            $table->string('image');
+            $table->string('file');
             $table->timestamps();
         });
     }

@@ -50,7 +50,8 @@
                                 <form action="{{ route('bapprentice.destroy', $apprentice->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">ลบ</button>
+                                    <a onclick="return confirm('คุณต้องการที่จะลบใช่หรือไม่?');">
+                                    <button type="submit" class="btn btn-danger">ลบ</button></a>
                                 </form>
                             </td>
                         </tr>

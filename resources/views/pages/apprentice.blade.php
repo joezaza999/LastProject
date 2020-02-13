@@ -18,9 +18,10 @@
             <div class="card-desc-container">
               <div class="card-desc-cont">
                   <div class="card-desc-header">{{ $apprentice->name }}</div>
-                  <div class="card-desc-desc"><p>{!! $apprentice->text !!}</p></div>
+                  
                   <c class="fa fa-print"></c>  <a href="files/{{ $apprentice->file }}" download="{{ $apprentice->file }}">
                     {{ $apprentice->file }} </a>
+                    <div class="card-desc-desc"><p>{!! $apprentice->text !!}</p></div>
               </div>
                   <div class="card-desc-tag">ฝึกงาน</div>
             </div>

@@ -36,8 +36,8 @@
           <div class="card-desc-wrapper">
             <div class="card-desc-container">
               <div class="card-desc-cont">
-                  <div class="card-desc-header">Have your say on the plan for Johnstone park</div>
-                  <div class="card-desc-desc app"><p>Comment on the concept and raingarden plan that will guide future improvements within and surrounding the park.</p></div>
+                  <div class="card-desc-header">{{ $newsupdate->title }}</div>
+                  <div class="card-desc-desc app"><p>{{ $newsupdate->content }}</p></div>
               </div>
               <div class="card-desc-link"><a href="{{ url('/newsupdate/show/'.$newsupdate->id)  }}">Read more</a></div>
                   <div class="card-desc-tag">ประชาสัมพันธ์</div>
@@ -59,8 +59,8 @@
               <div class="card-desc-wrapper">
                 <div class="card-desc-container">
                   <div class="card-desc-cont">
-                      <div class="card-desc-header">Have your say on the plan for Johnstone park</div>
-                      <div class="card-desc-desc appp"><p>Comment on the concept and raingarden plan that will guide future improvements within and surrounding the park. </p></div>
+                      <div class="card-desc-header">{{ $activitie->title }}</div>
+                      <div class="card-desc-desc appp"><p>{!! $activitie->content !!}</p></div>
                   </div>
                   <div class="card-desc-link"><a href="{{ url('/activities/show/'.$activitie->id)  }}">Read more</a></div>
                       <div class="card-desc-tag1">กิจกรรม</div>
@@ -78,9 +78,9 @@
       <div id="content">     
       @foreach ($newsupdates as $newsupdate)
         <ul class="timeline">
-          <li class="event" data-date="{{ $newsupdate->date }}">
+          <li class="event" data-date="">
             <h3><a href="{{ url('/newsupdate/show/'.$newsupdate->id)  }}">{{ $newsupdate->title }}</a></h3>
-            <p>{{ $newsupdate->content }}</p>
+            <div class="apppp"><p>{{ $newsupdate->content }}</p></div>
           </li>
         </ul>
         @endforeach
@@ -89,7 +89,7 @@
     </div>
     <div class="leftcolumn">
       <br>
-      <h3><c class="icon-book"></c> BIT About</h3><br>
+      <h2><c class="icon-book"></c> BIT About</h2><br>
       @foreach ($abouts as $about)
     <div class="indent2">
         <p>{!! $about->text !!}</p>  

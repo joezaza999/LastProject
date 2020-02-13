@@ -43,7 +43,7 @@
                         <div class="form-group">
                             <label class="col-md-4 text-left">ปฏิทิน</label>
                             <div class="col-md-8">
-                                <input type="date" data-date="" name="date" data-date-format='dd-mm-yy' min="2015-01-01" max="3000-12-01">   
+                                <input type="date" data-date="" name="date" data-date-format='dd-mm-yy' min="01-01-2015" max="12-01-3000">   
                             </div>
                         </div>
                         <br>

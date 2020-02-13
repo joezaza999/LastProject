@@ -48,7 +48,7 @@
             
           <span class="fa fa-navicon" style="color:#fff; font-size:28px;"></span>
 					</button>
-					<a class="navbar-brand" href="#"> <img class="img-fluid" src="<?php echo asset('assets/img/newupdate.jpg'); ?>" width="200px" alt=""/></a>
+          <a class="navbar-brand" href="{{ route('home') }}"> <img src="{{ url('/') }}/img/logo.png" width="300px"></a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
@@ -62,10 +62,10 @@
                 <a class="nav-link" href="{{ route('coursegenaral') }}">ข้อมูลทั่วไป</a></li>
                 <li class="{{ Request::path() == 'category' ? 'active' : '' }}">
 								<a class="nav-link" href="{{ route('category') }}">ข้อมูลหลักสูตร</a></li>
-							  <li class="{{ Request::path() == 'category' ? 'active' : '' }}">
-								<a class="nav-link" href="{{ route('category') }}">กลุ่มวิชาการพัฒนาซอฟต์แวร์</a></li>
-							  <li class="{{ Request::path() == 'category' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('category') }}">กลุ่มวิชาการจัดการเทคโนโลยีสารสนเทศ</a></li>
+							  <li class="{{ Request::path() == 'bitcourse' ? 'active' : '' }}">
+								<a class="nav-link" href="{{ route('bitcourse') }}">กลุ่มวิชาการพัฒนาซอฟต์แวร์</a></li>
+							  <li class="{{ Request::path() == 'mitcourse' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('mitcourse') }}">กลุ่มวิชาการจัดการเทคโนโลยีสารสนเทศ</a></li>
 							</ul>
             </li>
             <li class="{{ Request::path() == 'about' ? 'active' : '' }}">
@@ -90,8 +90,8 @@
                
                 <li class="{{ Request::path() == 'apprentice' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('apprentice') }}">ผลงานฝึกงาน</a></li>
-                <li class="{{ Request::path() == 'apprentice' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('apprentice') }}">สถานที่ศึกษานอกพื้นที่</a></li>
+                <li class="{{ Request::path() == 'location' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('location') }}">สถานที่ศึกษานอกพื้นที่</a></li>
                 <li class="{{ Request::path() == 'student' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('student') }}">รายชื่อนักศึกษา</a></li>
                 @endguest

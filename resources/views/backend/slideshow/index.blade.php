@@ -21,7 +21,7 @@
                                 <img src="{{ asset('images/resize/'.$slideshow->image) }}" style="width:100px"></a>
                             </td>
                             <td>
-                                <?= Form::open(array('url' => 'bslideshow/' . $slideshow->id, 'method' => 'delete')) ?>
+                                <a onclick="return confirm('คุณต้องการที่จะลบใช่หรือไม่?');"><?= Form::open(array('url' => 'bslideshow/' . $slideshow->id, 'method' => 'delete')) ?>
                                 <button type="submit" class="btn btn-danger">ลบ</button>
                                 {!! Form::close() !!}
                             </td>
