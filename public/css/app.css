@@ -165,9 +165,7 @@ a {
   color: #29b6f6;
   text-decoration: none;
 }
-b {
-  color: #ee771a;
-}
+
 a:hover {
   text-decoration: underline;
 }
@@ -469,7 +467,7 @@ h1 {
 }
 .w3 {
   color: #ffffff;
-  background-color: #eeab73;
+  background-color: #f77f3b;
 }
 /*Projects*/
 

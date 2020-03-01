@@ -6,19 +6,21 @@
 <div class="container">
  <nav aria-label="breadcrumb">
     <ol class="breadcrumb blue-grey lighten-4">
-      <li class="breadcrumb-item"><a class="black-text" href="#">Home</a>
-      <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-      <li class="breadcrumb-item"><a class="black-text" href="#">Library</a>
-      <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-      <li class="breadcrumb-item active">Data</li>
+      <li class="breadcrumb-item"><a class="black-text" href="home">หน้าหลัก</a>
+      <i class="fa fa-angle-right" aria-hidden="true"></i>
+      <li class="breadcrumb-item active">รายชื่อนักศึกษา</li>
     </ol>
   </nav>
       <section class="content">
+      <div class="">
+        <h3>รายชื่อนักศึกษา</h3>
+      </div>
+    <hr>
         <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="">รายชื่อนักศึกษา</h4>
+               
               </div>
               <!-- /.card-header -->
               <div class="card-body">

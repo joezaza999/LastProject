@@ -6,15 +6,16 @@
       <div class="container">
  <nav aria-label="breadcrumb">
     <ol class="breadcrumb blue-grey lighten-4">
-      <li class="breadcrumb-item"><a class="black-text" href="#">Home</a>
-      <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-      <li class="breadcrumb-item"><a class="black-text" href="#">Library</a>
-      <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-      <li class="breadcrumb-item active">Data</li>
+      <li class="breadcrumb-item"><a class="black-text" href="home">หน้าหลัก</a>
+      <i class="fa fa-angle-right" aria-hidden="true"></i>
+      <li class="breadcrumb-item active">ประชาสัมพันธ์</li>
     </ol>
   </nav>
       <div class="content">
-      <h2>ข่าวสาร/ประชาสัมพันธ์</h2>
+      <div class="">
+        <h3>ประชาสัมพันธ์</h3>
+      </div>
+    <hr>
       <div class="row">
       @foreach($newsupdates as $newsupdate)
       <div class="col-md-4">

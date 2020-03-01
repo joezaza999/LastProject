@@ -12,7 +12,10 @@
     </ol>
   </nav>
       <div class="content">
-        <h2>รางวัล</h2>
+      <div class="">
+        <h3>ผลงานฝึกงาน</h3>
+      </div>
+    <hr>
       <div class="row">
       @foreach($awards as $award)
       <div class="col-md-4">

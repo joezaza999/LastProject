@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>สาขาวิชาเทคโนโลยีสารสนเทศทางธุรกิจ</title>
+        <!-- <title>สาขาวิชาเทคโนโลยีสารสนเทศทางธุรกิจ</title> -->
         <link rel="stylesheet" href="{{asset('css/layouts.css')}}">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
@@ -116,13 +116,13 @@
     <!-- start .container -->
     <div class="container">
       <div class="row">
-        <div class="">
+        <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
           <div class="footer-widget">
-            <div class="widget-about">    
+            <div class="widget-about">
               <p>สาขาวิชาเทคโนโลยีสารสนเทศทางธุรกิจ</p>
               <p>264 ถนนจักรวรรดิ แขวงจักรวรรดิ	เขตสัมพันธวงศ์ กรุงเทพฯ 10100</p>
               <p>โทร : 0-2222-2814 ต่อ 5319,5330,5350</p>
-            </div>
+            </div>    
           </div>
           <!-- Ends: .footer-widget -->
         </div>
@@ -136,7 +136,7 @@
   <div class="mini-footer">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
           <div class="copyright-text">
             <p>© 2018
               <a>DigiPro</a>. All rights reserved. Created by
