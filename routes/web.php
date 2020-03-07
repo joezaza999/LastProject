@@ -41,6 +41,8 @@ Route::get('/bitcourse','ShowbitcourseController@index')->name('bitcourse');
 Route::get('/mitcourse','ShowmitcourseController@index')->name('mitcourse');
 Route::get('/award/show/{id}','ShowawardController@show');
 Route::get('/coursegenaral','ShowcoursegenaralController@index')->name('coursegenaral');
+Route::get('/location','ShowlocationController@index')->name('location');
+
 
 
 
@@ -75,6 +77,8 @@ Route::resource('/bheader','HeaderController')->name('index','bheader');
 Route::resource('/bbitcourse','BitcourseController')->name('index','bbitcourse');
 Route::resource('/bmitcourse','MitcourseController')->name('index','bmitcourse');
 Route::resource('/busers','UsersController')->name('index','busers');
+Route::resource('/blocation','LocationController')->name('index','blocation');
+
 
 
 

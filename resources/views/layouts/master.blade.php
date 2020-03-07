@@ -81,20 +81,16 @@
             
                 <li class="{{ Request::path() == 'success' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('success') }}">ความสำเร็จของศิษย์เก่า</a></li>
-                @guest
-                @if (Route::has('cooperative'))
-                @endif
-                @else
+              
                 <li class="{{ Request::path() == 'cooperative' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('cooperative') }}">ผลงานสหกิจศึกษา</a></li>
                
                 <li class="{{ Request::path() == 'apprentice' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('apprentice') }}">ผลงานฝึกงาน</a></li>
                 <li class="{{ Request::path() == 'location' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('location') }}">สถานที่ศึกษานอกพื้นที่</a></li>
+                <a class="nav-link" href="{{ route('location') }}">สถานที่ฝึกประสบการณ์</a></li>
                 <li class="{{ Request::path() == 'student' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('student') }}">รายชื่อนักศึกษา</a></li>
-                @endguest
 							</ul>
             </li>
             <li class="{{ Request::path() == 'tact' ? 'active' : '' }}">

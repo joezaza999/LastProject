@@ -8,21 +8,15 @@
     <ol class="breadcrumb blue-grey lighten-4">
       <li class="breadcrumb-item"><a class="black-text" href="home">หน้าหลัก</a>
       <i class="fa fa-angle-right" aria-hidden="true"></i>
-      <li class="breadcrumb-item active">สถานประกอบการสหกิจศึกษา</li>
+      <li class="breadcrumb-item active">สถานที่ฝึกประสบการณ์</li>
     </ol>
   </nav>
 <div class="content">
       <div class="">
-        <h3>สถานประกอบการสหกิจศึกษา</h3>
+        <h3>สถานที่ฝึกประสบการณ์</h3>
       </div>
     <hr>
-<div class="row">
-    <div class="leftcolumn1">
-    @foreach($cooperatives as $cooperative)
-    <p>{!!$cooperative->location!!}</p><br>
-    @endforeach
-    </div>
-</div>
+
 <!-- <div class="row">
 <h2>สถานประกอบการฝึกงาน</h2>
     <div class="leftcolumn1">

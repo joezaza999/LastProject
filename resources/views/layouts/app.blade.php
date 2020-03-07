@@ -241,6 +241,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{ route('blocation') }}" class="nav-link">
+                  <i class="fa fa-minus nav-icon"></i>
+                  <p>สถานที่ฝึกประสบการณ์</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ route('bstudent') }}" class="nav-link">
                   <i class="fa fa-minus nav-icon"></i>
                   <p>รายชื่อนักศึกษา</p>
